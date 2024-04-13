@@ -44,6 +44,7 @@
     {"id":{"name":"obj_test_enemy_speedy_boi","path":"objects/obj_test_enemy_speedy_boi/obj_test_enemy_speedy_boi.yy",},},
     {"id":{"name":"obj_test_enemy","path":"objects/obj_test_enemy/obj_test_enemy.yy",},},
     {"id":{"name":"obj_test_level_spawner","path":"objects/obj_test_level_spawner/obj_test_level_spawner.yy",},},
+    {"id":{"name":"obj_base_spawner","path":"objects/obj_base_spawner/obj_base_spawner.yy",},},
     {"id":{"name":"right_arrow_obj","path":"objects/right_arrow_obj/right_arrow_obj.yy",},},
     {"id":{"name":"spacebar_obj","path":"objects/spacebar_obj/spacebar_obj.yy",},},
     {"id":{"name":"up_arrow_obj","path":"objects/up_arrow_obj/up_arrow_obj.yy",},},

@@ -1,3 +1,2 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Rotates the enemy to face the way it's moving
 rotate_enemy();

@@ -1,3 +1,2 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Destroys the enemy when it reaches the end of the path
 instance_destroy();
