@@ -23,6 +23,7 @@
   "ResourceOrderSettings":[
     {"name":"down_arrow_obj","order":1,"path":"objects/down_arrow_obj/down_arrow_obj.yy",},
     {"name":"left_arrow_obj","order":2,"path":"objects/left_arrow_obj/left_arrow_obj.yy",},
+    {"name":"obj_test_enemy_speedy_boi","order":1,"path":"objects/obj_test_enemy_speedy_boi/obj_test_enemy_speedy_boi.yy",},
     {"name":"right_arrow_obj","order":3,"path":"objects/right_arrow_obj/right_arrow_obj.yy",},
     {"name":"spacebar_obj","order":4,"path":"objects/spacebar_obj/spacebar_obj.yy",},
     {"name":"EnemyTestRoom","order":1,"path":"rooms/EnemyTestRoom/EnemyTestRoom.yy",},
@@ -32,5 +33,7 @@
     {"name":"right_arrow_spr","order":3,"path":"sprites/right_arrow_spr/right_arrow_spr.yy",},
     {"name":"spacebar_spr","order":4,"path":"sprites/spacebar_spr/spacebar_spr.yy",},
     {"name":"spr_spawner","order":6,"path":"sprites/spr_spawner/spr_spawner.yy",},
+    {"name":"spr_test_enemy_speedy_boi","order":1,"path":"sprites/spr_test_enemy_speedy_boi/spr_test_enemy_speedy_boi.yy",},
+    {"name":"tl_test_wave_2","order":1,"path":"timelines/tl_test_wave_2/tl_test_wave_2.yy",},
   ],
 }

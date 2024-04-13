@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_test_level_spawner",
+  "%Name":"obj_test_enemy_speedy_boi",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":8,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_test_level_spawner",
+  "name":"obj_test_enemy_speedy_boi",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spawners",
-    "path":"folders/Objects/Spawners.yy",
+    "name":"Enemies",
+    "path":"folders/Objects/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,9 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_spawner",
-    "path":"sprites/spr_spawner/spr_spawner.yy",
+    "name":"spr_test_enemy_speedy_boi",
+    "path":"sprites/spr_test_enemy_speedy_boi/spr_test_enemy_speedy_boi.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
