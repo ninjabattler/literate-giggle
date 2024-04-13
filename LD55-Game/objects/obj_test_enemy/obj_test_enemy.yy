@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"test_enemy_obj",
+  "%Name":"obj_test_enemy",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":8,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"test_enemy_obj",
+  "name":"obj_test_enemy",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -31,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"test_enemy_spr",
-    "path":"sprites/test_enemy_spr/test_enemy_spr.yy",
+    "name":"spr_test_enemy",
+    "path":"sprites/spr_test_enemy/spr_test_enemy.yy",
   },
   "spriteMaskId":null,
   "visible":true,
