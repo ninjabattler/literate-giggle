@@ -23,6 +23,7 @@
   "ResourceOrderSettings":[
     {"name":"down_arrow_obj","order":1,"path":"objects/down_arrow_obj/down_arrow_obj.yy",},
     {"name":"left_arrow_obj","order":2,"path":"objects/left_arrow_obj/left_arrow_obj.yy",},
+    {"name":"obj_base_enemy","order":2,"path":"objects/obj_base_enemy/obj_base_enemy.yy",},
     {"name":"obj_test_enemy_speedy_boi","order":1,"path":"objects/obj_test_enemy_speedy_boi/obj_test_enemy_speedy_boi.yy",},
     {"name":"right_arrow_obj","order":3,"path":"objects/right_arrow_obj/right_arrow_obj.yy",},
     {"name":"spacebar_obj","order":4,"path":"objects/spacebar_obj/spacebar_obj.yy",},

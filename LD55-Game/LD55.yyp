@@ -40,6 +40,7 @@
   "resources":[
     {"id":{"name":"down_arrow_obj","path":"objects/down_arrow_obj/down_arrow_obj.yy",},},
     {"id":{"name":"left_arrow_obj","path":"objects/left_arrow_obj/left_arrow_obj.yy",},},
+    {"id":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},},
     {"id":{"name":"obj_test_enemy_speedy_boi","path":"objects/obj_test_enemy_speedy_boi/obj_test_enemy_speedy_boi.yy",},},
     {"id":{"name":"obj_test_enemy","path":"objects/obj_test_enemy/obj_test_enemy.yy",},},
     {"id":{"name":"obj_test_level_spawner","path":"objects/obj_test_level_spawner/obj_test_level_spawner.yy",},},
@@ -59,8 +60,8 @@
     {"id":{"name":"spr_test_enemy_speedy_boi","path":"sprites/spr_test_enemy_speedy_boi/spr_test_enemy_speedy_boi.yy",},},
     {"id":{"name":"spr_test_enemy","path":"sprites/spr_test_enemy/spr_test_enemy.yy",},},
     {"id":{"name":"up_arrow_spr","path":"sprites/up_arrow_spr/up_arrow_spr.yy",},},
-    {"id":{"name":"tl_test_wave_2","path":"timelines/tl_test_wave_2/tl_test_wave_2.yy",},},
     {"id":{"name":"tl_test_wave_1","path":"timelines/tl_test_wave_1/tl_test_wave_1.yy",},},
+    {"id":{"name":"tl_test_wave_2","path":"timelines/tl_test_wave_2/tl_test_wave_2.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
