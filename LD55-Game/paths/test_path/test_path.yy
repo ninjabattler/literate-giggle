@@ -1,0 +1,24 @@
+{
+  "$GMPath":"",
+  "%Name":"test_path",
+  "closed":false,
+  "kind":1,
+  "name":"test_path",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":-96.0,"y":0.0,},
+    {"speed":100.0,"x":301.58658,"y":0.0,},
+    {"speed":100.0,"x":568.58655,"y":-242.99988,},
+    {"speed":100.0,"x":792.8723,"y":-34.1427,},
+    {"speed":100.0,"x":412.01514,"y":210.5716,},
+    {"speed":100.0,"x":757.4437,"y":367.71442,},
+    {"speed":100.0,"x":1075.158,"y":0.0,},
+    {"speed":100.0,"x":1462.0,"y":0.0,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}
