@@ -8,3 +8,8 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 draw_set_colour(c_orange)
 draw_text(960, 0, $"Wave: {_current_wave}/{array_length(_waves)}");
+
+if(_wave_on_cooldown) {
+	draw_text(960, 50, $"{_countdown} Seconds Til More Death");
+	draw_text(960, 100, "Use [TAB] to Skip to Next Wave");
+}

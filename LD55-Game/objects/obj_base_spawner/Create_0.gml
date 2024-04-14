@@ -7,6 +7,8 @@ global.spawn_y = self.y;
 _current_wave = 0;
 _wave_timeline_complete = false;
 _waves = [];
+_wave_on_cooldown = false;
+_countdown = 0;
 
 function start_wave () {
 	if (_current_wave < array_length(_waves)) {
