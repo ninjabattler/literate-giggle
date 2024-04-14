@@ -7,6 +7,7 @@ if(!global.summon_window_active) {
 	self.y += _momentum_y;
 }
 
+if (!_disabled) {
 	var _move_up = keyboard_check(ord("W"));
 	var _move_left = keyboard_check(ord("A"));
 	var _move_down = keyboard_check(ord("S"));
