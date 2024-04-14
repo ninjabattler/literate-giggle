@@ -4,5 +4,6 @@
     {"name":"obj_base_radius","order":1,"path":"objects/obj_base_radius/obj_base_radius.yy",},
     {"name":"prt_heal_radius","order":2,"path":"particles/prt_heal_radius/prt_heal_radius.yy",},
     {"name":"prt_thief_radius","order":1,"path":"particles/prt_thief_radius/prt_thief_radius.yy",},
+    {"name":"spr_thief_void","order":1,"path":"sprites/spr_thief_void/spr_thief_void.yy",},
   ],
 }
