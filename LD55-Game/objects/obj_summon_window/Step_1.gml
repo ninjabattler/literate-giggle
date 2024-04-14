@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description 
 // You can write your code in this editor
 
 // Expand the window
@@ -21,3 +21,4 @@ else if(x <= target_x && !expanding) {
 	expanded = false
 	x = -sprite_width
 }
+
