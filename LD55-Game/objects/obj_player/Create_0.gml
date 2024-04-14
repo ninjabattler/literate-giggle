@@ -7,3 +7,4 @@ _initial_max_speed = 3;
 _max_speed = 3;
 _stab_cooldown = 15;
 _stab_on_cooldown = false;
+_disabled = false;
