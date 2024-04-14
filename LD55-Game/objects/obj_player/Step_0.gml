@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-image_angle=point_direction(mouse_x,mouse_y,self.x,self.y);
+image_angle = point_direction(mouse_x,mouse_y,self.x,self.y);
 self.x += _momentum_x;
 self.y += _momentum_y;
 
@@ -41,7 +41,6 @@ if (!_move_left && !_move_right) {
 		_momentum_x--	
 	}
 }
-
 
 if (!_move_up && !_move_down) {
 	if (_momentum_y < 0) {
