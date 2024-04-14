@@ -1,0 +1,26 @@
+{
+  "$GMParticleSystem":"",
+  "%Name":"prt_thief_radius",
+  "backdropHeight":768,
+  "backdropImageOpacity":0.5,
+  "backdropImagePath":"",
+  "backdropWidth":1366,
+  "backdropXOffset":0.0,
+  "backdropYOffset":0.0,
+  "drawOrder":0,
+  "emitters":[
+    {"$GMPSEmitter":"","%Name":"Emmiter_1","additiveBlend":true,"directionIncrease":0.0,"directionMax":180.0,"directionMin":180.0,"directionWiggle":0.0,"distribution":2,"editorColour":16777215,"editorDrawShape":true,"emitCount":3,"emitDelayMax":0.0,"emitDelayMin":0.0,"emitDelayUnits":0,"emitIntervalMax":0.1,"emitIntervalMin":0.1,"emitIntervalUnits":0,"enabled":true,"endColour":2684159,"GMPresetName":"","gravityDirection":270.0,"gravityForce":0.0,"headPosition":0.0,"lifetimeMax":60.0,"lifetimeMin":30.0,"linkedEmitter":null,"locked":false,"midColour":3422614271,"mode":0,"name":"Emmiter_1","orientationIncrease":0.0,"orientationMax":180.0,"orientationMin":180.0,"orientationRelative":false,"orientationWiggle":0.0,"regionH":128.0,"regionW":128.0,"regionX":0.0,"regionY":0.0,"resourceType":"GMPSEmitter","resourceVersion":"2.0","scaleX":1.0,"scaleY":1.0,"shape":1,"sizeIncrease":0.0,"sizeMax":0.25,"sizeMin":0.1,"sizeWiggle":0.0,"spawnOnDeathCount":0,"spawnOnDeathGMPreset":null,"spawnOnDeathId":null,"spawnOnUpdateCount":0,"spawnOnUpdateGMPreset":null,"spawnOnUpdateId":null,"speedIncrease":0.0,"speedMax":1.0,"speedMin":0.25,"speedWiggle":0.0,"spriteAnimate":false,"spriteId":null,"spriteRandom":false,"spriteStretch":true,"startColour":4283039727,"texture":3,},
+    {"$GMPSEmitter":"","%Name":"Emmiter","additiveBlend":true,"directionIncrease":0.0,"directionMax":0.0,"directionMin":0.0,"directionWiggle":0.0,"distribution":2,"editorColour":16777215,"editorDrawShape":true,"emitCount":3,"emitDelayMax":0.0,"emitDelayMin":0.0,"emitDelayUnits":0,"emitIntervalMax":0.1,"emitIntervalMin":0.1,"emitIntervalUnits":0,"enabled":true,"endColour":2684159,"GMPresetName":"","gravityDirection":270.0,"gravityForce":0.0,"headPosition":0.0,"lifetimeMax":60.0,"lifetimeMin":30.0,"linkedEmitter":null,"locked":false,"midColour":3422614271,"mode":0,"name":"Emmiter","orientationIncrease":0.0,"orientationMax":0.0,"orientationMin":0.0,"orientationRelative":false,"orientationWiggle":0.0,"regionH":128.0,"regionW":128.0,"regionX":0.0,"regionY":0.0,"resourceType":"GMPSEmitter","resourceVersion":"2.0","scaleX":1.0,"scaleY":1.0,"shape":1,"sizeIncrease":0.0,"sizeMax":0.25,"sizeMin":0.1,"sizeWiggle":0.0,"spawnOnDeathCount":0,"spawnOnDeathGMPreset":null,"spawnOnDeathId":null,"spawnOnUpdateCount":0,"spawnOnUpdateGMPreset":null,"spawnOnUpdateId":null,"speedIncrease":0.0,"speedMax":1.0,"speedMin":0.25,"speedWiggle":0.0,"spriteAnimate":false,"spriteId":null,"spriteRandom":false,"spriteStretch":true,"startColour":4283039727,"texture":3,},
+  ],
+  "name":"prt_thief_radius",
+  "parent":{
+    "name":"Particle Systems",
+    "path":"folders/Particle Systems.yy",
+  },
+  "resourceType":"GMParticleSystem",
+  "resourceVersion":"2.0",
+  "showBackdrop":true,
+  "showBackdropImage":false,
+  "xorigin":0,
+  "yorigin":0,
+}
