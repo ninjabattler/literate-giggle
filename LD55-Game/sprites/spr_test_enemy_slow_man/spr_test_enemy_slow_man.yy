@@ -44,8 +44,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"LD55",
-    "path":"LD55.yyp",
+    "name":"Enemies",
+    "path":"folders/Sprites/Enemies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
