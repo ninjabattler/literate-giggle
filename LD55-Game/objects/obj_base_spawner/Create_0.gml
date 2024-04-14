@@ -5,6 +5,7 @@ global.spawn_x = self.x;
 global.spawn_y = self.y;
 
 _current_wave = 0;
+_wave_timeline_complete = false;
 _waves = [];
 
 function start_wave () {
@@ -15,6 +16,6 @@ function start_wave () {
 		timeline_position = 0;
 		
 		_current_wave++;
-		alarm_set(0, timeline_max_moment(timeline_index));
+		alarm_set(2, timeline_max_moment(timeline_index));
 	}
 }
