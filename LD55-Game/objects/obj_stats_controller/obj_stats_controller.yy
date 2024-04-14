@@ -1,20 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_test_level_spawner",
+  "%Name":"obj_stats_controller",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_test_level_spawner",
+  "name":"obj_stats_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spawners",
-    "path":"folders/Objects/Spawners.yy",
+    "name":"Control",
+    "path":"folders/Objects/Control.yy",
   },
-  "parentObjectId":{
-    "name":"obj_base_spawner",
-    "path":"objects/obj_base_spawner/obj_base_spawner.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_spawner",
-    "path":"sprites/spr_spawner/spr_spawner.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

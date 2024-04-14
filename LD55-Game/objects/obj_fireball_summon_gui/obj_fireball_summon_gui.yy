@@ -9,8 +9,8 @@
   "name":"obj_fireball_summon_gui",
   "overriddenProperties":[],
   "parent":{
-    "name":"LD55",
-    "path":"LD55.yyp",
+    "name":"GUI",
+    "path":"folders/Objects/GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

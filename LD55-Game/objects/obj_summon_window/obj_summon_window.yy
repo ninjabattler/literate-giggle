@@ -11,8 +11,8 @@
   "name":"obj_summon_window",
   "overriddenProperties":[],
   "parent":{
-    "name":"LD55",
-    "path":"LD55.yyp",
+    "name":"GUI",
+    "path":"folders/Objects/GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

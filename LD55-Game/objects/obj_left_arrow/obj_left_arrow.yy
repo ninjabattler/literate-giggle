@@ -11,8 +11,8 @@
   "name":"obj_left_arrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"LD55",
-    "path":"LD55.yyp",
+    "name":"GUI",
+    "path":"folders/Objects/GUI.yy",
   },
   "parentObjectId":{
     "name":"obj_arrow_base",
