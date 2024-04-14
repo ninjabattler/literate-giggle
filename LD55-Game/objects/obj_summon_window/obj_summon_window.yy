@@ -11,8 +11,8 @@
   "name":"obj_summon_window",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUI",
-    "path":"folders/Objects/GUI.yy",
+    "name":"Summons",
+    "path":"folders/Objects/GUI/Summons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

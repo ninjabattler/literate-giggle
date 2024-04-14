@@ -10,8 +10,8 @@
   "name":"obj_arrow_base",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUI",
-    "path":"folders/Objects/GUI.yy",
+    "name":"Summons",
+    "path":"folders/Objects/GUI/Summons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,9 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"","%Name":"key","filters":[],"listItems":[],"multiselect":false,"name":"key","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"A\"","varType":2,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

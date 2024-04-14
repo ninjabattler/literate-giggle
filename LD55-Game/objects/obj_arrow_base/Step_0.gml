@@ -1,6 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Press if at correct index
+if(keyboard_check_pressed(ord(key)) && global.active_arrow == arrow_index && !disabled) {
+	image_xscale = max_scale;
+	image_yscale = max_scale;
+
+	pressed = true;
+	image_blend = c_white;
+}
+
 if(is_hovered) {
 	_mysine = (_mysine+2) mod 360;
 	image_xscale = 1 + (sin(degtorad(_mysine))/3);
@@ -15,6 +24,12 @@ if(is_hovered) {
 	}
 }
 
+// Reset to neutral state
 if(pressed && global.active_arrow == 0 && !global.summon_window_active) {
 	image_blend = #aaaaaa;
+}
+
+// Show as disabled
+if(disabled) {
+	image_blend = #555555;
 }
