@@ -12,5 +12,5 @@ parent_summon = self;
 max_scale = 1.5;
 target_scale = 1;
 pressed = false;
-//disabled = false;
+disabled = false;
 //ready = false;

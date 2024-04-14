@@ -6,6 +6,6 @@ global.summon_window_active = false;
 
 // Display list of available summons
 for(var _i = 0; _i < array_length(global.summons_list); _i++) {
-	summon = instance_create_depth(0, 0, 0, global.summons_list[_i]);
+	summon = instance_create_depth(0, 0, -1, global.summons_list[_i]);
 	summon.summon_index = _i;
 }

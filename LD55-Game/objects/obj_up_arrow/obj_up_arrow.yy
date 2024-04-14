@@ -4,15 +4,15 @@
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":11,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":38,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":87,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_up_arrow",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"W\"",},
+  ],
   "parent":{
-    "name":"LD55",
-    "path":"LD55.yyp",
+    "name":"Summons",
+    "path":"folders/Objects/GUI/Summons.yy",
   },
   "parentObjectId":{
     "name":"obj_arrow_base",

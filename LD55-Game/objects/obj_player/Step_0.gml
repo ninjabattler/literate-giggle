@@ -2,8 +2,10 @@
 // You can write your code in this editor
 
 image_angle = point_direction(mouse_x,mouse_y,self.x,self.y);
-self.x += _momentum_x;
-self.y += _momentum_y;
+if(!global.summon_window_active) {
+	self.x += _momentum_x;
+	self.y += _momentum_y;
+}
 
 var _move_up = keyboard_check(ord("W"));
 var _move_left = keyboard_check(ord("A"));
