@@ -49,3 +49,19 @@ if (!_move_up && !_move_down) {
 		_momentum_y--	
 	}
 }
+
+if (_momentum_x > _max_speed) {
+	_momentum_x--
+} else if (_momentum_x < -_max_speed) {
+	_momentum_x++
+}
+	
+if (_momentum_y > _max_speed) {
+	_momentum_y--
+} else if (_momentum_y < -_max_speed) {
+	_momentum_y++
+}
+
+if (_max_speed < _initial_max_speed) {
+	_max_speed++
+}

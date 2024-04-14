@@ -6,5 +6,5 @@
 function scr_create_enemy(_enemy) {
 	var _offset_x = random_range(-8, 8);
 	var _offset_y = random_range(-8, 8);
-	instance_create_depth(global.spawn_x + _offset_x, global.spawn_y + _offset_y, 1, _enemy);
+	instance_create_depth(global.spawn_x + _offset_x, global.spawn_y + _offset_y, 102, _enemy);
 }
