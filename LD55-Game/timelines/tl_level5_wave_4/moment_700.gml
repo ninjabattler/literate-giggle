@@ -1,0 +1,2 @@
+scr_create_enemy(obj_test_enemy_speedy_boi);
+scr_create_enemy(obj_test_enemy);
