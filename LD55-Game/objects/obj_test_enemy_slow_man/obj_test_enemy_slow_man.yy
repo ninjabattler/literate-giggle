@@ -9,6 +9,7 @@
   "name":"obj_test_enemy_slow_man",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_speed","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.75",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_max_hp","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"40",},
   ],
   "parent":{
     "name":"Enemies",

@@ -8,6 +8,13 @@
     {"name":"Summons","order":1,"path":"folders/Sprites/Summons.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_base_radius","order":1,"path":"objects/obj_base_radius/obj_base_radius.yy",},
+    {"name":"prt_heal_radius","order":2,"path":"particles/prt_heal_radius/prt_heal_radius.yy",},
+    {"name":"prt_thief_radius","order":1,"path":"particles/prt_thief_radius/prt_thief_radius.yy",},
+    {"name":"spr_player_stats","order":1,"path":"sprites/spr_player_stats/spr_player_stats.yy",},
+    {"name":"spr_thief_void","order":1,"path":"sprites/spr_thief_void/spr_thief_void.yy",},
+    {"name":"spr_wave_counter","order":2,"path":"sprites/spr_wave_counter/spr_wave_counter.yy",},
+    {"name":"spr_wave_cooldown","order":3,"path":"sprites/spr_wave_cooldown/spr_wave_cooldown.yy",},
     {"name":"obj_iceblast_summon_gui","order":1,"path":"objects/obj_iceblast_summon_gui/obj_iceblast_summon_gui.yy",},
     {"name":"obj_iceblast_summon","order":1,"path":"objects/obj_iceblast_summon/obj_iceblast_summon.yy",},
     {"name":"obj_iceblast","order":1,"path":"objects/obj_iceblast/obj_iceblast.yy",},

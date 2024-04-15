@@ -1,1 +1,1 @@
-scr_create_enemy(obj_test_enemy);
+scr_create_enemy(obj_test_enemy_heel);
