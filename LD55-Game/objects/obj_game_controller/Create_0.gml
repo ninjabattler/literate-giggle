@@ -5,6 +5,11 @@
 #macro ICEBLAST obj_iceblast_summon
 #macro LIGHTNING obj_lightning_summon
 
+// Define summon stats
+global.fireball_range = 240;
+global.iceblast_range = 200;
+global.lightning_range = 300;
+
 depth = -100;
 
 // Set cursor

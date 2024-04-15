@@ -3,8 +3,8 @@
 
 /// @function init_enemy(speed);
 /// @param {real}  speed  The speed of the enemy
-function init_enemy(speed = 1){
-	path_start(pth_test_path, speed, path_action_continue, false);
+function init_enemy(speed = 1, _path = pth_test_path){
+	path_start(_path, speed, path_action_continue, false);
 	image_angle = direction;
 }
 

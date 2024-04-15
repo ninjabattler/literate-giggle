@@ -22,6 +22,10 @@ if(global.active_summon != 0) {
 		
 		if(_nearest_summon_dist > global.active_summon.sprite_width + 32 && global._can_place) {
 			draw_sprite_ext(global.active_summon.sprite_index, 0, _project_x, _project_y, 1, 1, 0, c_white, 0.5);
+			draw_set_alpha(0.4);
+			draw_set_circle_precision(64);
+			draw_circle_color(_project_x, _project_y, global.active_summon.max_range, c_green, c_lime, false);
+			draw_set_alpha(1);
 		} else {
 			draw_sprite_ext(global.active_summon.sprite_index, 0, _project_x, _project_y, 1, 1, 0, c_red, 0.5);
 		}
