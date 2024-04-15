@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"GUI",
-    "path":"folders/Sprites/GUI.yy",
+    "name":"Summons",
+    "path":"folders/Sprites/Summons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

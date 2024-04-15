@@ -3,4 +3,5 @@
 _player_health = 100;
 _player_max_health = 100;
 _player_souls = 0;
+_player_souls = 10;
 _victory = false;
