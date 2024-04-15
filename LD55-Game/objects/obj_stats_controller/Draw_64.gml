@@ -11,7 +11,7 @@ draw_sprite(spr_player_stats, 0, 0, 1080);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_colour(c_black)
-draw_text(641, 1006, _player_souls);
+draw_text_transformed(641, 1006, _player_souls, 2, 2, 0);
 	
 if (_victory) {
 	draw_set_font(fnt_griffy_title)
@@ -22,7 +22,7 @@ if (_victory) {
 	
 	draw_set_valign(fa_bottom);
 	draw_set_colour(global.text_color);
-	draw_text(960, 300, "Victory");
+	draw_text_transformed(960, 300, "Victory", 2, 2, 0);
 } else if (_player_health <= 0) {
 	draw_set_font(fnt_griffy_title)
 	draw_set_halign(fa_center);
@@ -32,7 +32,7 @@ if (_victory) {
 	
 	draw_set_valign(fa_bottom);
 	draw_set_colour(global.text_color);
-	draw_text(960, 300, "Game Over");
+	draw_text_transformed(960, 300, "Game Over", 2, 2, 0);
 }
 
 draw_set_font(fnt_griffy)

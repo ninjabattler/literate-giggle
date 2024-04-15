@@ -9,13 +9,13 @@ draw_set_halign(fa_left);
 
 draw_sprite(spr_wave_counter, 0, 0, -1);
 draw_set_colour(global.text_color);
-draw_text(5, 5, $"Wave: {_current_wave}/{array_length(_waves)}");
+draw_text_transformed(5, 5, $"Wave: {_current_wave}/{array_length(_waves)}", 2, 2, 0);
 
 
 draw_sprite(spr_wave_cooldown, 0, 1670, -150 + _cooldown_drop);
 draw_set_halign(fa_center);
-draw_text(1670, 75 + _cooldown_drop, $"{_countdown} Seconds til Next Wave");
-draw_text(1670, 180 + _cooldown_drop, "Press [TAB] to Skip");
+draw_text_transformed(1670, 75 + _cooldown_drop, $"{_countdown} Seconds til Next Wave", 2, 2, 0);
+draw_text_transformed(1670, 180 + _cooldown_drop, "Press [TAB] to Skip", 2, 2, 0);
 
 if(_wave_on_cooldown && _cooldown_drop < 0) {
 	_cooldown_drop += 8;
