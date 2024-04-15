@@ -9,6 +9,7 @@ _wave_timeline_complete = false;
 _waves = [];
 _wave_on_cooldown = false;
 _countdown = 0;
+_cooldown_drop = -300;
 
 function start_wave () {
 	if (_current_wave < array_length(_waves)) {
