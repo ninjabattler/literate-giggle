@@ -8,7 +8,7 @@ if (_wave_timeline_complete && instance_number(obj_base_enemy) == 0 && !_wave_on
 		_countdown = 30;
 		
 		alarm_set(1, 60);
-	} else {
+	} else if (!obj_stats_controller._victory) {
 		obj_stats_controller._victory = true
 		obj_player._disabled = true;
 		instance_create_depth(960, 540, -100, obj_next_button);
