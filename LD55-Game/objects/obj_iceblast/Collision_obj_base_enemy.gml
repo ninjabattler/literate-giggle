@@ -4,8 +4,11 @@
 audio_play_sound(snd_enemy_hurt, 0, false);
 other._hp -= _damage;
 
-// Apply slowing to enemy
-other._speed *= 0.75;
-other.path_speed = other._speed;
+// Apply slowing to enemy if able
+if(!other._slowed) {
+	other._speed *= 0.75;
+	other.path_speed = other._speed;
+	other._slowed = true;
+}
 
 instance_destroy(self);

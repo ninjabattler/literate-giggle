@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = 0;
+image_xscale = -1;
+image_speed = 0;
 
 _momentum_x = 0;
 _momentum_y = 0;

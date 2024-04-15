@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_stabby",
-  "bboxMode":0,
-  "bbox_bottom":20,
+  "bboxMode":2,
+  "bbox_bottom":31,
   "bbox_left":0,
   "bbox_right":31,
   "bbox_top":11,
@@ -23,7 +23,7 @@
   ],
   "name":"spr_stabby",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":16,
-    "yorigin":16,
+    "yorigin":32,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

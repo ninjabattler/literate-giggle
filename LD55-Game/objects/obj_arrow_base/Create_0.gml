@@ -13,4 +13,4 @@ max_scale = 1.5;
 target_scale = 1;
 pressed = false;
 disabled = false;
-//ready = false;
+can_afford = false;

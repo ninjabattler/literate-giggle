@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // Press if at correct index
-if(keyboard_check_pressed(ord(key)) && global.active_arrow == arrow_index && !disabled) {
+if(keyboard_check_pressed(ord(key)) && global.active_arrow == arrow_index && !disabled && can_afford) {
 	image_xscale = max_scale;
 	image_yscale = max_scale;
 
@@ -39,3 +39,10 @@ if(disabled && global.active_arrow == 0 && !global.summon_window_active) {
 if(disabled) {
 	image_blend = #555555;
 }
+
+// Show as can't afford
+if(!can_afford) {
+	image_blend = #662222;
+}
+
+

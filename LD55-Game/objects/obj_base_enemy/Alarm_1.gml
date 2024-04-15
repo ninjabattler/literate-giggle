@@ -3,3 +3,4 @@
 
 _speed *= 4/3;
 path_speed = _speed;
+_slowed = false;

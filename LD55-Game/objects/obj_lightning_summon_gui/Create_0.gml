@@ -5,6 +5,7 @@ summon_command = ["UP", "UP", "DOWN", "DOWN", "DOWN"]
 summon_arrows = [];
 summon_progress = 0;
 summon_complete = false;
+cost = 15;
 
 for(var _i = 0; _i < array_length(summon_command); _i++) {
 	
