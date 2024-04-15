@@ -11,7 +11,7 @@
   "name":"obj_test_enemy_heel",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_speed","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_max_hp","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"20",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_max_hp","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"30",},
   ],
   "parent":{
     "name":"Enemies",
