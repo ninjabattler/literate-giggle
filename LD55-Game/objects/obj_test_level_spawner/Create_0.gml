@@ -4,7 +4,10 @@ event_inherited();
 
 _waves = [
 	tl_test_wave_1,
-	tl_test_wave_2
+	tl_test_wave_2,
+	tl_test_wave_3,
+	tl_test_wave_4,
+	tl_test_wave_5
 ]
 
 start_wave();

@@ -45,5 +45,8 @@
     {"name":"spr_tree1","order":1,"path":"sprites/spr_tree1/spr_tree1.yy",},
     {"name":"spr_wave_cooldown","order":3,"path":"sprites/spr_wave_cooldown/spr_wave_cooldown.yy",},
     {"name":"spr_wave_counter","order":2,"path":"sprites/spr_wave_counter/spr_wave_counter.yy",},
+    {"name":"tl_test_wave_5","order":3,"path":"timelines/tl_test_wave_5/tl_test_wave_5.yy",},
+    {"name":"tl_test_wave_3","order":1,"path":"timelines/tl_test_wave_3/tl_test_wave_3.yy",},
+    {"name":"tl_test_wave_4","order":2,"path":"timelines/tl_test_wave_4/tl_test_wave_4.yy",},
   ],
 }
