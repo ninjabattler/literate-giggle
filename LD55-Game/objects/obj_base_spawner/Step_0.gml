@@ -11,5 +11,7 @@ if (_wave_timeline_complete && instance_number(obj_base_enemy) == 0 && !_wave_on
 	} else {
 		obj_stats_controller._victory = true
 		obj_player._disabled = true;
+		instance_create_depth(960, 540, -100, obj_next_button);
+		instance_create_depth(960, 740, -100, obj_exit_button);
 	}
 }

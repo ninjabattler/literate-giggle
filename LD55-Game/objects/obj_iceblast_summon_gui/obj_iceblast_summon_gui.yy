@@ -13,10 +13,7 @@
     "name":"Summons",
     "path":"folders/Objects/GUI/Summons.yy",
   },
-  "parentObjectId":{
-    "name":"obj_summon_base_gui",
-    "path":"objects/obj_summon_base_gui/obj_summon_base_gui.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

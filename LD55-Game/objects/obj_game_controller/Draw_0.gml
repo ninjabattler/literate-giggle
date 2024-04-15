@@ -1,3 +1,6 @@
+draw_set_font(fnt_griffy)
+display_set_gui_size(1920, 1080);
+
 if(global.game_paused == true) {
 	if(!surface_exists(global.paused_surf)) {
 	    if(global.paused_surf == -1) {
