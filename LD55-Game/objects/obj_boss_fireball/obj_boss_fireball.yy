@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_fireball",
-    "path":"sprites/spr_boss_fireball/spr_boss_fireball.yy",
+    "name":"spr_fireball",
+    "path":"sprites/spr_fireball/spr_fireball.yy",
   },
   "spriteMaskId":null,
   "visible":true,

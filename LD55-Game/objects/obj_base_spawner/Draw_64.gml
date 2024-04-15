@@ -14,7 +14,11 @@ draw_text_transformed(5, 5, $"Wave: {_current_wave}/{array_length(_waves)}", 2, 
 
 draw_sprite(spr_wave_cooldown, 0, 1670, -150 + _cooldown_current_y);
 draw_set_halign(fa_center);
-draw_text_transformed(1670, 75 + _cooldown_current_y, $"{_countdown} Seconds til Next Wave", 2, 2, 0);
+if (_current_wave == 0) {
+	draw_text_transformed(1670, 75 + _cooldown_current_y, $"Wave 1 in {_countdown} Seconds", 2, 2, 0);
+} else {
+	draw_text_transformed(1670, 75 + _cooldown_current_y, $"{_countdown} Seconds til Next Wave", 2, 2, 0);
+}
 draw_text_transformed(1670, 180 + _cooldown_current_y, "Press [TAB] to Skip", 2, 2, 0);
 
 if(_wave_on_cooldown && _cooldown_drop < 0) {
