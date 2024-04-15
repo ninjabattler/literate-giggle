@@ -8,8 +8,8 @@ if(global.game_paused == true) {
 	    draw_surface(application_surface, 0, 0);
 	    surface_reset_target();
 		
-		instance_create_depth(room_width / 2, room_height / 2, -1, obj_resume_button);
-		instance_create_depth(room_width / 2, room_height / 2 + 96, -1, obj_exit_button);
+		resume_button = instance_create_depth(room_width / 2, room_height / 2, -200, obj_resume_button);
+		exit_button = instance_create_depth(room_width / 2, room_height / 2 + 96, -200, obj_exit_button);
 	} else {
 		// Draw paused background
 	    draw_surface(global.paused_surf, 0, 0);

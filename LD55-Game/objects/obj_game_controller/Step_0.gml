@@ -12,3 +12,8 @@ if room != TitleRoom {
 		}
 	}
 }
+
+if(global.game_paused == false && resume_button != self) {
+	instance_destroy(resume_button);
+	instance_destroy(exit_button);
+}

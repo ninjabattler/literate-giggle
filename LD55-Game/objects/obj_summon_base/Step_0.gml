@@ -13,8 +13,9 @@ attacking = (distance < max_range);
 if(attacking && can_attack) {
 	// Create fireball
 	var _projectile = instance_create_depth(x, y, -1, projectile);
-	_projectile._speed = 10;
+	_projectile._speed = projectile_speed;
 	_projectile.target = target;
+	_projectile._damage = damage;
 	
 	// Predict enemy position
 	var _prediction_x = target.x + target._speed * (distance / _projectile._speed);

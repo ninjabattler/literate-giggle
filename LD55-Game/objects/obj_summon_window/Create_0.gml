@@ -1,7 +1,9 @@
 /// @description Set initial scale
 
-image_xscale = 2
-image_yscale = 2
+depth = -50;
+
+image_xscale = 2;
+image_yscale = 2;
 
 //Move out of view
 x-=sprite_width

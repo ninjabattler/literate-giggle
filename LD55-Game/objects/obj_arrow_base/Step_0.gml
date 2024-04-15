@@ -29,6 +29,12 @@ if(pressed && global.active_arrow == 0 && !global.summon_window_active) {
 	image_blend = #aaaaaa;
 }
 
+// Reset to neutral from disabled state
+if(disabled && global.active_arrow == 0 && !global.summon_window_active) {
+	image_blend = #aaaaaa;
+	disabled = false;
+}
+
 // Show as disabled
 if(disabled) {
 	image_blend = #555555;
