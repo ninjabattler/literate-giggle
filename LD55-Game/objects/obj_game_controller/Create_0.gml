@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Global Colours
+global.text_color = #e3b669;
+global.hp_color = #f04c4c;
+
 #macro FIREBALL obj_fireball_summon
 #macro ICEBLAST obj_iceblast_summon
 #macro LIGHTNING obj_lightning_summon

@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_thief_radius",
   "bboxMode":0,
-  "bbox_bottom":127,
+  "bbox_bottom":126,
   "bbox_left":0,
-  "bbox_right":127,
+  "bbox_right":126,
   "bbox_top":0,
   "collisionKind":2,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"2e861e34-b0a2-4953-ad06-724e65d91708","name":"2e861e34-b0a2-4953-ad06-724e65d91708","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ddf74f7e-a949-4dbd-bc99-e00eb39d7dcf","name":"ddf74f7e-a949-4dbd-bc99-e00eb39d7dcf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":128,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"d2e6e424-6aa2-424f-bb77-4d967bf2d15c","blendMode":0,"displayName":"default","isLocked":false,"name":"d2e6e424-6aa2-424f-bb77-4d967bf2d15c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"42255666-4997-43d7-92d7-7871e1d7a60c","blendMode":0,"displayName":"default","isLocked":false,"name":"42255666-4997-43d7-92d7-7871e1d7a60c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_thief_radius",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2e861e34-b0a2-4953-ad06-724e65d91708","path":"sprites/spr_thief_radius/spr_thief_radius.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"17526d78-3659-42a1-bf1a-fb1d6f15891a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ddf74f7e-a949-4dbd-bc99-e00eb39d7dcf","path":"sprites/spr_thief_radius/spr_thief_radius.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"c78822ed-93a7-4f34-b6bc-0b4072ca6645","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
