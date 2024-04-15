@@ -21,6 +21,7 @@
     {"name":"obj_start_button","order":1,"path":"objects/obj_start_button/obj_start_button.yy",},
     {"name":"obj_title","order":4,"path":"objects/obj_title/obj_title.yy",},
     {"name":"obj_tree","order":1,"path":"objects/obj_tree/obj_tree.yy",},
+    {"name":"obj_gui_tutorial_1","order":5,"path":"objects/obj_gui_tutorial_1/obj_gui_tutorial_1.yy",},
     {"name":"prt_heal_radius","order":2,"path":"particles/prt_heal_radius/prt_heal_radius.yy",},
     {"name":"prt_thief_radius","order":1,"path":"particles/prt_thief_radius/prt_thief_radius.yy",},
     {"name":"snd_summon_obstruction","order":1,"path":"sounds/snd_summon_obstruction/snd_summon_obstruction.yy",},
@@ -45,8 +46,8 @@
     {"name":"spr_tree1","order":1,"path":"sprites/spr_tree1/spr_tree1.yy",},
     {"name":"spr_wave_cooldown","order":3,"path":"sprites/spr_wave_cooldown/spr_wave_cooldown.yy",},
     {"name":"spr_wave_counter","order":2,"path":"sprites/spr_wave_counter/spr_wave_counter.yy",},
-    {"name":"tl_test_wave_5","order":3,"path":"timelines/tl_test_wave_5/tl_test_wave_5.yy",},
     {"name":"tl_test_wave_3","order":1,"path":"timelines/tl_test_wave_3/tl_test_wave_3.yy",},
     {"name":"tl_test_wave_4","order":2,"path":"timelines/tl_test_wave_4/tl_test_wave_4.yy",},
+    {"name":"tl_test_wave_5","order":3,"path":"timelines/tl_test_wave_5/tl_test_wave_5.yy",},
   ],
 }
