@@ -9,5 +9,3 @@ _waves = [
 	tl_level2_wave_4,
 	tl_level2_wave_5
 ]
-
-start_wave();
