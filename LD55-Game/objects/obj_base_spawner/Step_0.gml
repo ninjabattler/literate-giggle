@@ -15,3 +15,9 @@ if (_wave_timeline_complete && instance_number(obj_base_enemy) == 0 && !_wave_on
 		instance_create_depth(960, 740, -100, obj_exit_button);
 	}
 }
+
+if(_cooldown_current_y < 0 && _wave_on_cooldown) {
+	_cooldown_current_y = lerp(_cooldown_current_y, 0, 0.15);
+} else if(_cooldown_current_y > _cooldown_drop && !_wave_on_cooldown) {
+	_cooldown_current_y = lerp(_cooldown_current_y, _cooldown_drop, 0.1);	
+}
