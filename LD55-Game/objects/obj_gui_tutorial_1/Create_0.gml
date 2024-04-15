@@ -3,4 +3,4 @@
 _target_y = -150;
 _lerp_speed = 0.15;
 
-alarm_set(0, 300);
+alarm_set(0, 600);
