@@ -2,6 +2,7 @@
 _can_be_stabbed = true;
 _hp = _max_hp;
 _heal_cooldown = false;
+_slowed = false;
 
 if(room == Level1) {
 	init_enemy(_speed, pth_level_1);

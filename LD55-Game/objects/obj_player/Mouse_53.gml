@@ -12,5 +12,6 @@ if(global.active_summon != 0) {
 } else if (!_stab_on_cooldown && !_disabled) {
 	var _stabby = instance_create_depth(self.x, self.y, 101, obj_stabby);
 	_stab_on_cooldown = true;
+	image_index = 1;
 	alarm_set(0, _stab_cooldown);
 }

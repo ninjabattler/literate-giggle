@@ -11,7 +11,7 @@ if(!global.summon_window_active) {
 }
 
 
-if(global.active_summon == 0) {
+if(global.active_summon == 0 && obj_stats_controller._player_souls >= cost) {
 	// Await keyboard inputs to track arrows
 	if(_key_up) {
 		if(summon_progress == global.active_arrow && summon_command[summon_progress] == "UP") {
@@ -20,6 +20,12 @@ if(global.active_summon == 0) {
 			if(summon_progress == array_length(summon_command)) {
 				summon_complete = true;
 				global.active_summon = LIGHTNING;
+				obj_stats_controller._player_souls -= cost;
+				
+				global.active_arrow = 0;
+				global.summon_window_active = false;
+				obj_summon_window.target_x = -obj_summon_window.sprite_width;
+				obj_summon_window.expanding = false;
 			}
 		} else {
 			for(var _i = 0; _i < array_length(summon_arrows); _i++) {
@@ -33,6 +39,12 @@ if(global.active_summon == 0) {
 			if(summon_progress == array_length(summon_command)) {
 				summon_complete = true;
 				global.active_summon = LIGHTNING;
+				obj_stats_controller._player_souls -= cost;
+				
+				global.active_arrow = 0;
+				global.summon_window_active = false;
+				obj_summon_window.target_x = -obj_summon_window.sprite_width;
+				obj_summon_window.expanding = false;
 			}
 		} else {
 			for(var _i = 0; _i < array_length(summon_arrows); _i++) {
@@ -46,6 +58,12 @@ if(global.active_summon == 0) {
 			if(summon_progress == array_length(summon_command)) {
 				summon_complete = true;
 				global.active_summon = LIGHTNING;
+				obj_stats_controller._player_souls -= cost;
+				
+				global.active_arrow = 0;
+				global.summon_window_active = false;
+				obj_summon_window.target_x = -obj_summon_window.sprite_width;
+				obj_summon_window.expanding = false;
 			}
 		} else {
 			for(var _i = 0; _i < array_length(summon_arrows); _i++) {
@@ -59,6 +77,12 @@ if(global.active_summon == 0) {
 			if(summon_progress == array_length(summon_command)) {
 				summon_complete = true;
 				global.active_summon = LIGHTNING;
+				obj_stats_controller._player_souls -= cost;
+				
+				global.active_arrow = 0;
+				global.summon_window_active = false;
+				obj_summon_window.target_x = -obj_summon_window.sprite_width;
+				obj_summon_window.expanding = false;
 			}
 		} else {
 			for(var _i = 0; _i < array_length(summon_arrows); _i++) {

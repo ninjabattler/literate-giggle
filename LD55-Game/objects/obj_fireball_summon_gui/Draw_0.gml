@@ -3,4 +3,4 @@
 
 draw_set_halign(fa_left);
 draw_set_color(global.text_color);
-draw_text_transformed(x, y, "Fireball", 2, 2, 0);
+draw_text_transformed(x, y, $"Fireball [{cost} souls]", 2, 2, 0);

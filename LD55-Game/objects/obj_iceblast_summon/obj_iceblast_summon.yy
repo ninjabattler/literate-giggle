@@ -7,6 +7,7 @@
   "overriddenProperties":[
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"projectile","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_iceblast",},
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"projectile_speed","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"8",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"max_range","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"250",},
   ],
   "parent":{
     "name":"Summons",
