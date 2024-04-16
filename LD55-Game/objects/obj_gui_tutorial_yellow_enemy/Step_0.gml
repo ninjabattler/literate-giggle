@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-_target_y = -150;
-_lerp_speed = 0.15;
 
-alarm_set(0, 600);
+y = lerp(y, _target_y, 0.15);
+_lerp_speed = 0.1
