@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_summons_controller",
+  "%Name":"obj_summon_placer",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":17,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":17,"eventType":10,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_summons_controller",
-  "overriddenProperties":[],
+  "name":"obj_summon_placer",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"max_range","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"250",},
+  ],
   "parent":{
-    "name":"Control",
-    "path":"folders/Objects/Control.yy",
+    "name":"Summons",
+    "path":"folders/Objects/Summons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_summon_placer",
+    "path":"sprites/spr_summon_placer/spr_summon_placer.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

@@ -14,7 +14,10 @@
     "name":"Projectiles",
     "path":"folders/Objects/Projectiles.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_projectile_base",
+    "path":"objects/obj_projectile_base/obj_projectile_base.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

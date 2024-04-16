@@ -1,13 +1,29 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+// Show as can't afford
+if(!can_afford) {
+	image_blend = #662222;
+} else {
+	image_blend = #aaaaaa;
+	// Show as disabled
+	if(pressed) {
+		image_blend = c_white;
+	}
+	if(disabled) {
+		image_blend = #555555;
+	}
+
+}
+
+
 // Press if at correct index
 if(keyboard_check_pressed(ord(key)) && global.active_arrow == arrow_index && !disabled && can_afford) {
 	image_xscale = max_scale;
 	image_yscale = max_scale;
 
 	pressed = true;
-	image_blend = c_white;
 }
 
 if(is_hovered) {
@@ -35,14 +51,6 @@ if(disabled && global.active_arrow == 0 && !global.summon_window_active) {
 	disabled = false;
 }
 
-// Show as disabled
-if(disabled) {
-	image_blend = #555555;
-}
 
-// Show as can't afford
-if(!can_afford) {
-	image_blend = #662222;
-}
 
 

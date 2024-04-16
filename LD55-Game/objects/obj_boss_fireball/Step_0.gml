@@ -3,7 +3,7 @@
 
 _target_rotation = direction;
 
-image_angle = _rotation;
+image_angle = direction;
 
 if (_rotation < _target_rotation) {
 	_rotation++;	

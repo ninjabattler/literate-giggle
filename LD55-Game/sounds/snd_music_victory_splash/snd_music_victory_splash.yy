@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"spr_music_victory_splash",
+  "%Name":"snd_music_victory_splash",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":2.758625,
-  "name":"spr_music_victory_splash",
+  "name":"snd_music_victory_splash",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"spr_music_victory_splash.wav",
+  "soundFile":"snd_music_victory_splash.wav",
   "type":0,
   "volume":1.0,
 }
