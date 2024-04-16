@@ -16,7 +16,7 @@ _disabled = false;
 _x_offset = 0;
 _y_offset = 0;
 _nearest_summon_dist = 0;
-global._can_place = false;
+global._can_place = true;
 
 // Setup for camera
 camera_zoom_out = false;

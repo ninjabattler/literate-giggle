@@ -11,7 +11,7 @@ _wave_on_cooldown = true;
 _countdown = 10;
 _cooldown_drop = -300;
 _cooldown_current_y = -300;
-		alarm_set(1, 60);
+alarm_set(1, 60);
 
 function start_wave () {
 	if (_current_wave < array_length(_waves)) {
