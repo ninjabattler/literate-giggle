@@ -20,11 +20,13 @@ depth = -100;
 window_set_cursor(cr_none);
 cursor_sprite = spr_cursor;
 
-// Start music
-audio_play_sound(snd_music_main, 1, true);
+// Start title music
+audio_play_sound(snd_music_title, 1, true);
 
 // Game states
 global.game_paused = false;
+global.summon_placement_x = 0;
+global.summon_placement_y = 0;
 
 // Black fade surface
 global.paused_surf = -1;

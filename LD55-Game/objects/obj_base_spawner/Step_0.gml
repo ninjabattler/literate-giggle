@@ -11,6 +11,13 @@ if (_wave_timeline_complete && instance_number(obj_base_enemy) == 0 && !_wave_on
 	} else if (!obj_stats_controller._victory) {
 		obj_stats_controller._victory = true
 		obj_player._disabled = true;
+		audio_stop_sound(snd_music_main);
+		
+		if(room == Level5) {
+			audio_play_sound(snd_music_victory, 0, true);
+		} else {
+			audio_play_sound(snd_music_victory_splash, 0, false);
+		}
 		
 		if (room != room_last) {
 			instance_create_depth(960, 540, -100, obj_next_button);

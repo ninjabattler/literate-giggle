@@ -6,6 +6,9 @@ if(global.active_summon != 0) {
 	if(_nearest_summon_dist > 96 && global._can_place) {
 		instance_create_depth(x + _x_offset, y + _y_offset, 10, global.active_summon);
 		global.active_summon = 0;
+		if(instance_exists(obj_summon_placer)) {
+			instance_destroy(obj_summon_placer);
+		}
 	} else {
 		audio_play_sound(snd_summon_obstruction, 0, false);
 	}

@@ -15,6 +15,9 @@ if(global.active_summon != 0) {
 	var _project_x = x + _x_offset;
 	var _project_y = y + _y_offset;
 	
+	global.summon_placement_x = _project_x;
+	global.summon_placement_y = _project_y;
+	
 	var _nearest_summon = instance_nearest(_project_x, _project_y, obj_summon_base);
 	if(instance_exists(_nearest_summon)) {
 		_nearest_summon_dist = point_distance(_project_x, _project_y, _nearest_summon.x, _nearest_summon.y);

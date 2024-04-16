@@ -1,11 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_map_5_path",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":11,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_map_5_path",
   "overriddenProperties":[],
@@ -13,7 +9,10 @@
     "name":"Levels",
     "path":"folders/Objects/Levels.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_map_path_base",
+    "path":"objects/obj_map_path_base/obj_map_path_base.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
