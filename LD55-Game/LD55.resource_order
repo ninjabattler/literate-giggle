@@ -21,6 +21,7 @@
     {"name":"obj_map_path_base","order":1,"path":"objects/obj_map_path_base/obj_map_path_base.yy",},
     {"name":"obj_projectile_base","order":1,"path":"objects/obj_projectile_base/obj_projectile_base.yy",},
     {"name":"obj_summon_placer","order":1,"path":"objects/obj_summon_placer/obj_summon_placer.yy",},
+    {"name":"prt_boss_fire_glare","order":4,"path":"particles/prt_boss_fire_glare/prt_boss_fire_glare.yy",},
     {"name":"prt_boss_fire","order":1,"path":"particles/prt_boss_fire/prt_boss_fire.yy",},
     {"name":"prt_fire_ball","order":2,"path":"particles/prt_fire_ball/prt_fire_ball.yy",},
     {"name":"prt_ice","order":3,"path":"particles/prt_ice/prt_ice.yy",},
