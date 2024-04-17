@@ -19,7 +19,7 @@ if(!can_afford) {
 
 
 // Press if at correct index
-if(keyboard_check_pressed(ord(key)) && global.active_arrow == arrow_index && !disabled && can_afford) {
+if(keyboard_check_pressed(ord(key)) && global.active_arrow == arrow_index && !disabled && can_afford && global.summon_window_active) {
 	image_xscale = max_scale;
 	image_yscale = max_scale;
 
