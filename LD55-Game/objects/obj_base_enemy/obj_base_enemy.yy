@@ -38,6 +38,7 @@
   "properties":[
     {"$GMObjectProperty":"","%Name":"_speed","filters":[],"listItems":[],"multiselect":false,"name":"_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"","%Name":"_max_hp","filters":[],"listItems":[],"multiselect":false,"name":"_max_hp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"4","varType":0,},
+    {"$GMObjectProperty":"","%Name":"_damage","filters":[],"listItems":[],"multiselect":false,"name":"_damage","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
