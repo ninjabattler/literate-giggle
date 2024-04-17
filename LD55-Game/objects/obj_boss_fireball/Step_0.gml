@@ -2,8 +2,9 @@
 // You can write your code in this editor
 
 _target_rotation = direction;
-
 image_angle = direction;
+part_system_position(_particle_system, x, y);
+part_system_angle(_particle_system, direction + 90);
 
 if (_rotation < _target_rotation) {
 	_rotation++;	
