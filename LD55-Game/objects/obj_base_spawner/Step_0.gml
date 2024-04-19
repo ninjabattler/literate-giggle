@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+timeline_speed = global.game_speed;
+
 if (_wave_timeline_complete && instance_number(obj_base_enemy) == 0 && !_wave_on_cooldown) {
 	if (_current_wave != array_length(_waves)) {
 		_wave_timeline_complete = false;
@@ -32,4 +34,17 @@ if(_cooldown_current_y < 0 && _wave_on_cooldown) {
 	_cooldown_current_y = lerp(_cooldown_current_y, 0, 0.15);
 } else if(_cooldown_current_y > _cooldown_drop && !_wave_on_cooldown) {
 	_cooldown_current_y = lerp(_cooldown_current_y, _cooldown_drop, 0.1);	
+}
+
+// Countdown
+if (timer_countdown > 0) {
+	timer_countdown -= global.game_speed * global.dt;
+} else {
+	if (_countdown == 0) {
+		_wave_on_cooldown = false;
+		start_wave();
+	} else {
+		_countdown--;
+		timer_countdown = 1;
+	}
 }

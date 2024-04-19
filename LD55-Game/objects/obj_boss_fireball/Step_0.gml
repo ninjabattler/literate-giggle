@@ -7,18 +7,32 @@ part_system_position(_particle_system, x, y);
 part_system_position(_particle_system2, x, y);
 part_system_angle(_particle_system2, direction + 90);
 
-if (_rotation < _target_rotation) {
-	_rotation++;	
-} else if (_rotation > _target_rotation) {
-	_rotation--;
-}
-
 if (_target_boss) {
 	if (instance_number(obj_test_boss) > 0 ) {
-		move_towards_point( obj_test_boss.x, obj_test_boss.y, 10);
+		move_towards_point( obj_test_boss.x, obj_test_boss.y, 10 * global.game_speed);
 	} else {
 		instance_destroy()
 	}
 } else {
-	move_towards_point( obj_player.x, obj_player.y, 10);
+	move_towards_point( obj_player.x, obj_player.y, 10 * global.game_speed);
+}
+
+// Time Slow Effect
+if (_game_speed_reset_timer > 0) {
+	_game_speed_reset_timer -= global.dt;
+	
+} else if (_game_slow_speed) {
+	global.game_speed = 1;
+	_game_slow_speed = false;
+}
+
+
+// Time Slow Effect
+if (_particle_update_timer > 0) {
+	_particle_update_timer -= global.game_speed * global.dt;
+	
+} else {
+	part_system_update(_particle_system);
+	part_system_update(_particle_system2);
+	_particle_update_timer = 0.001;
 }

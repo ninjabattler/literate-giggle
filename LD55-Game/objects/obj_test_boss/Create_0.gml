@@ -2,4 +2,4 @@
 // You can write your code in this editor
 event_inherited();
 
-alarm_set(3, 120);
+_fireball_timer = 2;

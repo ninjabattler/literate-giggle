@@ -7,4 +7,5 @@ attacking = false;
 distance = -1;
 target = self;
 
-alarm_set(0, 0);
+// Timers
+_attack_timer = 0;

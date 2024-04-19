@@ -14,8 +14,8 @@
 
 image_angle = point_direction(mouse_x,mouse_y,self.x,self.y);
 if(!global.summon_window_active && !_disabled) {
-	self.x += _momentum_x;
-	self.y += _momentum_y;
+	self.x += _momentum_x * global.game_speed;
+	self.y += _momentum_y * global.game_speed;
 }
 
 if (!_disabled) {

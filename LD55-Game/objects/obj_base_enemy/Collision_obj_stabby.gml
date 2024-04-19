@@ -5,5 +5,5 @@ if (_can_be_stabbed) {
 	_hp -= 1.5;
 	audio_play_sound(snd_enemy_stab, 0, false);
 	
-	alarm_set(0, 10);
+	_stab_flag_timer = 0.16667
 }
