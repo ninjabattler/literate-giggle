@@ -59,6 +59,7 @@
     {"id":{"name":"fnt_griffy_title","path":"fonts/fnt_griffy_title/fnt_griffy_title.yy",},},
     {"id":{"name":"fnt_griffy","path":"fonts/fnt_griffy/fnt_griffy.yy",},},
     {"id":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},},
+    {"id":{"name":"obj_base_button","path":"objects/obj_base_button/obj_base_button.yy",},},
     {"id":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},},
     {"id":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},},
     {"id":{"name":"obj_base_spawner","path":"objects/obj_base_spawner/obj_base_spawner.yy",},},

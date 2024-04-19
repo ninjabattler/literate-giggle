@@ -9,6 +9,7 @@
     {"name":"TitleScreen","order":16,"path":"folders/Sprites/TitleScreen.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_base_button","order":5,"path":"objects/obj_base_button/obj_base_button.yy",},
     {"name":"obj_gui_tutorial_blue_enemy","order":2,"path":"objects/obj_gui_tutorial_blue_enemy/obj_gui_tutorial_blue_enemy.yy",},
     {"name":"obj_gui_tutorial_boss","order":1,"path":"objects/obj_gui_tutorial_boss/obj_gui_tutorial_boss.yy",},
     {"name":"obj_gui_tutorial_green_enemy","order":3,"path":"objects/obj_gui_tutorial_green_enemy/obj_gui_tutorial_green_enemy.yy",},
