@@ -6,7 +6,7 @@ if (distance_to_object(obj_player) < 60 && !_follow) {
 }
 
 if (_follow) {
-	move_towards_point(_enemy_to_follow.x, _enemy_to_follow.y, 1);
+	move_towards_point(_enemy_to_follow.x, _enemy_to_follow.y, 1 * global.game_speed);
 } else if (_follow_player) {
 	direction = point_direction(x, y, obj_player.x, obj_player.y);
 	speed += 0.1;
@@ -14,7 +14,7 @@ if (_follow) {
 
 if (_fading_out) {
 	// Fade out after ~7 seconds
-	image_alpha -= 0.005
+	image_alpha -= 0.3 * global.game_speed * global.dt;
 	if (image_alpha <= 0) {
 		instance_destroy(self);
 	}
@@ -28,3 +28,10 @@ if (speed > 0 && !_follow && !_follow_player) {
 	speed = 0;	
 }
 
+// Time Slow Effect
+if (_fade_timer > 0) {
+	_fade_timer -= global.game_speed * global.dt;
+	
+} else if (!_fading_out) {
+	_fading_out = true;
+}

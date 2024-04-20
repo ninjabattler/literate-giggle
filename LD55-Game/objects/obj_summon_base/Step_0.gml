@@ -27,5 +27,12 @@ if(attacking && can_attack) {
 	
 	// Reset attack
 	can_attack = false;
-	alarm_set(0, 60);
+	_attack_timer = 1
+}
+
+// Attack Timer
+if (_attack_timer > 0) {
+	_attack_timer -= global.game_speed * global.dt;
+} else if (!can_attack) {
+	can_attack = true;
 }

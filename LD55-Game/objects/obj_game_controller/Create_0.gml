@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Global Speed
+global.game_speed = 1;
+global.dt = delta_time / 1000000;
+
 // Global Colours
 global.text_color = #e3b669;
 global.hp_color = #f04c4c;
