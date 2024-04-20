@@ -1,6 +1,6 @@
 /// @description Insert description here
-// You can write your code in this editor
 
+// Do sound stuff
 var _sound_pitch = random_range(0.8, 1.2);
 
 var _sound_params =
@@ -12,5 +12,6 @@ var _sound_params =
 };
 
 audio_play_sound_ext(_sound_params);
+
 other._hp -= _damage;
 instance_destroy(self);

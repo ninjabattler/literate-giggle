@@ -24,3 +24,6 @@ camera_width = 1280;
 camera_height = 720;
 //camera_destroy(view_camera[0]);
 //view_camera[0] = camera_create_view(0, 0, 1280, 720, 0, self, -1, -1, 640, 360);
+
+// Spawn weapon
+instance_create_depth(x, y, -1, obj_attack_arc);
