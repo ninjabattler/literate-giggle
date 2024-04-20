@@ -8,6 +8,7 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
 draw_sprite(spr_wave_counter, 0, 0, -1);
+
 draw_set_colour(global.text_color);
 draw_text_transformed(5, 5, $"Wave: {_current_wave}/{array_length(_waves)}", 2, 2, 0);
 
