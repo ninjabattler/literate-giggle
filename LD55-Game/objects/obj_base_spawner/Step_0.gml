@@ -3,13 +3,13 @@
 
 timeline_speed = global.game_speed;
 
-if (_wave_timeline_complete && instance_number(obj_base_enemy) == 0 && !_wave_on_cooldown) {
+if (timeline_position > timeline_max_moment(_waves[_current_wave - 1]) && instance_number(obj_base_enemy) == 0 && !_wave_on_cooldown) {
 	if (_current_wave != array_length(_waves)) {
 		_wave_timeline_complete = false;
 		_wave_on_cooldown = true;
 		_countdown = 30;
 		
-		alarm_set(1, 60);
+		timer_countdown = 1
 	} else if (!obj_stats_controller._victory && obj_stats_controller._player_health > 0) {
 		obj_stats_controller._victory = true
 		obj_player._disabled = true;
@@ -40,7 +40,7 @@ if(_cooldown_current_y < 0 && _wave_on_cooldown) {
 if (timer_countdown > 0) {
 	timer_countdown -= global.game_speed * global.dt;
 } else {
-	if (_countdown == 0) {
+	if (_countdown == 0 && _wave_on_cooldown) {
 		_wave_on_cooldown = false;
 		start_wave();
 	} else {
