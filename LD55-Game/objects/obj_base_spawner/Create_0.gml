@@ -4,7 +4,7 @@
 global.spawn_x = self.x;
 global.spawn_y = self.y;
 
-_current_wave = 2;
+_current_wave = 0;
 _wave_timeline_complete = false;
 _waves = [];
 _wave_on_cooldown = true;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"NM_wiggle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NM_wiggle",
+  "parent":{
+    "name":"NormalMapping",
+    "path":"folders/Scripts/NormalMapping.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"NM_draw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NM_draw",
+  "parent":{
+    "name":"NormalMapping",
+    "path":"folders/Scripts/NormalMapping.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

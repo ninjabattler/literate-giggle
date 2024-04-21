@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"NM_reset_default_shader",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NM_reset_default_shader",
+  "parent":{
+    "name":"NormalMapping",
+    "path":"folders/Scripts/NormalMapping.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
