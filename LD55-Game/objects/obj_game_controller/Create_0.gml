@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-Init();
+global.music_volume = 100;
+global.sound_effect_volume = 100;
+audio_group_load(soundEffects)
+audio_group_load(music)
 
 // Global Speed
 global.game_speed = 1;
@@ -26,7 +29,7 @@ window_set_cursor(cr_none);
 cursor_sprite = spr_cursor;
 
 // Start title music
-audio_play_sound(snd_music_title, 1, true);
+alarm_set(0, 5);
 
 // Game states
 global.game_paused = false;
