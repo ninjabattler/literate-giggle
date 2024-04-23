@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-sprite_index = spr_gui_sign;
+image_index = 0;

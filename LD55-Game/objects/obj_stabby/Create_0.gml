@@ -7,3 +7,6 @@ _offset = 0;
 image_angle = _direction;
 
 _destroy_timer = 0.166667;
+
+
+image_alpha = 0;

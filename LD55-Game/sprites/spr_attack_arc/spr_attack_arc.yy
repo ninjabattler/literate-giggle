@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_attack_arc",
   "bboxMode":0,
-  "bbox_bottom":3,
+  "bbox_bottom":7,
   "bbox_left":0,
-  "bbox_right":3,
+  "bbox_right":7,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":4,
+  "height":8,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"1c040f69-551e-400a-b2c1-9b7859dec7cb","blendMode":0,"displayName":"default","isLocked":false,"name":"1c040f69-551e-400a-b2c1-9b7859dec7cb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":4,
+  "width":8,
 }
