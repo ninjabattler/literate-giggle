@@ -19,6 +19,7 @@ if room != TitleRoom {
 if(global.game_paused == false && resume_button != self) {
 	instance_destroy(resume_button);
 	instance_destroy(exit_button);
+	instance_destroy(options_button);
 }
 
 audio_group_set_gain(music, global.music_volume / 100, 0);

@@ -1,4 +1,6 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_options_button","order":1,"path":"objects/obj_options_button/obj_options_button.yy",},
+  ],
 }

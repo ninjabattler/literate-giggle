@@ -11,9 +11,11 @@ if(global.game_paused == true) {
 	    draw_surface(application_surface, 0, 0);
 	    surface_reset_target();
 		
-		resume_button = instance_create_depth(room_width / 2, 540, -200, obj_resume_button);
+		resume_button = instance_create_depth(room_width / 2, 512, -200, obj_resume_button);
 		resume_button._button_id = 0;
-		exit_button = instance_create_depth(room_width / 2, 740, -200, obj_exit_button);
+		options_button = instance_create_depth(room_width / 2, 704, -200, obj_options_button);
+		options_button._button_id = 2;
+		exit_button = instance_create_depth(room_width / 2, 896, -200, obj_exit_button);
 		exit_button._button_id = 1;
 
 	} else {
