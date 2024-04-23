@@ -3,7 +3,7 @@
 
 timeline_speed = global.game_speed;
 
-if (timeline_position > timeline_max_moment(_waves[_current_wave - 1]) && instance_number(obj_base_enemy) == 0 && !_wave_on_cooldown) {
+if (timeline_position > timeline_max_moment(_waves[max(0, _current_wave - 1)]) && instance_number(obj_base_enemy) == 0 && !_wave_on_cooldown) {
 	if (_current_wave != array_length(_waves)) {
 		_wave_timeline_complete = false;
 		_wave_on_cooldown = true;

@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_enemy_killed",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"soundEffects",
+    "path":"audiogroups/soundEffects",
   },
   "bitDepth":1,
   "bitRate":128,

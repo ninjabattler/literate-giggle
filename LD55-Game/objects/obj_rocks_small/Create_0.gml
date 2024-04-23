@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-depth = 10;
+depth = 100;
 ran_num = random(1);
 
 if(ran_num < 0.5) {
