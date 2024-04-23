@@ -1,3 +1,8 @@
 /// @description Insert description here
-// You can write your code in this editor
-y = lerp(y, _target_y, 0.05);
+event_inherited();
+
+if (global.gamepad_active) {
+	if (global.gamepad_selection == _button_id && gamepad_button_check_pressed(0, gp_face1)) {
+		game_end()
+	}
+}

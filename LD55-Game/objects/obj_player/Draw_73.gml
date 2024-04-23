@@ -2,6 +2,8 @@
 // You can write your code in this editor
 draw_self()
 
+draw_text(500, 600,  abs(_momentum_x));
+
 // Project summons
 if(global.active_summon != 0) {
 	

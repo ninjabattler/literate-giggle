@@ -7,19 +7,19 @@ if(!can_afford) {
 	image_blend = #662222;
 } else {
 	image_blend = #aaaaaa;
-	// Show as disabled
+	// Show as pressed
 	if(pressed) {
 		image_blend = c_white;
 	}
+	// Show as disabled
 	if(disabled) {
 		image_blend = #555555;
 	}
 
 }
 
-
 // Press if at correct index
-if(keyboard_check_pressed(ord(key)) && global.active_arrow == arrow_index && !disabled && can_afford && global.summon_window_active) {
+if((keyboard_check_pressed(ord(key)) || gamepad_button_check_pressed(0, gp_key)) && global.active_arrow == arrow_index && !disabled && can_afford && global.summon_window_active) {
 	image_xscale = max_scale;
 	image_yscale = max_scale;
 

@@ -7,5 +7,5 @@ _deceleration = random_range(0.075, 0.15);
 _follow_player = false;
 _fading_out = false;
 
-alarm_set(0, 420)
+_fade_timer = 7;
 speed = 3;
