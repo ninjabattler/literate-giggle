@@ -9,8 +9,17 @@ distance = distance_to_object(target);
 
 attacking = (distance < max_range);
 
+if (instance_number(obj_test_boss) > 0) {
+	attacking = true;
+	target = obj_test_boss;
+}
+
+if (x < 0 || y < 0) {
+	can_attack = false;	
+}
+
 // Do attack
-if(attacking && can_attack) {
+if(attacking && can_attack && target._targetable) {
 	// Create fireball
 	var _projectile = instance_create_depth(x, y, -1, projectile);
 	_projectile._speed = projectile_speed;

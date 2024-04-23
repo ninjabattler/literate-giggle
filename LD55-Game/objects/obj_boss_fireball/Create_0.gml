@@ -11,7 +11,6 @@ _particle_system2 = part_system_create(prt_boss_fire_glare);
 part_system_global_space(_particle_system, true);
 part_system_automatic_update(_particle_system, false);
 part_system_automatic_update(_particle_system2, false);
-audio_play_sound(snd_summon_shoot, 0, false);
 
 // Timers
 _game_slow_speed = false;

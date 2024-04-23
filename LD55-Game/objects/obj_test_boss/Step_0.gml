@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
 image_angle = point_direction(x, y, obj_player.x, obj_player.y);
 
-if (!_attacking) {
-	_rotation += 1.25;
+if (!_attacking && !_targetable) {
+	_rotation += 1 + 0.25 * _current_phase;
 	x = 960 + radius * dcos(_rotation)
 	y = 540 - radius * dsin(_rotation)
 
@@ -35,6 +36,10 @@ if (!_attacking) {
 				_fireball_burst_repeat = 0;
 				_fireball_burst_max_repeat = 5 * _current_phase;
 				break;
+			case "FIREBALL_REFLECTIVE":
+				_fireball_reflective = true;
+			    _fireball_reflective_timer= 0.5;
+				break;
 		}
 			
 		if(_current_attack + 1 = array_length(_attack_order)) {
@@ -45,6 +50,33 @@ if (!_attacking) {
 	}
 }
 
+//Vulnerable
+if (_targetable) {
+	if (_targetable_timer > 0) {
+	    _targetable_timer -= global.game_speed * global.dt;
+		
+		if (_current_phase == 1 && _hp <= (_max_hp / 3) * 2) {
+			_current_phase = 2;
+			_targetable = false;
+			_attack_timer = 3.5 - 0.5 * _current_phase;
+			_attacking = false;
+		}
+		
+		if (_current_phase == 2 && _hp <= _max_hp / 3) {
+			_current_phase = 3;
+			_targetable = false;
+			_attack_timer = 3.5 - 0.5 * _current_phase;
+			_attacking = false;
+		}
+		
+		_fireball_reflects = _current_phase - 1;
+	} else {
+		_fireball_reflects = _current_phase - 1;
+		_targetable = false;
+		_attack_timer = 3.5 - 0.5 * _current_phase;
+		_attacking = false;
+	}
+}
 
 //Fireball Ring
 if (_attacking && _fireball_ring) {
@@ -63,13 +95,13 @@ if (_attacking && _fireball_ring) {
 			_fireball_ring_repeat++;
 		} else {
 			_fireball_ring = false;
-			_attack_timer = 3;
+			_attack_timer = 3.5 - 0.5 * _current_phase;
 			_attacking = false;
 		}
 	}
 }
 
-//Laser Teleoprt
+//Laser Teleport
 if (_attacking && _laser_teleport) {
 	if (_laser_teleport_timer > 0) {
 	    _laser_teleport_timer -= global.game_speed * global.dt;
@@ -88,7 +120,7 @@ if (_attacking && _laser_teleport) {
 			_laser_teleport_timer = 0.6 - 0.1 * _current_phase;
 		} else {
 			_attacking = false;
-			_attack_timer = 3;
+			_attack_timer = 3.5 - 0.5 * _current_phase;
 			_laser_teleport = false;
 		}
 	}
@@ -132,7 +164,7 @@ if (_attacking && _laser_fan) {
 			_laser_fan_timer = _angle_modifier / 100;
 		} else {
 			_attacking = false;
-			_attack_timer = 3;
+			_attack_timer = 3.5 - 0.5 * _current_phase;
 			_laser_fan = false;
 			_laser_fan_repeat = 0;
 		}
@@ -155,8 +187,19 @@ if (_attacking && _fireball_burst) {
 			_fireball_burst_repeat++;
 		} else {
 			_fireball_burst = false;
-			_attack_timer = 3;
+			_attack_timer = 3.5 - 0.5 * _current_phase;
 			_attacking = false;
 		}
+	}
+}
+
+//Fireball Reflective
+if (_attacking && _fireball_reflective) {
+	if (_fireball_reflective_timer > 0) {
+	    _fireball_reflective_timer -= global.game_speed * global.dt;
+	} else {
+		audio_play_sound(snd_summon_shoot, 0, false);
+		instance_create_depth(x, y, 0, obj_boss_fireball);
+		_fireball_reflective = false;
 	}
 }

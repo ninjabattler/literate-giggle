@@ -13,5 +13,8 @@ var _sound_params =
 
 audio_play_sound_ext(_sound_params);
 
-other._hp -= _damage;
+if (other._targetable) {
+	other._hp -= _damage;
+}
+
 instance_destroy(self);
