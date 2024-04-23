@@ -4,3 +4,5 @@ _player_health = 20;
 _player_max_health = 20;
 _player_souls = 0;
 _victory = false;
+
+depth = -150;

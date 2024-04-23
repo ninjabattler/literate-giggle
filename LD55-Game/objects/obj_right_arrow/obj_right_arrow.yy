@@ -9,6 +9,7 @@
   "name":"obj_right_arrow",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"D\"",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"gp_key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"32784",},
   ],
   "parent":{
     "name":"Summons",

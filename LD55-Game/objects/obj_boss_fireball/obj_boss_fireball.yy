@@ -15,8 +15,8 @@
   "name":"obj_boss_fireball",
   "overriddenProperties":[],
   "parent":{
-    "name":"Projectiles",
-    "path":"folders/Objects/Projectiles.yy",
+    "name":"Enemies",
+    "path":"folders/Objects/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,

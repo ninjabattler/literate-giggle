@@ -13,3 +13,4 @@ shader_set_uniform_f(shader_get_uniform(sh_test,"direction"),4)
 shader_reset();
 
 draw_self()
+draw_sprite_ext(spr_tree1, 0, x, y, image_xscale, image_yscale, image_angle, _colour_tint, 0.4);

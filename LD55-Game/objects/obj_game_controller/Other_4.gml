@@ -3,6 +3,10 @@
 
 // Set starting souls
 switch(room) {
+	case TitleRoom:
+		obj_start_button._button_id = 0;
+		obj_exit_button._button_id = 1;
+	break;
 	case Level1:
 		obj_stats_controller._player_souls = 10;
 	break;

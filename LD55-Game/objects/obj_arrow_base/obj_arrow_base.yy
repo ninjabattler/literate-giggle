@@ -30,6 +30,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"","%Name":"key","filters":[],"listItems":[],"multiselect":false,"name":"key","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"A\"","varType":2,},
+    {"$GMObjectProperty":"","%Name":"gp_key","filters":[],"listItems":[],"multiselect":false,"name":"gp_key","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"32783","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
