@@ -8,19 +8,12 @@
   ],
   "managed":true,
   "name":"obj_test_boss",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_speed","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.5",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_max_hp","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"150",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_damage","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"10000000",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
     "path":"folders/Objects/Enemies.yy",
   },
-  "parentObjectId":{
-    "name":"obj_base_enemy",
-    "path":"objects/obj_base_enemy/obj_base_enemy.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
