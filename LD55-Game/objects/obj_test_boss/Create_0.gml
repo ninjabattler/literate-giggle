@@ -3,25 +3,11 @@
 event_inherited();
 path_end();
 
+depth = 0;
 x = 540
 y = 540
 
 _arm_state_idle = [
-	{
-		_arm_rot_1: 60,
-		_arm_rot_2: 40
-	},
-	{
-		_arm_rot_1: -180,
-		_arm_rot_2: -90
-	},
-	{
-		_arm_rot_1: -60,
-		_arm_rot_2: 140
-	}
-]
-
-_arm_state_laser = [
 	{
 		_arm_rot_1: 60,
 		_arm_rot_2: 40
