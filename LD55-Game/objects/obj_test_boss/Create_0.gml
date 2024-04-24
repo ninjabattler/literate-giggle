@@ -6,6 +6,43 @@ path_end();
 x = 540
 y = 540
 
+_arm_state_idle = [
+	{
+		_arm_rot_1: 60,
+		_arm_rot_2: 40
+	},
+	{
+		_arm_rot_1: -180,
+		_arm_rot_2: -90
+	},
+	{
+		_arm_rot_1: -60,
+		_arm_rot_2: 140
+	}
+]
+
+_arm_state_laser = [
+	{
+		_arm_rot_1: 60,
+		_arm_rot_2: 40
+	},
+	{
+		_arm_rot_1: -180,
+		_arm_rot_2: -90
+	},
+	{
+		_arm_rot_1: -60,
+		_arm_rot_2: 140
+	}
+]
+
+_arm_rotation_offset = 0;
+_target_arm_rotation_offset = 10;
+_arm_rotation_timer = 0.75;
+
+_shield_scale_offset = 0;
+_target_shield_scale_offset = 0.2;
+
 _targetable = false;
 _targetable_timer = 0;
 _fireball_reflects = 0;

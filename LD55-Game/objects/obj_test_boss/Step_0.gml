@@ -80,6 +80,19 @@ if (_targetable) {
 	}
 }
 
+//Arm Rotation Offset
+if (!_targetable) {
+	_arm_rotation_offset = lerp(_arm_rotation_offset, _target_arm_rotation_offset, 0.025);
+	_shield_scale_offset = lerp(_shield_scale_offset, _target_shield_scale_offset, 0.02);
+	
+	if (_arm_rotation_timer > 0) {
+	    _arm_rotation_timer -= global.game_speed * global.dt;
+	} else {
+		_target_arm_rotation_offset = -_target_arm_rotation_offset;
+		_target_shield_scale_offset = -_target_shield_scale_offset;
+		_arm_rotation_timer = 0.75
+	}
+}
 //Fireball Ring
 if (_attacking && _fireball_ring) {
 	if (_fireball_timer > 0) {

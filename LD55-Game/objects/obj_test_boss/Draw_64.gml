@@ -10,4 +10,4 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_right);
 
 
-draw_text_transformed(room_width, 33, "Lux's Second Cousin, NUX", 2, 2, 0);
+draw_text_transformed(room_width, 33, "Novice Lich", 2, 2, 0);
