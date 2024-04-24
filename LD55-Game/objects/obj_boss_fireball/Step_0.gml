@@ -25,14 +25,3 @@ if (_game_speed_reset_timer > 0) {
 	global.game_speed = 1;
 	_game_slow_speed = false;
 }
-
-
-// Time Slow Effect
-if (_particle_update_timer > 0) {
-	_particle_update_timer -= global.game_speed * global.dt;
-	
-} else {
-	part_system_update(_particle_system);
-	part_system_update(_particle_system2);
-	_particle_update_timer = 0.001;
-}
