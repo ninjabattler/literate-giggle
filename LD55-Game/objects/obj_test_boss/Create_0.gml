@@ -46,7 +46,6 @@ _fireball_reflective_timer = 0;
 
 _current_attack = 0;
 _attack_order = [
-	"FIREBALL_REFLECTIVE",
 	"FIREBALL_RING",
 	"LASER_TELEPORT",
 	"LASER_FAN",
