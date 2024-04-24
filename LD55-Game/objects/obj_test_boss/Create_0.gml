@@ -9,6 +9,7 @@ y = 540
 _targetable = false;
 _targetable_timer = 0;
 _fireball_reflects = 0;
+_shield_rotate = 0;
 
 _fireball_timer = 2;
 _rotation = 0;
