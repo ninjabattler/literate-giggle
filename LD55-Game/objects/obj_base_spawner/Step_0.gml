@@ -14,6 +14,7 @@ if (timeline_position > timeline_max_moment(_waves[max(0, _current_wave - 1)]) &
 		obj_stats_controller._victory = true
 		obj_player._disabled = true;
 		audio_stop_sound(snd_music_main);
+		audio_stop_sound(snd_music_boss);
 		
 		if(room == Level5) {
 			audio_play_sound(snd_music_victory, 0, true);
