@@ -4,6 +4,7 @@ event_inherited();
 image_angle = point_direction(x, y, obj_player.x, obj_player.y);
 _shield_rotate += global.game_speed;
 
+//Idle Movement
 if (!_attacking && !_targetable) {
 	_rotation += 1 + 0.25 * _current_phase;
 	x = 960 + radius * dcos(_rotation)
