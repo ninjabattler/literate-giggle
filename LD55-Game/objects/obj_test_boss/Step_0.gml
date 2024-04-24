@@ -15,7 +15,7 @@ if (!_attacking && !_targetable) {
 	} else {
 		_attacking = true;
 		
-		switch(_attack_order[_current_attack]) {
+		switch(_attack_orders[_current_phase - 1][_current_attack]) {
 			case "FIREBALL_RING":
 				_fireball_ring = true
 			    _fireball_timer= 0.5;
@@ -42,9 +42,30 @@ if (!_attacking && !_targetable) {
 				_fireball_reflective = true;
 			    _fireball_reflective_timer= 0.5;
 				break;
+			case "LASER_SPIN":
+				_laser_spin = true
+			    _laser_spin_timer = 0.025;
+				_laser_spin_repeat = 0;
+				break;
+			case "FIREBALL_SPIN":
+				_fireball_spin = true
+			    _fireball_spin_timer = 0.025;
+				_fireball_spin_repeat = 0;
+				break;
+			case "LASER_TELEPORT_FAN":
+				_laser_teleport_fan = true
+			    _laser_teleport_fan_timer = 1;
+				_laser_teleport_fan_repeat = 0;
+				_laser_teleport_fan_teleports = 5;
+				break;
+			case "FIREBALL_TELEPORT":
+				_fireball_teleport = true
+			    _fireball_teleport_timer = 0.5;
+				_fireball_teleport_repeat = 10;
+				break;
 		}
 			
-		if(_current_attack + 1 = array_length(_attack_order)) {
+		if(_current_attack + 1 = array_length(_attack_orders[_current_phase - 1])) {
 			_current_attack = 0;
 		} else {
 			_current_attack++;
@@ -93,6 +114,7 @@ if (!_targetable) {
 		_arm_rotation_timer = 0.75
 	}
 }
+	
 //Fireball Ring
 if (_attacking && _fireball_ring) {
 	if (_fireball_timer > 0) {
@@ -186,6 +208,94 @@ if (_attacking && _laser_fan) {
 	}
 }
 
+//Laser Spin
+if (_attacking && _laser_spin) {
+	_rotation += 1 + 0.25 * _current_phase;
+	x = 960 + radius * dcos(_rotation)
+	y = 540 - radius * dsin(_rotation)
+		
+	if (_laser_spin_timer > 0) {
+	    _laser_spin_timer -= global.game_speed * global.dt;
+	} else {
+		audio_play_sound(snd_click_soft, 0, false);
+		
+		var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
+		_laser.direction = _rotation - 180;
+		
+		if (_laser_spin_repeat < _laser_spin_max_repeat) {
+			_laser_spin_repeat++;
+			_laser_spin_timer = 0.025;
+		} else {
+			_attacking = false;
+			_attack_timer = 3 - _current_phase;
+			_laser_spin = false;
+		}
+	}
+}
+
+//Laser Teleport Fan
+if (_attacking && _laser_teleport_fan) {
+	if (_laser_teleport_fan_timer > 0) {
+	    _laser_teleport_fan_timer -= global.game_speed * global.dt;
+	} else {
+		audio_play_sound(snd_click_soft, 0, false);
+		
+		if (_laser_teleport_fan_repeat == 0) {
+			_laser_fan_angle = point_direction(x, y, obj_player.x, obj_player.y);
+			var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
+			_laser.direction = _laser_fan_angle;
+		} else {
+			var _laser1 = instance_create_depth(x, y, 0, obj_boss_laser);
+			var _laser2 = instance_create_depth(x, y, 0, obj_boss_laser);
+			
+			_laser1.direction = _laser_fan_angle + 12.5 * _laser_teleport_fan_repeat;
+			_laser2.direction = _laser_fan_angle - 12.5 * _laser_teleport_fan_repeat;
+		}
+		
+		if (_laser_teleport_fan_repeat < _laser_teleport_fan_max_repeat) {
+			_laser_teleport_fan_repeat++;
+			_laser_teleport_fan_timer = 0.025;
+		} else if (_laser_teleport_fan_teleports > 0) {
+			_laser_teleport_fan_teleports--;
+			_laser_teleport_fan_repeat = 0;
+			_laser_teleport_fan_timer = 1;
+
+			_rotation += random_range(0, 360);
+			x = 960 + radius * dcos(_rotation)
+			y = 540 - radius * dsin(_rotation)
+		} else {
+			_attacking = false;
+			_attack_timer = 2;
+			_laser_teleport_fan = false;
+		}
+	}
+}
+
+//Fireball Spin
+if (_attacking && _fireball_spin) {
+	_rotation += 1 + 0.25 * _current_phase;
+	x = 960 + radius * dcos(_rotation)
+	y = 540 - radius * dsin(_rotation)
+		
+	if (_fireball_spin_timer > 0) {
+	    _fireball_spin_timer -= global.game_speed * global.dt;
+	} else {
+		audio_play_sound(snd_summon_shoot, 0, false);
+		
+		var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_homing);
+		_fireball.direction = image_angle + random_range(-5, 5);
+		
+		if (_fireball_spin_repeat < _fireball_spin_max_repeat) {
+			_fireball_spin_repeat++;
+			_fireball_spin_timer = 0.025;
+		} else {
+			_attacking = false;
+			_attack_timer = 3 - _current_phase;
+			_fireball_spin = false;
+		}
+	}
+}
+
 //Fireball Burst
 if (_attacking && _fireball_burst) {
 	if (_fireball_burst_timer > 0) {
@@ -204,6 +314,33 @@ if (_attacking && _fireball_burst) {
 			_fireball_burst = false;
 			_attack_timer = 3.5 - 0.5 * _current_phase;
 			_attacking = false;
+		}
+	}
+}
+
+//Fireball Teleport
+if (_attacking && _fireball_teleport) {
+	if (_fireball_teleport_timer > 0) {
+	    _fireball_teleport_timer -= global.game_speed * global.dt;
+	} else {
+		audio_play_sound(snd_summon_shoot, 0, false);
+
+		_rotation += random_range(0, 360);
+		x = 960 + radius * dcos(_rotation)
+		y = 540 - radius * dsin(_rotation)
+		
+	    for(var _i = 0; _i<= 4; _i++){
+			var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_non_homing);
+			_fireball.direction = _i * 90;
+		}
+		
+		if (_fireball_teleport_repeat > 0) {
+			_fireball_teleport_repeat--;
+			_fireball_teleport_timer = 0.6 - 0.1 * _current_phase;
+		} else {
+			_attacking = false;
+			_attack_timer = 3.5 - 0.5 * _current_phase;
+			_fireball_teleport = false;
 		}
 	}
 }

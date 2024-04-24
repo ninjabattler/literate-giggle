@@ -57,8 +57,12 @@ _attacking = false;
 _fireball_ring = false;
 _laser_teleport = false;
 _laser_fan = false;
+_laser_spin = false;
+_laser_teleport_fan = false;
+_fireball_spin = false;
 _fireball_burst = false;
 _fireball_reflective = false;
+_fireball_teleport = false;
 
 _attack_timer = 3;
 
@@ -75,21 +79,61 @@ _laser_fan_angle = 0;
 _laser_fan_repeat = 0;
 _laser_fan_max_repeat = 5;
 
+_laser_spin_timer = 0;
+_laser_spin_repeat = 0;
+_laser_spin_max_repeat = 120;
+
+_laser_teleport_fan_timer = 0;
+_laser_teleport_fan_repeat = 0;
+_laser_teleport_fan_max_repeat = 5;
+_laser_teleport_fan_teleports = 5;
+
+_fireball_spin_timer = 0;
+_fireball_spin_repeat = 0;
+_fireball_spin_max_repeat = 120;
+
 _fireball_burst_timer = 0;
 _fireball_burst_timer = 0;
 _fireball_burst_repeat = 0;
 _fireball_burst_max_repeat = 5;
 
+_fireball_teleport_timer = 0;
+_fireball_teleport_repeat = 5;
+
 _fireball_reflective_timer = 0;
 
 _current_attack = 0;
-_attack_order = [
-	"FIREBALL_RING",
-	"LASER_TELEPORT",
-	"LASER_FAN",
-	"FIREBALL_RING",
-	"FIREBALL_BURST",
-	"FIREBALL_REFLECTIVE"
+_attack_orders = [
+	[
+		"FIREBALL_RING",
+		"LASER_TELEPORT",
+		"LASER_FAN",
+		"FIREBALL_RING",
+		"FIREBALL_BURST",
+		"FIREBALL_REFLECTIVE"
+	],
+	[
+		"FIREBALL_RING",
+		"LASER_TELEPORT",
+		"LASER_FAN",
+		"FIREBALL_RING",
+		"FIREBALL_BURST",
+		"LASER_SPIN",
+		"FIREBALL_TELEPORT",
+		"FIREBALL_REFLECTIVE"
+	],
+	[
+		"FIREBALL_RING",
+		"LASER_TELEPORT",
+		"LASER_FAN",
+		"FIREBALL_RING",
+		"FIREBALL_BURST",
+		"LASER_SPIN",
+		"LASER_TELEPORT_FAN",
+		"FIREBALL_SPIN",
+		"FIREBALL_TELEPORT",
+		"FIREBALL_REFLECTIVE"
+	],
 ]
 
 audio_stop_sound(snd_music_main);
