@@ -15,6 +15,7 @@ if (!_attacking && !_targetable) {
 	    _attack_timer -= global.game_speed * global.dt;
 	} else {
 		_attacking = true;
+		audio_play_sound(snd_boss_1_growl, 0, false);
 		
 		switch(_attack_orders[_current_phase - 1][_current_attack]) {
 			case "FIREBALL_RING":

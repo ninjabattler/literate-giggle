@@ -5,7 +5,7 @@ _target_rotation = direction;
 image_angle = direction;
 part_system_position(_particle_system, x, y);
 part_system_position(_particle_system2, x, y);
-part_system_angle(_particle_system2, direction + 90);
+part_system_angle(_particle_system2, direction - 90);
 
 x = x + lengthdir_x(_current_speed * global.game_speed, direction);
 y = y + lengthdir_y(_current_speed * global.game_speed, direction);

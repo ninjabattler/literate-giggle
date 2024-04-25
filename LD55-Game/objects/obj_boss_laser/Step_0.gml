@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+part_system_angle(_particle_system, direction - 90);
 
 // Time Slow Effect
 if (_laser_timer > 0) {
@@ -10,7 +11,7 @@ if (_laser_timer > 0) {
 	move_towards_point(x + 32 * dcos(direction), y - 32 * dsin(direction), 1)
 } else {
 	if (!_sound_played) {
-		audio_play_sound(snd_summon_shoot, 0, false);
+		audio_play_sound(snd_boss_1_laser, 0, false);
 		_particle_system2 = part_system_create(prt_boss_laser_burst);
 		part_system_position(_particle_system2, x, y);
 		_sound_played = true;

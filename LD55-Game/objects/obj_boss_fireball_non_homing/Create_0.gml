@@ -9,8 +9,8 @@ _target_rotation = 0;
 _particle_system = part_system_create(prt_boss_fire);
 _particle_system2 = part_system_create(prt_boss_fire_glare);
 part_system_global_space(_particle_system, true);
-part_system_automatic_update(_particle_system, false);
-part_system_automatic_update(_particle_system2, false);
+//part_system_automatic_update(_particle_system, false);
+//part_system_automatic_update(_particle_system2, false);
 
 // Timers
 _game_slow_speed = false;

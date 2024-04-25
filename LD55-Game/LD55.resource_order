@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Boss 1","order":3,"path":"folders/Sprites/Enemies/Boss 1.yy",},
+    {"name":"Particles","order":1,"path":"folders/Sprites/Particles.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_boss_fireball_homing","order":3,"path":"objects/obj_boss_fireball_homing/obj_boss_fireball_homing.yy",},
@@ -10,6 +11,8 @@
     {"name":"prt_boss_laser_burst","order":1,"path":"particles/prt_boss_laser_burst/prt_boss_laser_burst.yy",},
     {"name":"prt_boss_reflective_glare","order":2,"path":"particles/prt_boss_reflective_glare/prt_boss_reflective_glare.yy",},
     {"name":"prt_boss_reflective_trail","order":3,"path":"particles/prt_boss_reflective_trail/prt_boss_reflective_trail.yy",},
+    {"name":"snd_boss_1_growl","order":2,"path":"sounds/snd_boss_1_growl/snd_boss_1_growl.yy",},
+    {"name":"snd_boss_1_laser","order":3,"path":"sounds/snd_boss_1_laser/snd_boss_1_laser.yy",},
     {"name":"snd_music_boss","order":1,"path":"sounds/snd_music_boss/snd_music_boss.yy",},
     {"name":"spr_boss_1_arm_1","order":1,"path":"sprites/spr_boss_1_arm_1/spr_boss_1_arm_1.yy",},
     {"name":"spr_boss_1_arm_2","order":2,"path":"sprites/spr_boss_1_arm_2/spr_boss_1_arm_2.yy",},
