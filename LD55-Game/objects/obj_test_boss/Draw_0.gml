@@ -6,12 +6,31 @@ if (!_targetable) {
 	draw_set_alpha(1);
 }
 
-for(var _i = 0; _i < array_length(_arm_state_idle); _i++) {
-	var _arm_rotation_1 = _arm_state_idle[_i]._arm_rot_1 + _arm_rotation_offset;
-	var _arm_rotation_2 = _arm_state_idle[_i]._arm_rot_2 + _arm_rotation_offset;
+var _arm_rotation_states = _arm_state_idle;
+
+switch (_arm_state) {
+	case "SPIN":
+		_arm_rotation_states = _arm_state_spin;
+		break;
+}
+
+for(var _i = 0; _i < array_length(_arm_rotation_states); _i++) {
+	var _arm_rotation_1 = _arm_1_1_rotation + _arm_1_1_rotation_offset;
+	var _arm_rotation_2 = _arm_1_2_rotation + _arm_1_2_rotation_offset;
+	
+	if (_i = 1) {
+		_arm_rotation_1 = _arm_2_1_rotation + _arm_2_1_rotation_offset;
+		_arm_rotation_2 = _arm_2_2_rotation + _arm_2_2_rotation_offset;
+	}
+	
+	if (_i = 2) {
+		_arm_rotation_1 = _arm_3_1_rotation + _arm_3_1_rotation_offset;
+		_arm_rotation_2 = _arm_3_2_rotation + _arm_3_2_rotation_offset;
+	}
+	
 	var _arm3 = spr_boss_1_arm_3_deactivated;
 	
-	if (_current_phase > _i) {
+	if (_fireball_reflects >= _i && !_targetable) {
 		_arm3 = spr_boss_1_arm_3;
 	}
 	

@@ -1,11 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-image_angle = point_direction(x, y, obj_player.x, obj_player.y);
+image_angle = _sprite_rotation;
 _shield_rotate += global.game_speed;
 
 //Idle Movement
 if (!_attacking && !_targetable) {
+	_arm_state = "IDLE";
 	_rotation += 1 + 0.25 * _current_phase;
 	x = 960 + radius * dcos(_rotation)
 	y = 540 - radius * dsin(_rotation)
@@ -17,48 +18,57 @@ if (!_attacking && !_targetable) {
 		
 		switch(_attack_orders[_current_phase - 1][_current_attack]) {
 			case "FIREBALL_RING":
+				_arm_state = "SPIN";
 				_fireball_ring = true
 			    _fireball_timer= 0.5;
 				_fireball_ring_repeat = 0;
 				_fireball_ring_max_repeat = -1 + 2 * _current_phase;
 				break;
 			case "LASER_TELEPORT":
+				_arm_state = "TELEPORT";
 				_laser_teleport = true
 			    _laser_teleport_timer = 0.5;
 				_laser_teleport_repeat = 5 * _current_phase;
 				break;
 			case "LASER_FAN":
+				_arm_state = "PROJECTILE";
 				_laser_fan = true
 			    _laser_fan_timer = 0.5;
 				_laser_fan_max_repeat = 5 * _current_phase;
 				break;
 			case "FIREBALL_BURST":
+				_arm_state = "PROJECTILE";
 				_fireball_burst = true
 			    _fireball_burst_timer= 0.5;
 				_fireball_burst_repeat = 0;
 				_fireball_burst_max_repeat = 5 * _current_phase;
 				break;
 			case "FIREBALL_REFLECTIVE":
+				_arm_state = "DEFENSE";
 				_fireball_reflective = true;
 			    _fireball_reflective_timer= 0.5;
 				break;
 			case "LASER_SPIN":
+				_arm_state = "SPIN";
 				_laser_spin = true
 			    _laser_spin_timer = 0.025;
 				_laser_spin_repeat = 0;
 				break;
 			case "FIREBALL_SPIN":
+				_arm_state = "SPIN";
 				_fireball_spin = true
 			    _fireball_spin_timer = 0.025;
 				_fireball_spin_repeat = 0;
 				break;
 			case "LASER_TELEPORT_FAN":
+				_arm_state = "TELEPORT";
 				_laser_teleport_fan = true
 			    _laser_teleport_fan_timer = 1;
 				_laser_teleport_fan_repeat = 0;
 				_laser_teleport_fan_teleports = 5;
 				break;
 			case "FIREBALL_TELEPORT":
+				_arm_state = "TELEPORT";
 				_fireball_teleport = true
 			    _fireball_teleport_timer = 0.5;
 				_fireball_teleport_repeat = 10;
@@ -103,15 +113,152 @@ if (_targetable) {
 
 //Arm Rotation Offset
 if (!_targetable) {
-	_arm_rotation_offset = lerp(_arm_rotation_offset, _target_arm_rotation_offset, 0.025);
+	_sprite_rotation = point_direction(x, y, obj_player.x, obj_player.y);
 	_shield_scale_offset = lerp(_shield_scale_offset, _target_shield_scale_offset, 0.02);
+			
+	switch (_arm_state) {
+		case "IDLE":
+			_arm_1_1_rotation_offset = lerp(_arm_1_1_rotation_offset, _target_arm_1_1_rotation_offset, 0.025);
+			_arm_1_2_rotation_offset = lerp(_arm_1_2_rotation_offset, _target_arm_1_2_rotation_offset, 0.025);
+			_arm_2_1_rotation_offset = lerp(_arm_2_1_rotation_offset, _target_arm_2_1_rotation_offset, 0.025);
+			_arm_2_2_rotation_offset = lerp(_arm_2_2_rotation_offset, _target_arm_2_2_rotation_offset, 0.025);
+			_arm_3_1_rotation_offset = lerp(_arm_3_1_rotation_offset, _target_arm_3_1_rotation_offset, 0.025);
+			_arm_3_2_rotation_offset = lerp(_arm_3_2_rotation_offset, _target_arm_3_2_rotation_offset, 0.025);
+			
+			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _arm_state_idle[0]._arm_rot_1 + _arm_1_1_rotation_offset, 0.1);
+			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _arm_state_idle[0]._arm_rot_2 + _arm_1_2_rotation_offset, 0.1);
+			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _arm_state_idle[1]._arm_rot_1 + _arm_2_1_rotation_offset, 0.1);
+			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _arm_state_idle[1]._arm_rot_2 + _arm_2_2_rotation_offset, 0.1);
+			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _arm_state_idle[2]._arm_rot_1 + _arm_3_1_rotation_offset, 0.1);
+			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _arm_state_idle[2]._arm_rot_2 + _arm_3_2_rotation_offset, 0.1);
 	
-	if (_arm_rotation_timer > 0) {
-	    _arm_rotation_timer -= global.game_speed * global.dt;
-	} else {
-		_target_arm_rotation_offset = -_target_arm_rotation_offset;
-		_target_shield_scale_offset = -_target_shield_scale_offset;
-		_arm_rotation_timer = 0.75
+			if (_arm_rotation_timer > 0) {
+			    _arm_rotation_timer -= global.game_speed * global.dt;
+			} else {
+				_target_arm_1_1_rotation_offset = -_target_arm_1_1_rotation_offset;
+				_target_arm_1_2_rotation_offset = -_target_arm_1_2_rotation_offset;
+				_target_arm_2_1_rotation_offset = -_target_arm_2_1_rotation_offset;
+				_target_arm_2_2_rotation_offset = -_target_arm_2_2_rotation_offset;
+				_target_arm_3_1_rotation_offset = -_target_arm_3_1_rotation_offset;
+				_target_arm_3_2_rotation_offset = -_target_arm_3_2_rotation_offset;
+				
+				_target_shield_scale_offset = -_target_shield_scale_offset;
+				_arm_rotation_timer = 0.75
+			}
+			break;
+		case "SPIN":
+			_arm_1_1_rotation_offset = _arm_1_1_rotation_offset < 360 ? _arm_1_1_rotation_offset + 3 : 0;
+			_arm_1_2_rotation_offset = _arm_1_2_rotation_offset > -360 ? _arm_1_2_rotation_offset - 3 : 0;
+			_arm_2_1_rotation_offset = _arm_2_1_rotation_offset < 360 ? _arm_2_1_rotation_offset + 3 : 0;
+			_arm_2_2_rotation_offset = _arm_2_2_rotation_offset > -360 ? _arm_2_2_rotation_offset - 3 : 0;
+			_arm_3_1_rotation_offset = _arm_3_1_rotation_offset < 360 ? _arm_3_1_rotation_offset + 3 : 0;
+			_arm_3_2_rotation_offset = _arm_3_2_rotation_offset > -360 ? _arm_3_2_rotation_offset - 3 : 0;
+			
+			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _arm_state_spin[0]._arm_rot_1 + _arm_1_1_rotation_offset, 0.1);
+			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _arm_state_spin[0]._arm_rot_2 + _arm_1_2_rotation_offset, 0.1);
+			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _arm_state_spin[1]._arm_rot_1 + _arm_2_1_rotation_offset, 0.1);
+			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _arm_state_spin[1]._arm_rot_2 + _arm_2_2_rotation_offset, 0.1);
+			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _arm_state_spin[2]._arm_rot_1 + _arm_3_1_rotation_offset, 0.1);
+			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _arm_state_spin[2]._arm_rot_2 + _arm_3_2_rotation_offset, 0.1);
+			
+			if (_arm_rotation_timer > 0) {
+			    _arm_rotation_timer -= global.game_speed * global.dt;
+			} else {
+				_target_shield_scale_offset = -_target_shield_scale_offset;
+				_arm_rotation_timer = 0.75
+			}
+			break;
+			
+		case "TELEPORT":
+			_arm_1_1_rotation_offset = 0;
+			_arm_1_2_rotation_offset = 0;
+			_arm_2_1_rotation_offset = 0;
+			_arm_2_2_rotation_offset = 0;
+			_arm_3_1_rotation_offset = 0;
+			_arm_3_2_rotation_offset = 0;
+			
+			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _arm_state_teleport[0]._arm_rot_1 + _arm_1_1_rotation_offset, 0.025);
+			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _arm_state_teleport[0]._arm_rot_2 + _arm_1_2_rotation_offset, 0.025);
+			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _arm_state_teleport[1]._arm_rot_1 + _arm_2_1_rotation_offset, 0.025);
+			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _arm_state_teleport[1]._arm_rot_2 + _arm_2_2_rotation_offset, 0.025);
+			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _arm_state_teleport[2]._arm_rot_1 + _arm_3_1_rotation_offset, 0.025);
+			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _arm_state_teleport[2]._arm_rot_2 + _arm_3_2_rotation_offset, 0.025);
+	
+			if (_arm_rotation_timer > 0) {
+			    _arm_rotation_timer -= global.game_speed * global.dt;
+			} else {
+				_target_arm_1_1_rotation_offset = -_target_arm_1_1_rotation_offset;
+				_target_arm_1_2_rotation_offset = -_target_arm_1_2_rotation_offset;
+				_target_arm_2_1_rotation_offset = -_target_arm_2_1_rotation_offset;
+				_target_arm_2_2_rotation_offset = -_target_arm_2_2_rotation_offset;
+				_target_arm_3_1_rotation_offset = -_target_arm_3_1_rotation_offset;
+				_target_arm_3_2_rotation_offset = -_target_arm_3_2_rotation_offset;
+				
+				_target_shield_scale_offset = -_target_shield_scale_offset;
+				_arm_rotation_timer = 0.75
+			}
+			break;
+		case "PROJECTILE":
+			_arm_1_1_rotation_offset = lerp(_arm_1_1_rotation_offset, _target_arm_1_1_rotation_offset, 0.025);
+			_arm_1_2_rotation_offset = lerp(_arm_1_2_rotation_offset, _target_arm_1_2_rotation_offset, 0.025);
+			_arm_2_1_rotation_offset = lerp(_arm_2_1_rotation_offset, _target_arm_2_1_rotation_offset, 0.025);
+			_arm_2_2_rotation_offset = lerp(_arm_2_2_rotation_offset, _target_arm_2_2_rotation_offset, 0.025);
+			_arm_3_1_rotation_offset = lerp(_arm_3_1_rotation_offset, _target_arm_3_1_rotation_offset, 0.025);
+			_arm_3_2_rotation_offset = lerp(_arm_3_2_rotation_offset, _target_arm_3_2_rotation_offset, 0.025);
+			
+			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _arm_state_projectile[0]._arm_rot_1 + _arm_1_1_rotation_offset, 0.1);
+			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _arm_state_projectile[0]._arm_rot_2 + _arm_1_2_rotation_offset, 0.1);
+			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _arm_state_projectile[1]._arm_rot_1 + _arm_2_1_rotation_offset, 0.1);
+			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _arm_state_projectile[1]._arm_rot_2 + _arm_2_2_rotation_offset, 0.1);
+			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _arm_state_projectile[2]._arm_rot_1 + _arm_3_1_rotation_offset, 0.1);
+			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _arm_state_projectile[2]._arm_rot_2 + _arm_3_2_rotation_offset, 0.1);
+	
+			if (_arm_rotation_timer > 0) {
+			    _arm_rotation_timer -= global.game_speed * global.dt;
+			} else {
+				_target_arm_1_1_rotation_offset = -_target_arm_1_1_rotation_offset;
+				_target_arm_1_2_rotation_offset = -_target_arm_1_2_rotation_offset;
+				_target_arm_2_1_rotation_offset = -_target_arm_2_1_rotation_offset;
+				_target_arm_2_2_rotation_offset = -_target_arm_2_2_rotation_offset;
+				_target_arm_3_1_rotation_offset = -_target_arm_3_1_rotation_offset;
+				_target_arm_3_2_rotation_offset = -_target_arm_3_2_rotation_offset;
+				
+				_target_shield_scale_offset = -_target_shield_scale_offset;
+				_arm_rotation_timer = 0.75
+			}
+			break;
+		case "DEFENSE":
+			var _state = _arm_state_defense_1;
+			
+			if (_fireball_reflects == 1) {
+				_state = _arm_state_defense_2;
+			}
+			
+			if (_fireball_reflects == 2) {
+				_state = _arm_state_defense_3;
+			}
+			
+			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _state[0]._arm_rot_1 + _arm_1_1_rotation_offset, 0.1);
+			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _state[0]._arm_rot_2 + _arm_1_2_rotation_offset, 0.1);
+			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _state[1]._arm_rot_1 + _arm_2_1_rotation_offset, 0.1);
+			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _state[1]._arm_rot_2 + _arm_2_2_rotation_offset, 0.1);
+			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _state[2]._arm_rot_1 + _arm_3_1_rotation_offset, 0.1);
+			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _state[2]._arm_rot_2 + _arm_3_2_rotation_offset, 0.1);
+	
+			if (_arm_rotation_timer > 0) {
+				_arm_rotation_timer -= global.game_speed * global.dt;
+			} else {
+				_target_arm_1_1_rotation_offset = -_target_arm_1_1_rotation_offset;
+				_target_arm_1_2_rotation_offset = -_target_arm_1_2_rotation_offset;
+				_target_arm_2_1_rotation_offset = -_target_arm_2_1_rotation_offset;
+				_target_arm_2_2_rotation_offset = -_target_arm_2_2_rotation_offset;
+				_target_arm_3_1_rotation_offset = -_target_arm_3_1_rotation_offset;
+				_target_arm_3_2_rotation_offset = -_target_arm_3_2_rotation_offset;
+				
+				_target_shield_scale_offset = -_target_shield_scale_offset;
+				_arm_rotation_timer = 0.75
+			}
+			break;
 	}
 }
 	
@@ -146,8 +293,10 @@ if (_attacking && _laser_teleport) {
 		audio_play_sound(snd_click_soft, 0, false);
 
 		_rotation += random_range(0, 360);
-		x = 960 + radius * dcos(_rotation)
-		y = 540 - radius * dsin(_rotation)
+		x = 960 + radius * dcos(_rotation);
+		y = 540 - radius * dsin(_rotation);
+		
+		apply_projectile_pose();
 		
 		var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
 		_laser.direction = point_direction(x, y, obj_player.x, obj_player.y);
@@ -241,6 +390,7 @@ if (_attacking && _laser_teleport_fan) {
 		audio_play_sound(snd_click_soft, 0, false);
 		
 		if (_laser_teleport_fan_repeat == 0) {
+			apply_projectile_pose();
 			_laser_fan_angle = point_direction(x, y, obj_player.x, obj_player.y);
 			var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
 			_laser.direction = _laser_fan_angle;
@@ -261,8 +411,8 @@ if (_attacking && _laser_teleport_fan) {
 			_laser_teleport_fan_timer = 1;
 
 			_rotation += random_range(0, 360);
-			x = 960 + radius * dcos(_rotation)
-			y = 540 - radius * dsin(_rotation)
+			x = 960 + radius * dcos(_rotation);
+			y = 540 - radius * dsin(_rotation);
 		} else {
 			_attacking = false;
 			_attack_timer = 2;
@@ -326,12 +476,18 @@ if (_attacking && _fireball_teleport) {
 		audio_play_sound(snd_summon_shoot, 0, false);
 
 		_rotation += random_range(0, 360);
-		x = 960 + radius * dcos(_rotation)
-		y = 540 - radius * dsin(_rotation)
+		x = 960 + radius * dcos(_rotation);
+		y = 540 - radius * dsin(_rotation);
+		apply_projectile_pose();
 		
 	    for(var _i = 0; _i<= 4; _i++){
-			var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_non_homing);
-			_fireball.direction = _i * 90;
+			var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
+			_laser.direction = _i * 90;
+			
+			if (_current_phase == 3) {
+				var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_non_homing);
+				_fireball.direction = _i * 90;
+			}
 		}
 		
 		if (_fireball_teleport_repeat > 0) {

@@ -4,26 +4,130 @@ event_inherited();
 path_end();
 
 depth = 0;
-x = 540
-y = 540
+x = 540;
+y = 540;
 
+_arm_state = "IDLE";
 _arm_state_idle = [
 	{
 		_arm_rot_1: 60,
 		_arm_rot_2: 40
 	},
 	{
-		_arm_rot_1: -180,
+		_arm_rot_1: -60,
+		_arm_rot_2: 0
+	},
+	{
+		_arm_rot_1: 180,
 		_arm_rot_2: -90
+	}
+]
+_arm_state_spin = [
+	{
+		_arm_rot_1: 0,
+		_arm_rot_2: 60
+	},
+	{
+		_arm_rot_1: 120,
+		_arm_rot_2: -60
+	},
+	{
+		_arm_rot_1: 240,
+		_arm_rot_2: -180
+	},
+]
+_arm_state_teleport = [
+	{
+		_arm_rot_1: 60,
+		_arm_rot_2: 120
 	},
 	{
 		_arm_rot_1: -60,
-		_arm_rot_2: 140
-	}
+		_arm_rot_2: -120
+	},
+	{
+		_arm_rot_1: 240,
+		_arm_rot_2: -90
+	},
+]
+_arm_state_projectile = [
+	{
+		_arm_rot_1: 90,
+		_arm_rot_2: -150
+	},
+	{
+		_arm_rot_1: -90,
+		_arm_rot_2: 150
+	},
+	{
+		_arm_rot_1: 180,
+		_arm_rot_2: -240
+	},
+]
+_arm_state_defense_1 = [
+	{
+		_arm_rot_1: 60,
+		_arm_rot_2: 70
+	},
+	{
+		_arm_rot_1: -120,
+		_arm_rot_2: -180
+	},
+	{
+		_arm_rot_1: 120,
+		_arm_rot_2: -180
+	},
+]
+_arm_state_defense_2 = [
+	{
+		_arm_rot_1: 40,
+		_arm_rot_2: 70
+	},
+	{
+		_arm_rot_1: -40,
+		_arm_rot_2: -70
+	},
+	{
+		_arm_rot_1: 140,
+		_arm_rot_2: -240
+	},
+]
+_arm_state_defense_3 = [
+	{
+		_arm_rot_1: 80,
+		_arm_rot_2: 10
+	},
+	{
+		_arm_rot_1: -80,
+		_arm_rot_2: -20
+	},
+	{
+		_arm_rot_1: 40,
+		_arm_rot_2: 40
+	},
 ]
 
-_arm_rotation_offset = 0;
-_target_arm_rotation_offset = 10;
+_arm_1_1_rotation = 0;
+_arm_1_2_rotation = 0;
+_arm_1_1_rotation_offset = 0;
+_target_arm_1_1_rotation_offset = 10;
+_arm_1_2_rotation_offset = 0;
+_target_arm_1_2_rotation_offset = 10;
+
+_arm_2_1_rotation = 0;
+_arm_2_2_rotation = 0;
+_arm_2_1_rotation_offset = 0;
+_target_arm_2_1_rotation_offset = 10
+_arm_2_2_rotation_offset = 0;
+_target_arm_2_2_rotation_offset = 10;
+
+_arm_3_1_rotation = 0;
+_arm_3_2_rotation = 0;
+_arm_3_1_rotation_offset = 0;
+_target_arm_3_1_rotation_offset = 10;
+_arm_3_2_rotation_offset = 0;
+_target_arm_3_2_rotation_offset = 10;
+
 _arm_rotation_timer = 0.75;
 
 _shield_scale_offset = 0;
@@ -33,6 +137,7 @@ _targetable = false;
 _targetable_timer = 0;
 _fireball_reflects = 0;
 _shield_rotate = 0;
+_sprite_rotation = 0;
 
 _fireball_timer = 2;
 _rotation = 0;
@@ -124,3 +229,12 @@ _attack_orders = [
 
 audio_stop_sound(snd_music_main);
 audio_play_sound(snd_music_boss, 0, true);
+
+function apply_projectile_pose() {
+	_arm_1_1_rotation = _arm_state_projectile[0]._arm_rot_1;
+	_arm_1_2_rotation = _arm_state_projectile[0]._arm_rot_2;
+	_arm_2_1_rotation = _arm_state_projectile[1]._arm_rot_1;
+	_arm_2_2_rotation = _arm_state_projectile[1]._arm_rot_2;
+	_arm_3_1_rotation = _arm_state_projectile[2]._arm_rot_1;
+	_arm_3_2_rotation = _arm_state_projectile[2]._arm_rot_2;	
+}
