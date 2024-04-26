@@ -9,8 +9,8 @@
   "name":"obj_left_arrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Summons",
-    "path":"folders/Objects/GUI/Summons.yy",
+    "name":"Arrows",
+    "path":"folders/Objects/GUI/Summons/Arrows.yy",
   },
   "parentObjectId":{
     "name":"obj_arrow_base",

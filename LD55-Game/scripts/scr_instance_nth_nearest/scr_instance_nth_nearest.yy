@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_instance_nth_nearest",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_instance_nth_nearest",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
