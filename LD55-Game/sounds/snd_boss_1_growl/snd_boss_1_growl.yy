@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_boss_1_growl.wav",
   "type":0,
-  "volume":0.7,
+  "volume":0.85,
 }

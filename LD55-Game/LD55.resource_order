@@ -18,6 +18,8 @@
     {"name":"spr_boss_1_arm_2","order":2,"path":"sprites/spr_boss_1_arm_2/spr_boss_1_arm_2.yy",},
     {"name":"spr_boss_1_arm_3_deactivated","order":4,"path":"sprites/spr_boss_1_arm_3_deactivated/spr_boss_1_arm_3_deactivated.yy",},
     {"name":"spr_boss_1_arm_3","order":3,"path":"sprites/spr_boss_1_arm_3/spr_boss_1_arm_3.yy",},
+    {"name":"spr_boss_1_downed","order":6,"path":"sprites/spr_boss_1_downed/spr_boss_1_downed.yy",},
+    {"name":"spr_boss_1_downed_anim","order":7,"path":"sprites/spr_boss_1_downed_anim/spr_boss_1_downed_anim.yy",},
     {"name":"spr_boss_1_radius","order":5,"path":"sprites/spr_boss_1_radius/spr_boss_1_radius.yy",},
     {"name":"tl_test_wave_5_backup","order":1,"path":"timelines/tl_test_wave_5_backup/tl_test_wave_5_backup.yy",},
   ],

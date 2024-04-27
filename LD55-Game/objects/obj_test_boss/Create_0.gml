@@ -6,6 +6,7 @@ path_end();
 depth = 0;
 x = 540;
 y = 540;
+_shield_alpha = 1;
 
 _arm_state = "IDLE";
 _arm_state_idle = [
@@ -105,6 +106,42 @@ _arm_state_defense_3 = [
 		_arm_rot_1: 40,
 		_arm_rot_2: 40
 	},
+]
+
+_arm_position_offsets = [
+	[
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0
+	]
+]
+
+_arm_position_target_offsets = [
+	[
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0
+	]
 ]
 
 _arm_1_1_rotation = 0;
@@ -237,4 +274,12 @@ function apply_projectile_pose() {
 	_arm_2_2_rotation = _arm_state_projectile[1]._arm_rot_2;
 	_arm_3_1_rotation = _arm_state_projectile[2]._arm_rot_1;
 	_arm_3_2_rotation = _arm_state_projectile[2]._arm_rot_2;	
+}
+
+function reset_arm_offsets() {
+	for (var _i = 0; _i < array_length(_arm_position_target_offsets); _i++) {
+		for (var _j = 0; _j < array_length(_arm_position_target_offsets[_i]); _j++) {
+			_arm_position_target_offsets[_i][_j] = 0;
+		}
+	}	
 }

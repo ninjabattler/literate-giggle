@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-event_inherited();
 
 shader_set(sh_test)
 

@@ -4,10 +4,18 @@ event_inherited();
 image_angle = _sprite_rotation;
 _shield_rotate += global.game_speed;
 
+for (var _i = 0; _i < array_length(_arm_position_offsets); _i++) {
+	for (var _j = 0; _j < array_length(_arm_position_offsets[_i]); _j++) {
+		_arm_position_offsets[_i][_j] = lerp(_arm_position_offsets[_i][_j], _arm_position_target_offsets[_i][_j], 0.05);
+	}
+}
+
 //Idle Movement
 if (!_attacking && !_targetable) {
+	_shield_alpha = lerp(_shield_alpha, 1, 0.2);
 	_arm_state = "IDLE";
 	_rotation += 1 + 0.25 * _current_phase;
+	sprite_index = spr_boss_1;
 	x = 960 + radius * dcos(_rotation)
 	y = 540 - radius * dsin(_rotation)
 
@@ -86,6 +94,8 @@ if (!_attacking && !_targetable) {
 
 //Vulnerable
 if (_targetable) {
+	_shield_alpha = lerp(_shield_alpha, 0, 0.2);
+	
 	if (_targetable_timer > 0) {
 	    _targetable_timer -= global.game_speed * global.dt;
 		
@@ -94,6 +104,8 @@ if (_targetable) {
 			_targetable = false;
 			_attack_timer = 3.5 - 0.5 * _current_phase;
 			_attacking = false;
+		
+			reset_arm_offsets()
 		}
 		
 		if (_current_phase == 2 && _hp <= _max_hp / 3) {
@@ -101,6 +113,8 @@ if (_targetable) {
 			_targetable = false;
 			_attack_timer = 3.5 - 0.5 * _current_phase;
 			_attacking = false;
+		
+			reset_arm_offsets()
 		}
 		
 		_fireball_reflects = _current_phase - 1;
@@ -109,6 +123,8 @@ if (_targetable) {
 		_targetable = false;
 		_attack_timer = 3.5 - 0.5 * _current_phase;
 		_attacking = false;
+		
+		reset_arm_offsets()
 	}
 }
 
