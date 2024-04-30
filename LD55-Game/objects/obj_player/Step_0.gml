@@ -2,6 +2,9 @@
 
 if (!_disabled) {
 	
+	//Update the position of the occluder to match this instance's position
+
+	
 	// Change player direction
 	if (global.gamepad_active) {
 		if(abs(gamepad_axis_value(0, gp_axisrh)) > 0.4 || abs(gamepad_axis_value(0, gp_axisrv)) > 0.4) {

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"BulbLightOverlay",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BulbLightOverlay",
+  "parent":{
+    "name":"Bulb",
+    "path":"folders/Bulb.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

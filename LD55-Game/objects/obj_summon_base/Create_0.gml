@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-depth = 100;
+depth = 410;
 
 can_attack = true;
 attacking = false;

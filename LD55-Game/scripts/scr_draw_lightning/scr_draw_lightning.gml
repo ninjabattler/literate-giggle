@@ -15,7 +15,7 @@ function draw_lightning(_x1, _y1, _x2, _y2, _branches, _color, _seed)
     //
     //feel free to use this in your project!
     //
-	random_set_seed(1);
+	random_set_seed(_seed);
 	
 	// Strange coord adjustment?
 	_x1 = _x1 - 1;
@@ -66,7 +66,7 @@ function draw_lightning(_x1, _y1, _x2, _y2, _branches, _color, _seed)
             {
             var _bdir = _dir + choose(random_range(-45,-25),random_range(45,25));
             var _blength = random_range(5,30);
-            draw_lightning(_xx + _dif_x2, _yy + _dif_y2, _xx + _dif_x2 + lengthdir_x(_blength,_bdir), _yy + _dif_y2 + lengthdir_y(_blength,_bdir), false,_colour, 1)
+            draw_lightning(_xx + _dif_x2, _yy + _dif_y2, _xx + _dif_x2 + lengthdir_x(_blength,_bdir), _yy + _dif_y2 + lengthdir_y(_blength,_bdir), false,_colour, _seed)
             }
     
         var _size = random_range(.1,1);
