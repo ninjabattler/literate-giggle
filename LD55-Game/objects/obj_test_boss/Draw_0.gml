@@ -40,9 +40,17 @@ for(var _i = 0; _i < array_length(_arm_rotation_states); _i++) {
 	var _arm_pos_3_x = _arm_position_offsets[_i][2] * dcos(image_angle + _arm_rotation_2);
 	var _arm_pos_3_y = _arm_position_offsets[_i][2] * dsin(image_angle + _arm_rotation_2);
 	
-	draw_sprite_ext(spr_boss_1_arm_1, image_index, x + _arm_off_1_x, y - _arm_off_1_y, 1, 1, image_angle + _arm_rotation_1, c_white, 1);
-	draw_sprite_ext(spr_boss_1_arm_2, image_index, x + _arm_off_2_x + 56 * dcos(image_angle + _arm_rotation_1), y - _arm_off_2_y - 56 * dsin(image_angle + _arm_rotation_1), 1, 1, image_angle - _arm_rotation_2, c_white, 1);
-	draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(image_angle + _arm_rotation_1)) + 56 * dcos(image_angle - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(image_angle + _arm_rotation_1)) - 56 * dsin(image_angle - _arm_rotation_2), 1, 1,  image_angle - _arm_rotation_2 + 30, c_white, 1);
+	if (!_arm_piece_destroyed[_i][0]) {
+		draw_sprite_ext(spr_boss_1_arm_1, image_index, x + _arm_off_1_x, y - _arm_off_1_y, 1, 1, image_angle + _arm_rotation_1, c_white, 1);
+	}
+	
+	if (!_arm_piece_destroyed[_i][1]) {
+		draw_sprite_ext(spr_boss_1_arm_2, image_index, x + _arm_off_2_x + 56 * dcos(image_angle + _arm_rotation_1), y - _arm_off_2_y - 56 * dsin(image_angle + _arm_rotation_1), 1, 1, image_angle - _arm_rotation_2, c_white, 1);
+	}
+	
+	if (!_arm_piece_destroyed[_i][2]) {
+		draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(image_angle + _arm_rotation_1)) + 56 * dcos(image_angle - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(image_angle + _arm_rotation_1)) - 56 * dsin(image_angle - _arm_rotation_2), 1, 1,  image_angle - _arm_rotation_2 + 30, c_white, 1);
+	}
 }
 
 draw_self();

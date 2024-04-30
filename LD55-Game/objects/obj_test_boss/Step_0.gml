@@ -10,8 +10,90 @@ for (var _i = 0; _i < array_length(_arm_position_offsets); _i++) {
 	}
 }
 
+
+if (_hp <= 0 && !_defeated) {
+	_defeated = true;
+	_targetable = false;
+	sprite_index = spr_boss_1;
+	_arm_state = "IDLE";
+	_target_arm_1_1_rotation_offset *= 5;
+	_target_arm_1_2_rotation_offset *= 5;
+	_target_arm_2_1_rotation_offset *= 5;
+	_target_arm_2_2_rotation_offset *= 5;
+	_target_arm_3_1_rotation_offset *= 5;
+	_target_arm_3_2_rotation_offset *= 5;
+	reset_arm_offsets();
+}
+
+// Death Animation
+if (_defeated) {
+	if (_death_explosion_timer > 0) {
+		_death_explosion_timer -= global.game_speed * global.dt;
+	} else if(_death_explosion_arm >= 0) {
+		var _explosion_x = x;
+		var _explosion_y = y;
+		var _arm_rotations = [
+			[
+				_arm_1_2_rotation + _arm_1_2_rotation_offset,
+				_arm_1_2_rotation + _arm_1_2_rotation_offset,
+				_arm_1_1_rotation + _arm_1_1_rotation_offset,
+			],
+			[
+				_arm_2_2_rotation + _arm_2_2_rotation_offset,
+				_arm_2_2_rotation + _arm_2_2_rotation_offset,
+				_arm_2_1_rotation + _arm_2_1_rotation_offset,
+			],
+			[
+				_arm_3_2_rotation + _arm_3_2_rotation_offset,
+				_arm_3_2_rotation + _arm_3_2_rotation_offset,
+				_arm_3_1_rotation + _arm_3_1_rotation_offset,
+			],
+		]
+		
+		
+		
+		switch (_death_explosion_arm_piece) {
+			case 0:
+				_explosion_x = x + 28 * dcos(image_angle + _arm_rotations[_death_explosion_arm][2])
+				_explosion_y = y - 28 * dsin(image_angle + _arm_rotations[_death_explosion_arm][2])
+				break;
+			case 1:
+				_explosion_x = (x + 56 * dcos(image_angle + _arm_rotations[_death_explosion_arm][2])) + 28 * dcos(image_angle - _arm_rotations[_death_explosion_arm][1])
+				_explosion_y = (y - 56 * dsin(image_angle + _arm_rotations[_death_explosion_arm][2])) - 28 * dsin(image_angle - _arm_rotations[_death_explosion_arm][1])
+				break;
+			case 2:
+				_explosion_x = (x + 56 * dcos(image_angle + _arm_rotations[_death_explosion_arm][2])) + 56 * dcos(image_angle - _arm_rotations[_death_explosion_arm][1])
+				_explosion_y = (y - 56 * dsin(image_angle + _arm_rotations[_death_explosion_arm][2])) - 56 * dsin(image_angle - _arm_rotations[_death_explosion_arm][1])
+				break;
+		}
+		
+		
+		
+		audio_play_sound(snd_enemy_killed, 0, false);
+		part_particles_burst(_particle_system, _explosion_x, _explosion_y, prt_boss_death_explosion_1);
+		_death_explosion_timer = 0.3333;	
+		
+		_arm_piece_destroyed[_death_explosion_arm][_death_explosion_arm_piece] = true;
+		
+		if (_death_explosion_arm_piece > 0) {
+			_death_explosion_arm_piece--;	
+		} else if(_death_explosion_arm > 0) {
+			_death_explosion_arm--;
+			_death_explosion_arm_piece = 2;
+		} else {
+			_death_explosion_arm--;
+			image_index = 0;
+			sprite_index = spr_boss_1_downed_anim;
+			_death_explosion_timer = 1.5;
+		}
+	} else {
+		part_particles_burst(_particle_system, x, y, prt_boss_death_explosion_2);
+		instance_destroy()
+	}
+}
+
 //Idle Movement
-if (!_attacking && !_targetable) {
+if (!_attacking && !_targetable && !_defeated) {
 	_shield_alpha = lerp(_shield_alpha, 1, 0.2);
 	_arm_state = "IDLE";
 	_rotation += 1 + 0.25 * _current_phase;
@@ -135,19 +217,22 @@ if (!_targetable) {
 			
 	switch (_arm_state) {
 		case "IDLE":
-			_arm_1_1_rotation_offset = lerp(_arm_1_1_rotation_offset, _target_arm_1_1_rotation_offset, 0.025);
-			_arm_1_2_rotation_offset = lerp(_arm_1_2_rotation_offset, _target_arm_1_2_rotation_offset, 0.025);
-			_arm_2_1_rotation_offset = lerp(_arm_2_1_rotation_offset, _target_arm_2_1_rotation_offset, 0.025);
-			_arm_2_2_rotation_offset = lerp(_arm_2_2_rotation_offset, _target_arm_2_2_rotation_offset, 0.025);
-			_arm_3_1_rotation_offset = lerp(_arm_3_1_rotation_offset, _target_arm_3_1_rotation_offset, 0.025);
-			_arm_3_2_rotation_offset = lerp(_arm_3_2_rotation_offset, _target_arm_3_2_rotation_offset, 0.025);
+			var _rotation_lerp = _arm_rotation_timer = _defeated ? 0.025 : 0.1;
+			var _offset_lerp = _arm_rotation_timer = _defeated ? 0.005 : 0.025;
 			
-			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _arm_state_idle[0]._arm_rot_1 + _arm_1_1_rotation_offset, 0.1);
-			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _arm_state_idle[0]._arm_rot_2 + _arm_1_2_rotation_offset, 0.1);
-			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _arm_state_idle[1]._arm_rot_1 + _arm_2_1_rotation_offset, 0.1);
-			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _arm_state_idle[1]._arm_rot_2 + _arm_2_2_rotation_offset, 0.1);
-			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _arm_state_idle[2]._arm_rot_1 + _arm_3_1_rotation_offset, 0.1);
-			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _arm_state_idle[2]._arm_rot_2 + _arm_3_2_rotation_offset, 0.1);
+			_arm_1_1_rotation_offset = lerp(_arm_1_1_rotation_offset, _target_arm_1_1_rotation_offset, _offset_lerp);
+			_arm_1_2_rotation_offset = lerp(_arm_1_2_rotation_offset, _target_arm_1_2_rotation_offset, _offset_lerp);
+			_arm_2_1_rotation_offset = lerp(_arm_2_1_rotation_offset, _target_arm_2_1_rotation_offset, _offset_lerp);
+			_arm_2_2_rotation_offset = lerp(_arm_2_2_rotation_offset, _target_arm_2_2_rotation_offset, _offset_lerp);
+			_arm_3_1_rotation_offset = lerp(_arm_3_1_rotation_offset, _target_arm_3_1_rotation_offset, _offset_lerp);
+			_arm_3_2_rotation_offset = lerp(_arm_3_2_rotation_offset, _target_arm_3_2_rotation_offset, _offset_lerp);
+			
+			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _arm_state_idle[0]._arm_rot_1 + _arm_1_1_rotation_offset, _rotation_lerp);
+			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _arm_state_idle[0]._arm_rot_2 + _arm_1_2_rotation_offset, _rotation_lerp);
+			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _arm_state_idle[1]._arm_rot_1 + _arm_2_1_rotation_offset, _rotation_lerp);
+			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _arm_state_idle[1]._arm_rot_2 + _arm_2_2_rotation_offset, _rotation_lerp);
+			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _arm_state_idle[2]._arm_rot_1 + _arm_3_1_rotation_offset, _rotation_lerp);
+			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _arm_state_idle[2]._arm_rot_2 + _arm_3_2_rotation_offset, _rotation_lerp);
 	
 			if (_arm_rotation_timer > 0) {
 			    _arm_rotation_timer -= global.game_speed * global.dt;
@@ -160,7 +245,7 @@ if (!_targetable) {
 				_target_arm_3_2_rotation_offset = -_target_arm_3_2_rotation_offset;
 				
 				_target_shield_scale_offset = -_target_shield_scale_offset;
-				_arm_rotation_timer = 0.75
+				_arm_rotation_timer = _defeated ? 0.15 : 0.75
 			}
 			break;
 		case "SPIN":

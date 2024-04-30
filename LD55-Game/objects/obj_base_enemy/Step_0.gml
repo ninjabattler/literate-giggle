@@ -3,7 +3,7 @@ rotate_enemy();
 
 path_speed = _speed * global.game_speed;
 
-if (_hp <= 0) {
+if (_hp <= 0 && !_has_death_anim) {
 	instance_destroy();	
 }
 

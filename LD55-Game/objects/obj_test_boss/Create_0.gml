@@ -6,7 +6,16 @@ path_end();
 depth = 0;
 x = 540;
 y = 540;
+_has_death_anim = true;
 _shield_alpha = 1;
+_particle_system = part_system_create(prt_boss_death_explosion_1);
+_death_explosion_1 = part_emitter_create(_particle_system);
+_death_explosion_timer = 1;
+_death_explosion_arm = 2;
+_death_explosion_arm_piece = 2;
+part_system_global_space(_particle_system, true);
+
+_defeated = false;
 
 _arm_state = "IDLE";
 _arm_state_idle = [
@@ -144,6 +153,24 @@ _arm_position_target_offsets = [
 	]
 ]
 
+_arm_piece_destroyed = [
+	[
+		false,
+		false,
+		false
+	],
+	[
+		false,
+		false,
+		false
+	],
+	[
+		false,
+		false,
+		false
+	]
+]
+
 _arm_1_1_rotation = 0;
 _arm_1_2_rotation = 0;
 _arm_1_1_rotation_offset = 0;
@@ -229,6 +256,7 @@ _fireball_teleport_timer = 0;
 _fireball_teleport_repeat = 5;
 
 _fireball_reflective_timer = 0;
+
 
 _current_attack = 0;
 _attack_orders = [
