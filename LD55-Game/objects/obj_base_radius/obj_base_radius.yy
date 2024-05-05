@@ -33,6 +33,7 @@
     {"$GMObjectProperty":"","%Name":"_enemy_to_follow","filters":[],"listItems":[],"multiselect":false,"name":"_enemy_to_follow","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_test_enemy_slow_man","varType":5,},
     {"$GMObjectProperty":"","%Name":"_particles","filters":[],"listItems":[],"multiselect":false,"name":"_particles","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"prt_ice_radius","varType":5,},
     {"$GMObjectProperty":"","%Name":"_radius_background_colour","filters":[],"listItems":[],"multiselect":false,"name":"_radius_background_colour","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FFFFFF00","varType":7,},
+    {"$GMObjectProperty":"","%Name":"_rotation_speed","filters":[],"listItems":[],"multiselect":false,"name":"_rotation_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"60","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

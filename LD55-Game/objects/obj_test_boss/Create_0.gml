@@ -257,7 +257,6 @@ _fireball_teleport_repeat = 5;
 
 _fireball_reflective_timer = 0;
 
-
 _current_attack = 0;
 _attack_orders = [
 	[

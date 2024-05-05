@@ -50,8 +50,6 @@ if (_defeated) {
 			],
 		]
 		
-		
-		
 		switch (_death_explosion_arm_piece) {
 			case 0:
 				_explosion_x = x + 28 * dcos(image_angle + _arm_rotations[_death_explosion_arm][2])
@@ -67,11 +65,15 @@ if (_defeated) {
 				break;
 		}
 		
-		
-		
 		audio_play_sound(snd_enemy_killed, 0, false);
 		part_particles_burst(_particle_system, _explosion_x, _explosion_y, prt_boss_death_explosion_1);
-		_death_explosion_timer = 0.3333;	
+		_death_explosion_timer = 0.3333;
+		
+		for (var _i = 0; _i < 5; _i++) {
+			var _soul = instance_create_depth(_explosion_x, _explosion_y, 0, obj_soul);
+			_soul.speed = 5;
+			_soul.alarm[1] = random_range(30, 45);
+		}
 		
 		_arm_piece_destroyed[_death_explosion_arm][_death_explosion_arm_piece] = true;
 		

@@ -1,6 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if (_particles != noone) {
-	_particle_system = part_system_create(_particles);
-}
+part_system_destroy(_glare);
+part_system_destroy(_glare_trail);

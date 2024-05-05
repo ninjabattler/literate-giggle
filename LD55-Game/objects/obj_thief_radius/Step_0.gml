@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
 
-if (_particles != noone) {
-	_particle_system = part_system_create(_particles);
-}
+x = _enemy_to_follow.x + 2;
