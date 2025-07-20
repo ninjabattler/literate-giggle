@@ -4,11 +4,11 @@
 global.spawn_x = self.x;
 global.spawn_y = self.y;
 
-_current_wave = 0;
+_current_wave = 4;
 _wave_timeline_complete = false;
 _waves = [];
 _wave_on_cooldown = true;
-_countdown = 10;
+_countdown = 100;
 _cooldown_drop = -300;
 _cooldown_current_y = -300;
 // alarm_set(1, 60);

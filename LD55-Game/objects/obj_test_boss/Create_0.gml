@@ -116,6 +116,34 @@ _arm_state_defense_3 = [
 		_arm_rot_2: 40
 	},
 ]
+_arm_state_single_laser = [
+	{
+		_arm_rot_1: 0,
+		_arm_rot_2: 0
+	},
+	{
+		_arm_rot_1: -120,
+		_arm_rot_2: -150
+	},
+	{
+		_arm_rot_1: 120,
+		_arm_rot_2: -210
+	},
+]
+_arm_state_stretched = [
+	{
+		_arm_rot_1: 0,
+		_arm_rot_2: 0
+	},
+	{
+		_arm_rot_1: 120,
+		_arm_rot_2: -120
+	},
+	{
+		_arm_rot_1: 240,
+		_arm_rot_2: 120
+	},
+]
 
 _arm_position_offsets = [
 	[
@@ -218,6 +246,11 @@ _fireball_spin = false;
 _fireball_burst = false;
 _fireball_reflective = false;
 _fireball_teleport = false;
+_single_laser = false;
+_double_laser = false;
+_triple_laser = false;
+_blue_lasers = [];
+_attack_name = "";
 
 _attack_timer = 3;
 
@@ -236,7 +269,7 @@ _laser_fan_max_repeat = 5;
 
 _laser_spin_timer = 0;
 _laser_spin_repeat = 0;
-_laser_spin_max_repeat = 120;
+_laser_spin_max_repeat = 30;
 
 _laser_teleport_fan_timer = 0;
 _laser_teleport_fan_repeat = 0;
@@ -245,7 +278,7 @@ _laser_teleport_fan_teleports = 5;
 
 _fireball_spin_timer = 0;
 _fireball_spin_repeat = 0;
-_fireball_spin_max_repeat = 120;
+_fireball_spin_max_repeat = 30;
 
 _fireball_burst_timer = 0;
 _fireball_burst_timer = 0;
@@ -254,6 +287,13 @@ _fireball_burst_max_repeat = 5;
 
 _fireball_teleport_timer = 0;
 _fireball_teleport_repeat = 5;
+
+_single_laser_timer = 4;
+_single_laser_repeat = 10;
+
+_triple_laser_projectile_timer = 2.5;
+_triple_laser_projectile_repeat = 320;
+_triple_laser_warning_timer = 2;
 
 _fireball_reflective_timer = 0;
 
@@ -265,13 +305,12 @@ _attack_orders = [
 		"LASER_FAN",
 		"FIREBALL_RING",
 		"FIREBALL_BURST",
-		"FIREBALL_REFLECTIVE"
+		"SINGLE_LASER"
 	],
 	[
 		"FIREBALL_RING",
 		"LASER_TELEPORT",
 		"LASER_FAN",
-		"FIREBALL_RING",
 		"FIREBALL_BURST",
 		"LASER_SPIN",
 		"FIREBALL_TELEPORT",
@@ -281,13 +320,13 @@ _attack_orders = [
 		"FIREBALL_RING",
 		"LASER_TELEPORT",
 		"LASER_FAN",
-		"FIREBALL_RING",
 		"FIREBALL_BURST",
 		"LASER_SPIN",
 		"LASER_TELEPORT_FAN",
 		"FIREBALL_SPIN",
 		"FIREBALL_TELEPORT",
-		"FIREBALL_REFLECTIVE"
+		"TRIPLE_LASER",
+		"FIREBALL_REFLECTIVE",
 	],
 ]
 

@@ -8,12 +8,16 @@ if (_laser_timer > 0) {
 	
 	image_angle = direction;
 	part_system_position(_particle_system, x, y);
-	move_towards_point(x + 32 * dcos(direction), y - 32 * dsin(direction), 1)
+	move_towards_point(x + 32 * dcos(direction), y - 32 * dsin(direction), _laser_movement_speed)
 } else {
 	if (!_sound_played) {
-		audio_play_sound(snd_boss_1_laser, 0, false);
+		if (!_silent) {
+			audio_play_sound(snd_boss_1_laser, 0, false);
+		}
+		
 		_particle_system2 = part_system_create(prt_boss_laser_burst);
 		part_system_position(_particle_system2, x, y);
+		part_system_angle(_particle_system2, direction);
 		_sound_played = true;
 	}
 	

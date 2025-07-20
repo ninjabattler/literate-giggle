@@ -1,0 +1,26 @@
+{
+  "$GMParticleSystem":"",
+  "%Name":"prt_boss_fire_blue",
+  "backdropHeight":768,
+  "backdropImageOpacity":0.5,
+  "backdropImagePath":"",
+  "backdropWidth":1366,
+  "backdropXOffset":0.0,
+  "backdropYOffset":0.0,
+  "drawOrder":1,
+  "emitters":[
+    {"$GMPSEmitter":"","%Name":"Laser Dust","additiveBlend":true,"directionIncrease":-3.0,"directionMax":250.0,"directionMin":110.0,"directionWiggle":4.0,"distribution":0,"editorColour":16777215,"editorDrawShape":true,"emitCount":3,"emitDelayMax":0.0,"emitDelayMin":0.0,"emitDelayUnits":1,"emitIntervalMax":0.0,"emitIntervalMin":0.0,"emitIntervalUnits":0,"enabled":true,"endColour":16777028,"GMPresetName":null,"gravityDirection":0.0,"gravityForce":0.0,"headPosition":0.0,"lifetimeMax":45.0,"lifetimeMin":15.0,"linkedEmitter":null,"locked":false,"midColour":452984644,"mode":0,"name":"Laser Dust","orientationIncrease":0.0,"orientationMax":0.0,"orientationMin":0.0,"orientationRelative":true,"orientationWiggle":0.0,"regionH":1.0,"regionW":1.0,"regionX":-20.0,"regionY":0.0,"resourceType":"GMPSEmitter","resourceVersion":"2.0","scaleX":1.0,"scaleY":0.1,"shape":0,"sizeIncrease":-0.025,"sizeMax":1.5,"sizeMin":1.5,"sizeWiggle":0.025,"spawnOnDeathCount":1,"spawnOnDeathGMPreset":null,"spawnOnDeathId":null,"spawnOnUpdateCount":1,"spawnOnUpdateGMPreset":null,"spawnOnUpdateId":null,"speedIncrease":-1.0,"speedMax":60.0,"speedMin":0.0,"speedWiggle":0.0,"spriteAnimate":false,"spriteId":null,"spriteRandom":false,"spriteStretch":true,"startColour":2197815108,"texture":8,},
+    {"$GMPSEmitter":"","%Name":"Emitter","additiveBlend":true,"directionIncrease":0.0,"directionMax":0.0,"directionMin":180.0,"directionWiggle":0.0,"distribution":0,"editorColour":1090519039,"editorDrawShape":true,"emitCount":5,"emitDelayMax":0.0,"emitDelayMin":0.0,"emitDelayUnits":1,"emitIntervalMax":3.0,"emitIntervalMin":3.0,"emitIntervalUnits":1,"enabled":true,"endColour":16777123,"GMPresetName":null,"gravityDirection":270.0,"gravityForce":0.0,"headPosition":0.0,"lifetimeMax":30.0,"lifetimeMin":15.0,"linkedEmitter":null,"locked":false,"midColour":1006632867,"mode":0,"name":"Emitter","orientationIncrease":0.0,"orientationMax":0.0,"orientationMin":0.0,"orientationRelative":true,"orientationWiggle":0.0,"regionH":6.0,"regionW":6.0,"regionX":0.0,"regionY":0.0,"resourceType":"GMPSEmitter","resourceVersion":"2.0","scaleX":0.25,"scaleY":3.0,"shape":0,"sizeIncrease":0.01,"sizeMax":0.275,"sizeMin":0.275,"sizeWiggle":0.1,"spawnOnDeathCount":1,"spawnOnDeathGMPreset":null,"spawnOnDeathId":null,"spawnOnUpdateCount":1,"spawnOnUpdateGMPreset":null,"spawnOnUpdateId":null,"speedIncrease":0.0,"speedMax":1.0,"speedMin":1.0,"speedWiggle":0.1,"spriteAnimate":false,"spriteId":null,"spriteRandom":false,"spriteStretch":true,"startColour":4294967295,"texture":8,},
+  ],
+  "name":"prt_boss_fire_blue",
+  "parent":{
+    "name":"Particle Systems",
+    "path":"folders/Particle Systems.yy",
+  },
+  "resourceType":"GMParticleSystem",
+  "resourceVersion":"2.0",
+  "showBackdrop":true,
+  "showBackdropImage":false,
+  "xorigin":-20,
+  "yorigin":0,
+}

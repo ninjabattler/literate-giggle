@@ -33,26 +33,69 @@ for(var _i = 0; _i < array_length(_arm_rotation_states); _i++) {
 		_arm3 = spr_boss_1_arm_3;
 	}
 	
-	var _arm_off_1_x = _arm_position_offsets[_i][0] * dcos(image_angle);
-	var _arm_off_1_y = _arm_position_offsets[_i][0] * dsin(image_angle);
-	var _arm_off_2_x = _arm_position_offsets[_i][1] * dcos(image_angle + _arm_rotation_1);
-	var _arm_off_2_y = _arm_position_offsets[_i][1] * dsin(image_angle + _arm_rotation_1);
-	var _arm_pos_3_x = _arm_position_offsets[_i][2] * dcos(image_angle + _arm_rotation_2);
-	var _arm_pos_3_y = _arm_position_offsets[_i][2] * dsin(image_angle + _arm_rotation_2);
+	var _arm_base_1 = image_angle;
+	var _arm_base_2 = image_angle;
+	var _arm_base_3 = image_angle;
+	
+	if (_arm_state == "STRETCHED") {
+		_arm_base_1 = -90;	
+		_arm_base_2 = -90;	
+		_arm_base_3 = -90;	
+	}
+	
+	if (_arm_state == "SINGLE_LASER") {
+		_arm_base_1 = -90;	
+	}
+	
+	var _arm_off_1_x = _arm_position_offsets[_i][0] * dcos(_arm_base_1);
+	var _arm_off_1_y = _arm_position_offsets[_i][0] * dsin(_arm_base_1);
+	var _arm_off_2_x = _arm_position_offsets[_i][1] * dcos(_arm_base_2 + _arm_rotation_1);
+	var _arm_off_2_y = _arm_position_offsets[_i][1] * dsin(_arm_base_2 + _arm_rotation_1);
+	var _arm_pos_3_x = _arm_position_offsets[_i][2] * dcos(_arm_base_3 + _arm_rotation_2);
+	var _arm_pos_3_y = _arm_position_offsets[_i][2] * dsin(_arm_base_3 + _arm_rotation_2);
+	
+	var _arm_base = _arm_base_1;
+	
+	if (_i = 1) {
+		_arm_base = _arm_base_2;	
+	}
+	
+	if (_i = 2) {
+		_arm_base = _arm_base_3;	
+	}
 	
 	if (!_arm_piece_destroyed[_i][0]) {
-		draw_sprite_ext(spr_boss_1_arm_1, image_index, x + _arm_off_1_x, y - _arm_off_1_y, 1, 1, image_angle + _arm_rotation_1, c_white, 1);
+		draw_sprite_ext(spr_boss_1_arm_1, image_index, x + _arm_off_1_x, y - _arm_off_1_y, 1, 1, _arm_base + _arm_rotation_1, c_white, 1);
 	}
 	
 	if (!_arm_piece_destroyed[_i][1]) {
-		draw_sprite_ext(spr_boss_1_arm_2, image_index, x + _arm_off_2_x + 56 * dcos(image_angle + _arm_rotation_1), y - _arm_off_2_y - 56 * dsin(image_angle + _arm_rotation_1), 1, 1, image_angle - _arm_rotation_2, c_white, 1);
+		draw_sprite_ext(spr_boss_1_arm_2, image_index, x + _arm_off_2_x + 56 * dcos(_arm_base + _arm_rotation_1), y - _arm_off_2_y - 56 * dsin(_arm_base + _arm_rotation_1), 1, 1, _arm_base - _arm_rotation_2, c_white, 1);
 	}
 	
 	if (!_arm_piece_destroyed[_i][2]) {
-		draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(image_angle + _arm_rotation_1)) + 56 * dcos(image_angle - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(image_angle + _arm_rotation_1)) - 56 * dsin(image_angle - _arm_rotation_2), 1, 1,  image_angle - _arm_rotation_2 + 30, c_white, 1);
+		draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(_arm_base + _arm_rotation_1)) + 56 * dcos(_arm_base - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(_arm_base + _arm_rotation_1)) - 56 * dsin(_arm_base - _arm_rotation_2), 1, 1,  _arm_base - _arm_rotation_2 + 30, c_white, 1);
 	}
 }
 
 draw_self();
 
-draw_sprite_ext(spr_boss_1_radius, image_index, x, y, 1.2 + _shield_scale_offset, 1.2 + _shield_scale_offset, _shield_rotate, c_white, _shield_alpha);	
+draw_sprite_ext(spr_boss_1_radius, image_index, x, y, 1.2 + _shield_scale_offset, 1.2 + _shield_scale_offset, _shield_rotate, c_white, _shield_alpha);
+
+draw_set_alpha(1);
+
+if (_attacking) {
+	draw_set_valign(fa_bottom);
+	var _box_width = string_width(_attack_name);
+	var _box_height = string_height(_attack_name);
+	var _text_y = y - 130;
+	
+	if (y < room_height / 2) {
+		draw_set_valign(fa_top);
+		_text_y = y + 130;
+	}
+	
+	draw_set_color(#FF91FF);
+	draw_rectangle(x - (_box_width / 2), _text_y, x + (_box_width / 2), _text_y, false);
+	
+	draw_text_ext_colour(x, _text_y, _attack_name, _box_height, _box_width, c_white, c_white, #FF91FF, #FF91FF, 1);
+}
