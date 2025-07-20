@@ -197,6 +197,7 @@
     {"id":{"name":"scr_create_enemy","path":"scripts/scr_create_enemy/scr_create_enemy.yy",},},
     {"id":{"name":"scr_draw_lightning","path":"scripts/scr_draw_lightning/scr_draw_lightning.yy",},},
     {"id":{"name":"scr_enemy_ai","path":"scripts/scr_enemy_ai/scr_enemy_ai.yy",},},
+    {"id":{"name":"scr_instance_nth_nearest","path":"scripts/scr_instance_nth_nearest/scr_instance_nth_nearest.yy",},},
     {"id":{"name":"sh_test","path":"shaders/sh_test/sh_test.yy",},},
     {"id":{"name":"snd_boss_1_growl","path":"sounds/snd_boss_1_growl/snd_boss_1_growl.yy",},},
     {"id":{"name":"snd_boss_1_laser","path":"sounds/snd_boss_1_laser/snd_boss_1_laser.yy",},},
