@@ -6,6 +6,7 @@ _hp = _max_hp;
 _heal_cooldown = false;
 _slowed = false;
 _speed *= global.game_speed;
+_image_tint = #ffffff;
 
 if(room == Level1) {
 	init_enemy(_speed, pth_level_1);

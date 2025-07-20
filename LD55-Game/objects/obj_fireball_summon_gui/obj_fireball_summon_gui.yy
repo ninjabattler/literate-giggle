@@ -2,19 +2,23 @@
   "$GMObject":"",
   "%Name":"obj_fireball_summon_gui",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_fireball_summon_gui",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_gui_base","path":"objects/obj_summon_gui_base/obj_summon_gui_base.yy",},"propertyId":{"name":"cost","path":"objects/obj_summon_gui_base/obj_summon_gui_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"8",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_gui_base","path":"objects/obj_summon_gui_base/obj_summon_gui_base.yy",},"propertyId":{"name":"name","path":"objects/obj_summon_gui_base/obj_summon_gui_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Fireball",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_gui_base","path":"objects/obj_summon_gui_base/obj_summon_gui_base.yy",},"propertyId":{"name":"summon_id","path":"objects/obj_summon_gui_base/obj_summon_gui_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"FIREBALL",},
+  ],
   "parent":{
     "name":"Summons",
     "path":"folders/Objects/GUI/Summons.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_summon_gui_base",
+    "path":"objects/obj_summon_gui_base/obj_summon_gui_base.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -11,8 +11,8 @@
   "name":"obj_arrow_base",
   "overriddenProperties":[],
   "parent":{
-    "name":"Summons",
-    "path":"folders/Objects/GUI/Summons.yy",
+    "name":"Arrows",
+    "path":"folders/Objects/GUI/Summons/Arrows.yy",
   },
   "parentObjectId":null,
   "persistent":false,

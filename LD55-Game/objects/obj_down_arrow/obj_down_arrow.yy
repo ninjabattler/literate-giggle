@@ -12,8 +12,8 @@
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"gp_key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"32782",},
   ],
   "parent":{
-    "name":"Summons",
-    "path":"folders/Objects/GUI/Summons.yy",
+    "name":"Arrows",
+    "path":"folders/Objects/GUI/Summons/Arrows.yy",
   },
   "parentObjectId":{
     "name":"obj_arrow_base",

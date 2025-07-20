@@ -91,9 +91,9 @@
   "isDnd":false,
   "layers":[
     {"$GMRLayer":"","%Name":"Sun","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
-        {"$GMRInstanceLayer":"","%Name":"Instances_4","depth":100,"effectEnabled":true,"effectType":"_effect_glow","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-            {"$GMRInstance":"","%Name":"inst_2BF95E38","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2BF95E38","objectId":{"name":"obj_sun","path":"objects/obj_sun/obj_sun.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":5.0,"x":-416.0,"y":-416.0,},
-          ],"layers":[],"name":"Instances_4","properties":[
+        {"$GMRInstanceLayer":"","%Name":"Lighting","depth":100,"effectEnabled":true,"effectType":"_effect_glow","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+            {"$GMRInstance":"","%Name":"inst_2BF95E38","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2BF95E38","objectId":{"name":"obj_sun","path":"objects/obj_sun/obj_sun.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":5.0,"x":-416.0,"y":-416.0,},
+          ],"layers":[],"name":"Lighting","properties":[
             {"name":"g_GlowRadius","type":0,"value":"1024",},
             {"name":"g_GlowQuality","type":0,"value":"10",},
             {"name":"g_GlowIntensity","type":0,"value":"1",},

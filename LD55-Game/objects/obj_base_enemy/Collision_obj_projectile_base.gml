@@ -1,5 +1,5 @@
 /// @description Insert description here
 // Flicker red
 
-image_blend = #ffbbbb;
+_image_tint = #ffbbbb;
 alarm_set(3, 10);
