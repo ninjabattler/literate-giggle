@@ -1,4 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-part_system_destroy(_particle_system);
+if (_particles != noone) {
+	part_system_destroy(_particle_system);
+}

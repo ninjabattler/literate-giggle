@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+part_system_position(_glare, x, y);
+part_system_position(_glare_trail, x, y);
+
 if (distance_to_object(obj_player) < 60 && !_follow) {
 	_follow_player = true;	
 }

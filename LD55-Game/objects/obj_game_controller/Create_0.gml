@@ -7,6 +7,8 @@ audio_group_load(music)
 
 depth = -100;
 
+global.show_options = false;
+
 // Global Speed
 global.game_speed = 1;
 global.dt = delta_time / 1000000;
@@ -39,6 +41,7 @@ global.summon_placement_y = 0;
 global.paused_surf = -1;
 exit_button = self;
 resume_button = self;
+options_button = self;
 
 #macro FIREBALL obj_fireball_summon
 #macro ICEBLAST obj_iceblast_summon

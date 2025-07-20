@@ -2,7 +2,7 @@
 // You can write your code in this editor
 _colour_tint = #ffffff
 
-depth = 100;
+depth = 0;
 //ran_num = random(1);
 
 //if(ran_num < 0.5) {
