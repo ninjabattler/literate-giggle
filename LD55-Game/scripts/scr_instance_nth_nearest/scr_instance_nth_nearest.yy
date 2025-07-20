@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_instance_nth_nearest",
   "isCompatibility":false,
   "isDnD":false,

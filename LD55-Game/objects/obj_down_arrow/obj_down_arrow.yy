@@ -2,14 +2,14 @@
   "$GMObject":"",
   "%Name":"obj_down_arrow",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":11,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":11,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_down_arrow",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"S\"",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"gp_key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"32782",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"S\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"propertyId":{"name":"gp_key","path":"objects/obj_arrow_base/obj_arrow_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"32782",},
   ],
   "parent":{
     "name":"Arrows",

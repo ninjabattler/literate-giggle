@@ -2,16 +2,16 @@
   "$GMObject":"",
   "%Name":"obj_thief_radius",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_thief_radius",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_radius_background_colour","path":"objects/obj_base_radius/obj_base_radius.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$0000C3FF",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_enemy_to_follow","path":"objects/obj_base_radius/obj_base_radius.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_test_enemy_thiefy",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_particles","path":"objects/obj_base_radius/obj_base_radius.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"noone",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_rotation_speed","path":"objects/obj_base_radius/obj_base_radius.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-600",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_radius_background_colour","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$0000C3FF",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_enemy_to_follow","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_test_enemy_thiefy",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_particles","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"noone",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_rotation_speed","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-600",},
   ],
   "parent":{
     "name":"Enemies",

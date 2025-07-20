@@ -5,7 +5,7 @@
   "managed":true,
   "name":"obj_fireball_summon",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"max_range","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"300",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"max_range","path":"objects/obj_summon_base/obj_summon_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"300",},
   ],
   "parent":{
     "name":"Summons",

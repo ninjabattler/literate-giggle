@@ -2,13 +2,13 @@
   "$GMObject":"",
   "%Name":"obj_sound_slider",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_sound_slider",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_slider","path":"objects/obj_base_slider/obj_base_slider.yy",},"propertyId":{"name":"_label","path":"objects/obj_base_slider/obj_base_slider.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Sounds Effects",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_slider","path":"objects/obj_base_slider/obj_base_slider.yy",},"propertyId":{"name":"_label","path":"objects/obj_base_slider/obj_base_slider.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Sounds Effects",},
   ],
   "parent":{
     "name":"GUI",
