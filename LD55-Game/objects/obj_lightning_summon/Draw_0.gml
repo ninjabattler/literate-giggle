@@ -22,9 +22,9 @@ if (attacking) {
 		draw_lightning(x, y, lightning_target_x, lightning_target_y, true, c_purple, lightning_seed);
 		
 		// Arc to nearby enemies
-		//if(random(1) < 0.5) {
-		//	var _target1 = instance_nth_nearest(lightning_target_x, lightning_target_y, obj_base_enemy, 2);
-		//	draw_lightning(lightning_target_x, lightning_target_y, _target1.x, _target1.y, true, c_purple, lightning_seed);
-		//}
+		if(random(1) < 0.5) {
+			var _target1 = instance_nth_nearest(lightning_target_x, lightning_target_y, obj_base_enemy, 2);
+			draw_lightning(lightning_target_x, lightning_target_y, _target1.x, _target1.y, true, c_purple, lightning_seed);
+		}
 	}
 }
