@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"LD55",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -63,11 +63,12 @@
     {"$GMFolder":"","%Name":"Level 5","folderPath":"folders/Timelines/Level 5.yy","name":"Level 5","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"TestRoomWaves","folderPath":"folders/Timelines/TestRoomWaves.yy","name":"TestRoomWaves","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"LD55",
   "resources":[
@@ -75,6 +76,7 @@
     {"id":{"name":"fnt_griffy","path":"fonts/fnt_griffy/fnt_griffy.yy",},},
     {"id":{"name":"Contributors","path":"notes/Contributors/Contributors.yy",},},
     {"id":{"name":"LICENSE","path":"notes/LICENSE/LICENSE.yy",},},
+    {"id":{"name":"obj_arc_summon","path":"objects/obj_arc_summon/obj_arc_summon.yy",},},
     {"id":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},},
     {"id":{"name":"obj_attack_arc","path":"objects/obj_attack_arc/obj_attack_arc.yy",},},
     {"id":{"name":"obj_base_button","path":"objects/obj_base_button/obj_base_button.yy",},},
@@ -116,7 +118,6 @@
     {"id":{"name":"obj_level5_spawner","path":"objects/obj_level5_spawner/obj_level5_spawner.yy",},},
     {"id":{"name":"obj_lightning_summon_gui","path":"objects/obj_lightning_summon_gui/obj_lightning_summon_gui.yy",},},
     {"id":{"name":"obj_lightning_summon","path":"objects/obj_lightning_summon/obj_lightning_summon.yy",},},
-    {"id":{"name":"obj_arc_summon","path":"objects/obj_arc_summon/obj_arc_summon.yy",},},
     {"id":{"name":"obj_lightning","path":"objects/obj_lightning/obj_lightning.yy",},},
     {"id":{"name":"obj_map_1_path","path":"objects/obj_map_1_path/obj_map_1_path.yy",},},
     {"id":{"name":"obj_map_2_path","path":"objects/obj_map_2_path/obj_map_2_path.yy",},},

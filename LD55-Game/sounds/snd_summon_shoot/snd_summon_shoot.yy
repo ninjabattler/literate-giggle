@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.187982,
+  "duration":0.18798186,
   "name":"snd_summon_shoot",
   "parent":{
     "name":"Sounds",

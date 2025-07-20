@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.485646,
+  "duration":1.4856462,
   "name":"snd_boss_killed",
   "parent":{
     "name":"Sounds",

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.154739,
+  "duration":0.15473923,
   "name":"snd_summon_obstruction",
   "parent":{
     "name":"Sounds",

@@ -5,8 +5,8 @@
   "managed":true,
   "name":"obj_heal_radius",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_radius_background_colour","path":"objects/obj_base_radius/obj_base_radius.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$FF0CFF5D",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_particles","path":"objects/obj_base_radius/obj_base_radius.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"prt_heal_radius",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_radius_background_colour","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$FF0CFF5D",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_particles","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"prt_heal_radius",},
   ],
   "parent":{
     "name":"Enemies",
