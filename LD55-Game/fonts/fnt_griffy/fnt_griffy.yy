@@ -3,7 +3,7 @@
   "%Name":"fnt_griffy",
   "AntiAlias":1,
   "applyKerning":0,
-  "ascender":18,
+  "ascender":19,
   "ascenderOffset":0,
   "bold":false,
   "canGenerateBitmap":true,
@@ -134,10 +134,7 @@
   "sdfSpread":8,
   "size":15.0,
   "styleName":"Regular",
-  "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
-  },
+  "textureGroupId":null,
   "TTFName":null,
   "usesSDF":false,
 }
