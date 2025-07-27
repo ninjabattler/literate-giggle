@@ -3,7 +3,7 @@
 
 _target_rotation = direction;
 image_angle = direction;
-part_system_position(_particle_system, x, y);
+//part_system_position(_particle_system, x, y);
 part_system_position(_particle_system2, x, y);
 part_system_angle(_particle_system2, direction - 90);
 
@@ -21,3 +21,9 @@ if (_speed_up = false) {
 } else {
 	_current_speed = lerp(_current_speed, _max_speed, 0.015);
 }
+
+array_shift(_curve_points_x);
+array_shift(_curve_points_y);
+
+array_push(_curve_points_x, self.x);
+array_push(_curve_points_y, self.y);

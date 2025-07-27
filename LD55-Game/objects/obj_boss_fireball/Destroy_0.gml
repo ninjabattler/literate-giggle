@@ -6,5 +6,5 @@ if (_game_slow_speed) {
 
 obj_test_boss._attacking = false;
 
-part_system_destroy(_particle_system);
+// part_system_destroy(_particle_system);
 part_system_destroy(_particle_system2);

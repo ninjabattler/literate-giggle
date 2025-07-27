@@ -13,7 +13,7 @@
   "managed":true,
   "name":"obj_test_boss",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_max_hp","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"360",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_enemy","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"propertyId":{"name":"_max_hp","path":"objects/obj_base_enemy/obj_base_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"360",},
   ],
   "parent":{
     "name":"Enemies",

@@ -3,7 +3,7 @@
 
 _target_rotation = direction;
 image_angle = direction;
-part_system_position(_particle_system, x, y);
+//part_system_position(_particle_system, x, y);
 part_system_position(_particle_system2, x, y);
 part_system_angle(_particle_system2, direction - 90);
 
@@ -20,3 +20,9 @@ if (_game_speed_reset_timer > 0) {
 }
 
 _speed += 0.1 * global.game_speed
+
+array_shift(_curve_points_x);
+array_shift(_curve_points_y);
+
+array_push(_curve_points_x, self.x);
+array_push(_curve_points_y, self.y);

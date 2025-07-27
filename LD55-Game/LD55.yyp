@@ -238,6 +238,7 @@
     {"id":{"name":"spr_enemy_boss","path":"sprites/spr_enemy_boss/spr_enemy_boss.yy",},},
     {"id":{"name":"spr_enemy_boss54","path":"sprites/spr_enemy_boss54/spr_enemy_boss54.yy",},},
     {"id":{"name":"spr_exit_button","path":"sprites/spr_exit_button/spr_exit_button.yy",},},
+    {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},},
     {"id":{"name":"spr_fireball_summon_gui","path":"sprites/spr_fireball_summon_gui/spr_fireball_summon_gui.yy",},},
     {"id":{"name":"spr_fireball_summon","path":"sprites/spr_fireball_summon/spr_fireball_summon.yy",},},
     {"id":{"name":"spr_fireball","path":"sprites/spr_fireball/spr_fireball.yy",},},
