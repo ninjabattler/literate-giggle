@@ -665,7 +665,7 @@ if (_attacking && _laser_teleport_fan) {
 		} else if (_laser_teleport_fan_teleports > 0) {
 			_laser_teleport_fan_teleports--;
 			_laser_teleport_fan_repeat = 0;
-			_laser_teleport_fan_timer = 1;
+			_laser_teleport_fan_timer = 0.75;
 
 			_rotation += random_range(0, 360);
 			x = 960 + radius * dcos(_rotation);
@@ -725,7 +725,7 @@ if (_attacking && _fireball_burst) {
 	}
 }
 
-//Fireball Teleport
+//Laser Grid
 if (_attacking && _fireball_teleport) {
 	if (_fireball_teleport_timer > 0) {
 	    _fireball_teleport_timer -= global.game_speed * global.dt;
@@ -745,7 +745,7 @@ if (_attacking && _fireball_teleport) {
 			_laser._laser_movement_speed = 0;
 			_laser._silent = true;
 			
-			if (_i > 0 && _fireball_teleport_repeat > 1) {
+			if (_i == 0 && _fireball_teleport_repeat == 1) {
 				_laser._silent = false;
 			}
 		}
@@ -806,7 +806,7 @@ if (_attacking && _single_laser) {
 			_attack_timer = 3;
 			_single_laser = false;
 			_single_laser_timer = 4;
-			_single_laser_repeat = 10;
+			_single_laser_repeat = 5;
 			
 			_blue_lasers = [];
 			

@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_griffy",
+  "%Name":"fnt_griffy_small",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":38,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":54,
   "maintainGms1Font":false,
-  "name":"fnt_griffy",
+  "name":"fnt_griffy_small",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",

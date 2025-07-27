@@ -84,6 +84,7 @@ draw_sprite_ext(spr_boss_1_radius, image_index, x, y, 1.2 + _shield_scale_offset
 draw_set_alpha(1);
 
 if (_attacking) {
+	draw_set_font(fnt_griffy_small);
 	draw_set_valign(fa_bottom);
 	var _box_width = string_width(_attack_name);
 	var _box_height = string_height(_attack_name);
@@ -96,6 +97,5 @@ if (_attacking) {
 	
 	draw_set_color(#FF91FF);
 	draw_rectangle(x - (_box_width / 2), _text_y, x + (_box_width / 2), _text_y, false);
-	
 	draw_text_ext_colour(x, _text_y, _attack_name, _box_height, _box_width, c_white, c_white, #FF91FF, #FF91FF, 1);
 }

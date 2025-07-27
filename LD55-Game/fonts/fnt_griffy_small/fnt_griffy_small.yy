@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_griffy",
+  "%Name":"fnt_griffy_small",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":19,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":27,
   "maintainGms1Font":false,
-  "name":"fnt_griffy",
+  "name":"fnt_griffy_small",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",
@@ -134,7 +134,10 @@
   "sdfSpread":8,
   "size":15.0,
   "styleName":"Regular",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":null,
   "usesSDF":false,
 }

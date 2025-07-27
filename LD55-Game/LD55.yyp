@@ -72,6 +72,8 @@
   },
   "name":"LD55",
   "resources":[
+    {"id":{"name":"fnt_boss_name","path":"fonts/fnt_boss_name/fnt_boss_name.yy",},},
+    {"id":{"name":"fnt_griffy_small","path":"fonts/fnt_griffy_small/fnt_griffy_small.yy",},},
     {"id":{"name":"fnt_griffy_title","path":"fonts/fnt_griffy_title/fnt_griffy_title.yy",},},
     {"id":{"name":"fnt_griffy","path":"fonts/fnt_griffy/fnt_griffy.yy",},},
     {"id":{"name":"Contributors","path":"notes/Contributors/Contributors.yy",},},

@@ -289,7 +289,7 @@ _fireball_teleport_timer = 0;
 _fireball_teleport_repeat = 5;
 
 _single_laser_timer = 4;
-_single_laser_repeat = 10;
+_single_laser_repeat = 5;
 
 _triple_laser_projectile_timer = 2.5;
 _triple_laser_projectile_repeat = 320;
