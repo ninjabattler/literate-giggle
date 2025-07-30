@@ -7,5 +7,5 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 	
 draw_set_colour(global.text_color);
-draw_text_transformed(x, y + 250, "Use Left Click to Attack", 2, 2, 0);
-draw_text_transformed(x, y + 355, "Summon Towers with [CTRL]", 1.8, 1.8, 0);
+draw_text_transformed(x, y + 250, "Use Left Click to Attack", 1, 1, 0);
+draw_text_transformed(x, y + 355, "Summon Towers with [CTRL]", 0.9, 0.9, 0);

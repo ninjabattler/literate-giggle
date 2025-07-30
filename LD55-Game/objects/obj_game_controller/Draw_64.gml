@@ -29,7 +29,7 @@ if(global.game_paused == true) {
 		draw_sprite(spr_gui_title, 0, room_width / 2, 300);
 		draw_set_font(fnt_griffy_title);
 	    draw_set_valign(fa_bottom);
-	    draw_text_transformed_colour(room_width / 2, 300, "Paused", 2, 2, 0, global.text_color, global.text_color, global.text_color, global.text_color, 1);
+	    draw_text_transformed_colour(room_width / 2, 300, "Paused", 1, 1, 0, global.text_color, global.text_color, global.text_color, global.text_color, 1);
 		draw_set_font(fnt_griffy);
 	    draw_set_halign(fa_left);
     }

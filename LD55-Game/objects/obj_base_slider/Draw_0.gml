@@ -8,7 +8,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 	
 draw_set_colour(global.text_color);
-draw_text_transformed(x, y - 16, _label, 2, 2, 0);
+draw_text_transformed(x, y - 16, _label, 1, 1, 0);
 
 draw_set_halign(fa_right);
-draw_text_transformed(x + sprite_width, y - 16, $"{_current_percent}%", 2, 2, 0);
+draw_text_transformed(x + sprite_width, y - 16, $"{_current_percent}%", 1, 1, 0);

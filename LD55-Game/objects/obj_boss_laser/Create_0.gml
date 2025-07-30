@@ -17,7 +17,7 @@ _zoom_unblur = false;
 _particle_update_timer = 0;
 
 _laser_timer = 0.65;
-_laser_movement_speed = 1;
+_laser_movement_speed = 8;
 _current_laser_width = 0;
 _target_laser_width = 10;
 
