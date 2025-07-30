@@ -188,7 +188,6 @@
     {"id":{"name":"pth_level_4","path":"paths/pth_level_4/pth_level_4.yy",},},
     {"id":{"name":"pth_level_5_2","path":"paths/pth_level_5_2/pth_level_5_2.yy",},},
     {"id":{"name":"pth_level_5","path":"paths/pth_level_5/pth_level_5.yy",},},
-    {"id":{"name":"BulbTest","path":"rooms/BulbTest/BulbTest.yy",},},
     {"id":{"name":"Level1","path":"rooms/Level1/Level1.yy",},},
     {"id":{"name":"Level2","path":"rooms/Level2/Level2.yy",},},
     {"id":{"name":"Level3","path":"rooms/Level3/Level3.yy",},},
@@ -343,7 +342,6 @@
     {"roomId":{"name":"Level3","path":"rooms/Level3/Level3.yy",},},
     {"roomId":{"name":"Level4","path":"rooms/Level4/Level4.yy",},},
     {"roomId":{"name":"Level5","path":"rooms/Level5/Level5.yy",},},
-    {"roomId":{"name":"BulbTest","path":"rooms/BulbTest/BulbTest.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

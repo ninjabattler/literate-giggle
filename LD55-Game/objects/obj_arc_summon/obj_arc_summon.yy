@@ -10,10 +10,10 @@
   "managed":true,
   "name":"obj_arc_summon",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"projectile","path":"objects/obj_summon_base/obj_summon_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_iceblast",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"projectile_speed","path":"objects/obj_summon_base/obj_summon_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"8",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"max_range","path":"objects/obj_summon_base/obj_summon_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"350",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"damage","path":"objects/obj_summon_base/obj_summon_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"4",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"projectile","path":"objects/obj_summon_base/obj_summon_base.yy",},"resource":{"name":"obj_iceblast","path":"objects/obj_iceblast/obj_iceblast.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_iceblast",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"projectile_speed","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"8",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"max_range","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"350",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_summon_base","path":"objects/obj_summon_base/obj_summon_base.yy",},"propertyId":{"name":"damage","path":"objects/obj_summon_base/obj_summon_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"4",},
   ],
   "parent":{
     "name":"Summons",
