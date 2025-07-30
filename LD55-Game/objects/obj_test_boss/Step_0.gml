@@ -5,6 +5,11 @@ event_inherited();
 image_angle = _sprite_rotation;
 
 _shield_rotate += global.game_speed;
+_shield_index += global.dt * 24;
+
+if (_shield_index > 179) {
+	_shield_index = 0;	
+}
 
 for (var _i = 0; _i < array_length(_arm_position_offsets); _i++) {
 	for (var _j = 0; _j < array_length(_arm_position_offsets[_i]); _j++) {
@@ -102,8 +107,8 @@ if (!_attacking && !_targetable && !_defeated) {
 	_arm_state = "IDLE";
 	_rotation += 1 + 0.3 * _current_phase;
 	sprite_index = spr_boss_1;
-	x = 960 + radius * dcos(_rotation)
-	y = 540 - radius * dsin(_rotation)
+	x =  960 + radius * dcos(_rotation)
+	y =  540 - radius * dsin(_rotation)
 
 	if (_attack_timer > 0) {
 		_attack_name = ""
@@ -784,7 +789,6 @@ if (_attacking && _single_laser) {
 		for(var _i = 0; _i< 8; _i++){
 			var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
 			_laser.direction = (_i * 45);
-			_laser._laser_movement_speed = 0;
 			_laser._laser_timer = 1.25;
 				
 			if (_i > 0) {
@@ -814,6 +818,7 @@ if (_attacking && _single_laser) {
 			self._targetable_timer = 10;
 			audio_play_sound(snd_enemy_hurt, 0, false);
 			self.sprite_index = spr_boss_1_downed_anim;
+			self.image_index = 0;
 		
 			for (var _i = 0; _i < array_length(self._arm_position_target_offsets); _i++) {
 				for (var _j = 0; _j < array_length(self._arm_position_target_offsets[_i]); _j++) {
@@ -826,8 +831,8 @@ if (_attacking && _single_laser) {
 
 //Triple Laser
 if (_attacking && _triple_laser) {
-	x = lerp(x, 960, 0.055);
-	y = lerp(y, 540, 0.055);
+	x = lerp(x, 960, 0.035);
+	y = lerp(y, 540, 0.035);
 
 	for(var _i = 0; _i< 3; _i++){
 		var _arm_rotation_1 = _arm_1_1_rotation + _arm_1_1_rotation_offset;
@@ -864,27 +869,26 @@ if (_attacking && _triple_laser) {
 			_rotation += random_range(0, 360);
 			var _laser_rotation = random_range(0, 360);
 			
-			var _i_max = 1;
+			var _i_max = 2;
 			
-			if (_triple_laser_projectile_repeat < 240) {
-				_i_max = 2;
-			} else if (_triple_laser_projectile_repeat < 120) {
-				_i_max = 3;
+			if (_triple_laser_projectile_repeat < 420) {
+				_i_max = 4;
+			} else if (_triple_laser_projectile_repeat < 300) {
+				_i_max = 8;
 			}
 		
-			for(var _i = 0; _i< 2; _i++){
+			for(var _i = 0; _i< _i_max; _i++){
 				audio_play_sound(snd_summon_shoot, 0, false);
-				var _laser_random = random_range(-5, 1);
+				var _laser_random = random_range(-8, 1);
 				
-				if (_i_max > 1 && _laser_random > 0) {
-					var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
-					_laser.direction = (_i * (360 / _i_max)) + _laser_rotation;
-					_laser._laser_timer = 1;
-				} else {
-					var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_non_homing);
-					_fireball.direction = (_i * (360 / _i_max)) + _laser_rotation;
-					_fireball._speed = 2.5;
-				}
+				//if (_i_max > 1 && _laser_random > 0) {
+				//	var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
+				//	_laser.direction = (_i * (360 / _i_max)) + _triple_laser_projectile_repeat * (36 / (_i_max / 2));
+				//	_laser._laser_timer = 1;
+				//}
+				var _fireball = instance_create_depth(x, y, -1, obj_boss_fireball_non_homing);
+				_fireball.direction = ((_i * (360 / (_i_max / 2))) + (_triple_laser_projectile_repeat * (36 / (_i_max / 2))) + (180 * (_i / (_i_max - 1))));
+				_fireball._speed = 2.25;
 				
 			}
 		}
@@ -911,7 +915,7 @@ if (_attacking && _triple_laser) {
 			
 		}
 		
-		_triple_laser_projectile_timer = -0.025 + clamp((_triple_laser_projectile_repeat / 320) / 10, 0.03, 0.1);
+		_triple_laser_projectile_timer = -0.025 + clamp((_triple_laser_projectile_repeat / 500) / 10, 0.03, 0.1);
 		_triple_laser_projectile_repeat -= 1;
 		
 		if (_triple_laser_projectile_repeat <= 0) {
@@ -919,7 +923,7 @@ if (_attacking && _triple_laser) {
 			_attack_timer = 3;
 			_triple_laser = false;
 			_triple_laser_projectile_timer = 2.5;
-			_triple_laser_projectile_repeat = 320;
+			_triple_laser_projectile_repeat = 500;
 			
 			_blue_lasers = [];
 			
@@ -927,6 +931,7 @@ if (_attacking && _triple_laser) {
 			self._targetable_timer = 10;
 			audio_play_sound(snd_enemy_hurt, 0, false);
 			self.sprite_index = spr_boss_1_downed_anim;
+			self.image_index = 0;
 		
 			for (var _i = 0; _i < array_length(self._arm_position_target_offsets); _i++) {
 				for (var _j = 0; _j < array_length(self._arm_position_target_offsets[_i]); _j++) {

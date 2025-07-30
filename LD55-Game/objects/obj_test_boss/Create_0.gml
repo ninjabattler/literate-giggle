@@ -224,6 +224,7 @@ _arm_rotation_timer = 0.75;
 
 _shield_scale_offset = 0;
 _target_shield_scale_offset = 0.2;
+_shield_index = 0;
 
 _targetable = false;
 _targetable_timer = 0;
@@ -292,7 +293,7 @@ _single_laser_timer = 4;
 _single_laser_repeat = 5;
 
 _triple_laser_projectile_timer = 2.5;
-_triple_laser_projectile_repeat = 320;
+_triple_laser_projectile_repeat = 500;
 _triple_laser_warning_timer = 2;
 
 _fireball_reflective_timer = 0;

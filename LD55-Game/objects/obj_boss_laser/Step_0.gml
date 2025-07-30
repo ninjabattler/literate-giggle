@@ -8,7 +8,9 @@ if (_laser_timer > 0) {
 	
 	image_angle = direction;
 	part_system_position(_particle_system, x, y);
-	move_towards_point(x + 32 * dcos(direction), y - 32 * dsin(direction), _laser_movement_speed)
+	move_towards_point(x + 32 * dcos(direction), y - 32 * dsin(direction), _laser_movement_speed);
+	
+	_laser_movement_speed = lerp(_laser_movement_speed, 0, 0.1);
 } else {
 	if (!_sound_played) {
 		if (!_silent) {

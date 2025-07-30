@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 draw_set_alpha(_shield_alpha / 5);
-draw_circle_color(x, y, 100, c_aqua, c_aqua, false);
+draw_circle_color(x, y, 100 * (1 + _shield_scale_offset), c_aqua, c_aqua, false);
 draw_set_alpha(1);
 
 var _arm_rotation_states = _arm_state_idle;
@@ -65,21 +65,23 @@ for(var _i = 0; _i < array_length(_arm_rotation_states); _i++) {
 	}
 	
 	if (!_arm_piece_destroyed[_i][0]) {
-		draw_sprite_ext(spr_boss_1_arm_1, image_index, x + _arm_off_1_x, y - _arm_off_1_y, 1, 1, _arm_base + _arm_rotation_1, c_white, 1);
+		draw_sprite_ext(spr_boss_1_arm_1, image_index, x + _arm_off_1_x, y - _arm_off_1_y, 0.515, 0.515, _arm_base + _arm_rotation_1, c_white, 1);
 	}
 	
 	if (!_arm_piece_destroyed[_i][1]) {
-		draw_sprite_ext(spr_boss_1_arm_2, image_index, x + _arm_off_2_x + 56 * dcos(_arm_base + _arm_rotation_1), y - _arm_off_2_y - 56 * dsin(_arm_base + _arm_rotation_1), 1, 1, _arm_base - _arm_rotation_2, c_white, 1);
+		draw_sprite_ext(spr_boss_1_arm_2, image_index, x + _arm_off_2_x + 56 * dcos(_arm_base + _arm_rotation_1), y - _arm_off_2_y - 56 * dsin(_arm_base + _arm_rotation_1), 0.515, 0.515, _arm_base - _arm_rotation_2, c_white, 1);
 	}
 	
 	if (!_arm_piece_destroyed[_i][2]) {
-		draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(_arm_base + _arm_rotation_1)) + 56 * dcos(_arm_base - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(_arm_base + _arm_rotation_1)) - 56 * dsin(_arm_base - _arm_rotation_2), 1, 1,  _arm_base - _arm_rotation_2 + 30, c_white, 1);
+		draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(_arm_base + _arm_rotation_1)) + 56 * dcos(_arm_base - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(_arm_base + _arm_rotation_1)) - 56 * dsin(_arm_base - _arm_rotation_2), 0.5, 0.5,  _arm_base - _arm_rotation_2 + 30, c_white, 1);
 	}
 }
 
-draw_self();
+//draw_self();
 
-draw_sprite_ext(spr_boss_1_radius, image_index, x, y, 1.2 + _shield_scale_offset, 1.2 + _shield_scale_offset, _shield_rotate, c_white, _shield_alpha);
+draw_sprite_ext(sprite_index, image_index, x ,y, 0.325, 0.325, image_angle, c_white, 1);
+
+draw_sprite_ext(spr_boss_1_radius, _shield_index, x, y, (1.2 + _shield_scale_offset) * 0.415, (1.2 + _shield_scale_offset) * 0.415, _shield_rotate, c_white, _shield_alpha);
 
 draw_set_alpha(1);
 
