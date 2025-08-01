@@ -15,6 +15,7 @@ _rotation_speed = lerp(_rotation_speed, _max_rotation_speed, 0.025);
 if (_speed_up = false) {
 	if ((point_direction(x, y, obj_player.x, obj_player.y) - direction) < 5 && (point_direction(x, y, obj_player.x, obj_player.y) - direction) > -5) {
 		_speed_up = true;
+		direction = point_direction(x, y, obj_player.x, obj_player.y)
 	} else {
 		direction += _rotation_speed;
 	}

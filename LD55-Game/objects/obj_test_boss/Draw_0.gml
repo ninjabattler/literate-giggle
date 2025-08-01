@@ -1,8 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_set_alpha(_shield_alpha / 5);
-draw_circle_color(x, y, 100 * (1 + _shield_scale_offset), c_aqua, c_aqua, false);
-draw_set_alpha(1);
+if (_active) {
+	draw_set_alpha(_shield_alpha / 5);
+	draw_circle_color(x, y, 100 * (1 + _shield_scale_offset), c_aqua, c_aqua, false);
+	draw_set_alpha(1);
+}
 
 var _arm_rotation_states = _arm_state_idle;
 
@@ -81,8 +83,9 @@ for(var _i = 0; _i < array_length(_arm_rotation_states); _i++) {
 
 draw_sprite_ext(sprite_index, image_index, x ,y, 0.325, 0.325, image_angle, c_white, 1);
 
-draw_sprite_ext(spr_boss_1_radius, _shield_index, x, y, (1.2 + _shield_scale_offset) * 0.415, (1.2 + _shield_scale_offset) * 0.415, _shield_rotate, c_white, _shield_alpha);
-
+if (_active) {
+	draw_sprite_ext(spr_boss_1_radius, _shield_index, x, y, (1.2 + _shield_scale_offset) * 0.415, (1.2 + _shield_scale_offset) * 0.415, _shield_rotate, c_white, _shield_alpha);
+}
 draw_set_alpha(1);
 
 if (_attacking) {

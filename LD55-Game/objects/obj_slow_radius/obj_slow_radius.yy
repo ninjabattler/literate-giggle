@@ -8,7 +8,7 @@
   "managed":true,
   "name":"obj_slow_radius",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_particles","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"prt_ice_radius",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_base_radius","path":"objects/obj_base_radius/obj_base_radius.yy",},"propertyId":{"name":"_particles","path":"objects/obj_base_radius/obj_base_radius.yy",},"resource":{"name":"prt_ice_radius","path":"particles/prt_ice_radius/prt_ice_radius.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"prt_ice_radius",},
   ],
   "parent":{
     "name":"Enemies",

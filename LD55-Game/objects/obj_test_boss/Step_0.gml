@@ -3,6 +3,7 @@
 event_inherited();
 
 image_angle = _sprite_rotation;
+_stats_offset = lerp(_stats_offset, _target_stats_offset, 0.075);
 
 _shield_rotate += global.game_speed;
 _shield_index += global.dt * 24;
@@ -105,15 +106,17 @@ if (_defeated) {
 if (!_attacking && !_targetable && !_defeated) {
 	_shield_alpha = lerp(_shield_alpha, 1, 0.2);
 	_arm_state = "IDLE";
-	_rotation += 1 + 0.3 * _current_phase;
-	sprite_index = spr_boss_1;
-	x =  960 + radius * dcos(_rotation)
-	y =  540 - radius * dsin(_rotation)
+	
+	 if (_active) {
+		_rotation += 1 + 0.3 * _current_phase;
+		sprite_index = spr_boss_1;
+		x =  960 + radius * dcos(_rotation)
+		y =  540 - radius * dsin(_rotation)
 
-	if (_attack_timer > 0) {
-		_attack_name = ""
-	    _attack_timer -= global.game_speed * global.dt;
-	} else {
+		if (_attack_timer > 0) {
+			_attack_name = ""
+		    _attack_timer -= global.game_speed * global.dt;
+		} else {
 		_attacking = true;
 		audio_play_sound(snd_boss_1_growl, 0, false);
 		
@@ -277,6 +280,7 @@ if (!_attacking && !_targetable && !_defeated) {
 			_current_attack++;
 		}
 	}
+	 }
 }
 
 //Vulnerable
@@ -878,14 +882,11 @@ if (_attacking && _triple_laser) {
 			}
 		
 			for(var _i = 0; _i< _i_max; _i++){
-				audio_play_sound(snd_summon_shoot, 0, false);
+				if (_i == 0) {
+					audio_play_sound(snd_summon_shoot, 0, false);
+				}
 				var _laser_random = random_range(-8, 1);
-				
-				//if (_i_max > 1 && _laser_random > 0) {
-				//	var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
-				//	_laser.direction = (_i * (360 / _i_max)) + _triple_laser_projectile_repeat * (36 / (_i_max / 2));
-				//	_laser._laser_timer = 1;
-				//}
+
 				var _fireball = instance_create_depth(x, y, -1, obj_boss_fireball_non_homing);
 				_fireball.direction = ((_i * (360 / (_i_max / 2))) + (_triple_laser_projectile_repeat * (36 / (_i_max / 2))) + (180 * (_i / (_i_max - 1))));
 				_fireball._speed = 2.25;

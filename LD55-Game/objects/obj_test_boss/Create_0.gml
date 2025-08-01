@@ -4,8 +4,11 @@ event_inherited();
 path_end();
 
 depth = 0;
-x = 540;
-y = 540;
+radius = point_distance(960, 540, 540, 540);
+x =  960 + radius * dcos(1.03)
+y =  540 - radius * dsin(1.03)
+_stats_offset = 960;
+_target_stats_offset = 960;
 _has_death_anim = true;
 _shield_alpha = 1;
 _particle_system = part_system_create(prt_boss_death_explosion_1);
@@ -15,6 +18,7 @@ _death_explosion_arm = 2;
 _death_explosion_arm_piece = 2;
 part_system_global_space(_particle_system, true);
 
+_active = false;
 _defeated = false;
 
 _arm_state = "IDLE";
@@ -235,7 +239,6 @@ _sprite_rotation = 0;
 _fireball_timer = 2;
 _rotation = 0;
 _current_phase = 1;
-radius = point_distance(960, 540, x, y);
 
 _attacking = false;
 _fireball_ring = false;
@@ -330,9 +333,6 @@ _attack_orders = [
 		"FIREBALL_REFLECTIVE",
 	],
 ]
-
-audio_stop_sound(snd_music_main);
-audio_play_sound(snd_music_boss, 0, true);
 
 function apply_projectile_pose() {
 	_arm_1_1_rotation = _arm_state_projectile[0]._arm_rot_1;

@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings":[
+    {"name":"Cutscene Controllers","order":1,"path":"folders/Objects/Cutscene Controllers.yy",},
     {"name":"Boss 1","order":3,"path":"folders/Sprites/Enemies/Boss 1.yy",},
     {"name":"Particles","order":1,"path":"folders/Sprites/Particles.yy",},
   ],
@@ -36,6 +37,7 @@
     {"name":"spr_boss_1_downed","order":6,"path":"sprites/spr_boss_1_downed/spr_boss_1_downed.yy",},
     {"name":"spr_boss_1_radius","order":5,"path":"sprites/spr_boss_1_radius/spr_boss_1_radius.yy",},
     {"name":"spr_boss_laser","order":1,"path":"sprites/spr_boss_laser/spr_boss_laser.yy",},
+    {"name":"spr_cutscene_border","order":2,"path":"sprites/spr_cutscene_border/spr_cutscene_border.yy",},
     {"name":"spr_explosion","order":2,"path":"sprites/spr_explosion/spr_explosion.yy",},
     {"name":"spr_gui_boss_healthbar","order":1,"path":"sprites/spr_gui_boss_healthbar/spr_gui_boss_healthbar.yy",},
     {"name":"tl_test_wave_5_backup","order":1,"path":"timelines/tl_test_wave_5_backup/tl_test_wave_5_backup.yy",},
