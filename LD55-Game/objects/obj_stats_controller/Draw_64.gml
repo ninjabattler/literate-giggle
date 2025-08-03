@@ -2,7 +2,9 @@
 // You can write your code in this editor
 display_set_gui_size(1920, 1080);
 
-_soul_counter_surface = surface_create(200, 200);
+if (!surface_exists(_soul_counter_surface)) {
+	_soul_counter_surface = surface_create(200, 200);
+}
 
 draw_set_valign(fa_bottom);
 draw_set_halign(fa_left);

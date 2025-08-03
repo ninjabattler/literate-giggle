@@ -136,6 +136,20 @@ _arm_state_single_laser = [
 		_arm_rot_2: -210
 	},
 ]
+_arm_state_double_laser = [
+	{
+		_arm_rot_1: -60,
+		_arm_rot_2: 60
+	},
+	{
+		_arm_rot_1:	60,
+		_arm_rot_2: -60
+	},
+	{
+		_arm_rot_1: 225,
+		_arm_rot_2: -125
+	},
+]
 _arm_state_stretched = [
 	{
 		_arm_rot_1: 0,
@@ -306,6 +320,11 @@ _single_laser_repeat = 5;
 _single_laser_homing_timer = 0.025;
 _single_laser_homing_repeat = 0;
 
+_double_laser_start_timer = 2.5;
+_double_laser_timer = 15;
+_double_laser_projectile_timer = 0.5;
+_double_laser_projectile_offset = 1;
+
 _triple_laser_projectile_timer = 2.5;
 _triple_laser_projectile_repeat = 500;
 _triple_laser_warning_timer = 2;
@@ -329,7 +348,7 @@ _attack_orders = [
 		"FIREBALL_BURST",
 		"LASER_SPIN",
 		"FIREBALL_TELEPORT",
-		"FIREBALL_REFLECTIVE"
+		"DOUBLE_LASER"
 	],
 	[
 		"FIREBALL_RING",
@@ -341,7 +360,6 @@ _attack_orders = [
 		"FIREBALL_SPIN",
 		"FIREBALL_TELEPORT",
 		"TRIPLE_LASER",
-		"FIREBALL_REFLECTIVE",
 	],
 ]
 

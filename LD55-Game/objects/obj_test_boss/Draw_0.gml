@@ -38,7 +38,7 @@ if (!_invisible) {
 		var _arm_base_2 = image_angle;
 		var _arm_base_3 = image_angle;
 	
-		if (_arm_state == "STRETCHED") {
+		if (_arm_state == "STRETCHED" || _arm_state == "DOUBLE_LASER") {
 			_arm_base_1 = -90;	
 			_arm_base_2 = -90;	
 			_arm_base_3 = -90;	
