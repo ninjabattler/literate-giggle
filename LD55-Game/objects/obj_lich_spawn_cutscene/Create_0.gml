@@ -4,6 +4,17 @@ obj_player._disabled = true;
 obj_stats_controller._target_stats_offset = -960;
 _cutscene_ended = false;
 
+/* 
+	0 = boss explosion spawn
+	1 = boss prepares spell
+	2 = boss casts shield and goes back to idle
+	3 = end
+*/
+_step = 0;
+_particle_system = part_system_create(prt_boss_laser_glare);
+_particle_system2 = pointer_null;
+part_system_position(_particle_system, obj_test_boss.x, obj_test_boss.y);
+
 _screen_width = 1920;
 _screen_height = 1080;
 _target_screen_width = _screen_width * 0.8;
@@ -14,7 +25,7 @@ _target_view_x = obj_test_boss.x;
 _target_view_y = obj_test_boss.y;
 
 _music_volume_start = global.music_volume;
-_timer = 5;
+_timer = 3;
 _border_frame = 0;
 
 view_camera[0] = camera_create();

@@ -10,7 +10,9 @@ y =  540 - radius * dsin(1.03)
 _stats_offset = 960;
 _target_stats_offset = 960;
 _has_death_anim = true;
-_shield_alpha = 1;
+_invisible = true;
+_shield_alpha = 0;
+_hide_shield = true;
 _particle_system = part_system_create(prt_boss_death_explosion_1);
 _death_explosion_1 = part_emitter_create(_particle_system);
 _death_explosion_timer = 1;
@@ -226,6 +228,13 @@ _target_arm_3_2_rotation_offset = 10;
 
 _arm_rotation_timer = 0.75;
 
+_arm_rotation_timer_1_1 = 0.75;
+_arm_rotation_timer_1_2 = 0.8;
+_arm_rotation_timer_2_1 = 0.65;
+_arm_rotation_timer_2_2 = 0.7;
+_arm_rotation_timer_3_1 = 0.85;
+_arm_rotation_timer_3_2 = 0.9;
+
 _shield_scale_offset = 0;
 _target_shield_scale_offset = 0.2;
 _shield_index = 0;
@@ -294,6 +303,8 @@ _fireball_teleport_repeat = 5;
 
 _single_laser_timer = 4;
 _single_laser_repeat = 5;
+_single_laser_homing_timer = 0.025;
+_single_laser_homing_repeat = 0;
 
 _triple_laser_projectile_timer = 2.5;
 _triple_laser_projectile_repeat = 500;

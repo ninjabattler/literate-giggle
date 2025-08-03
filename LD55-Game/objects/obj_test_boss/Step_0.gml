@@ -104,10 +104,15 @@ if (_defeated) {
 
 //Idle Movement
 if (!_attacking && !_targetable && !_defeated) {
-	_shield_alpha = lerp(_shield_alpha, 1, 0.2);
-	_arm_state = "IDLE";
+	//Hide Shield for Cutscene
+	if (_hide_shield) {
+		_shield_alpha = lerp(_shield_alpha, 0, 0.2);
+	} else {
+		_shield_alpha = lerp(_shield_alpha, 1, 0.2);
+	}
 	
 	 if (_active) {
+		_arm_state = "IDLE";
 		_rotation += 1 + 0.3 * _current_phase;
 		sprite_index = spr_boss_1;
 		x =  960 + radius * dcos(_rotation)
@@ -787,9 +792,11 @@ if (_attacking && _single_laser) {
 	_blue_lasers[0].y = _laser_y;
 	_blue_lasers[0].direction = -90 - _arm_rotation_2;
 
+	// Laser Spread
 	if (_single_laser_timer > 0) {
 	    _single_laser_timer -= global.game_speed * global.dt;
 	} else {
+		audio_play_sound(snd_click_soft, 0, false);
 		for(var _i = 0; _i< 8; _i++){
 			var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
 			_laser.direction = (_i * 45);
@@ -800,13 +807,9 @@ if (_attacking && _single_laser) {
 			}
 		}
 		
-		for(var _i = 0; _i< 10; _i++){
-			var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_homing);
-			_fireball.direction = (image_angle - 180) + (random_range(-5, 5) * 9);
-		}
-		
 		_single_laser_timer = 2;
 		_single_laser_repeat -= 1;
+		_single_laser_homing_repeat = 8;
 		
 		if (_single_laser_repeat <= 0) {
 			speed = 0;
@@ -830,6 +833,20 @@ if (_attacking && _single_laser) {
 				}
 			}
 		}
+	}
+}
+
+// Single Laser Homing Projectiles
+if (_single_laser_homing_repeat > 0) {
+	if (_single_laser_homing_timer > 0) {
+		_single_laser_homing_timer -= global.dt; 	
+	} else {
+		audio_play_sound(snd_summon_shoot, 0, false);
+		var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_homing);
+		_fireball.direction = (image_angle - 180) + (random_range(-1, 1) * 30);
+			
+		_single_laser_homing_repeat -= 1;
+		_single_laser_homing_timer = 0.025;
 	}
 }
 
