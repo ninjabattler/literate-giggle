@@ -11,6 +11,11 @@ _cutscene_ended = false;
 	3 = end
 */
 _step = 0;
+
+_boss_name_underline = 1912;
+_boss_name_opacity = 0;
+_show_boss_name = false;
+
 _particle_system = part_system_create(prt_boss_laser_glare);
 _particle_system2 = pointer_null;
 part_system_position(_particle_system, obj_test_boss.x, obj_test_boss.y);

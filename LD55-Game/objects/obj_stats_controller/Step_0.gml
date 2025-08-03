@@ -9,3 +9,9 @@ if (_player_health <= 0 && !obj_player._disabled) {
 	instance_create_depth(960, 540, -100, obj_restart_button);
 	instance_create_depth(960, 740, -100, obj_exit_button);
 }
+
+_souls_index += 20 * global.dt;
+
+if (_souls_index > 179) {
+	_souls_index -= 179;	
+}

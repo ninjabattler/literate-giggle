@@ -1,13 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 if (!_invisible) {
+	
 	draw_set_alpha(_shield_alpha / 5);
 	draw_circle_color(x, y, 100 * (1 + _shield_scale_offset), c_aqua, c_aqua, false);
 	draw_set_alpha(1);
 
-
 	var _arm_rotation_states = _arm_state_idle;
-
 	switch (_arm_state) {
 		case "SPIN":
 			_arm_rotation_states = _arm_state_spin;
@@ -78,11 +77,8 @@ if (!_invisible) {
 			draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(_arm_base + _arm_rotation_1)) + 56 * dcos(_arm_base - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(_arm_base + _arm_rotation_1)) - 56 * dsin(_arm_base - _arm_rotation_2), 0.5, 0.5,  _arm_base - _arm_rotation_2 + 30, c_white, 1);
 		}
 	}
-
-	//draw_self();
-
 	draw_sprite_ext(sprite_index, image_index, x ,y, 0.325, 0.325, image_angle, c_white, 1);
-
+	
 	draw_sprite_ext(spr_boss_1_radius, _shield_index, x, y, (1.2 + _shield_scale_offset) * 0.415, (1.2 + _shield_scale_offset) * 0.415, _shield_rotate, c_white, _shield_alpha);
 
 	draw_set_alpha(1);

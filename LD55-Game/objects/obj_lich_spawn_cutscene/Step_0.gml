@@ -1,6 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (_show_boss_name) {
+	_boss_name_underline = lerp(_boss_name_underline, 960, 0.0075);
+
+	if (_boss_name_underline < 1400) {
+		_boss_name_opacity = lerp(_boss_name_opacity, 1, 0.015)	
+	}
+} else {
+	_boss_name_opacity = lerp(_boss_name_opacity, 0, 0.1)	
+}
+
 if (_timer <= 0 && !_cutscene_ended) {
 	switch (_step) {
 		case 0:
@@ -11,6 +21,7 @@ if (_timer <= 0 && !_cutscene_ended) {
 			_particle_system2 = part_system_create(prt_boss_spawn_explosion);
 			part_system_position(_particle_system2, obj_test_boss.x, obj_test_boss.y);
 			
+			_show_boss_name = true;
 			_step += 1;
 			_timer = 2;
 			break;
@@ -28,6 +39,7 @@ if (_timer <= 0 && !_cutscene_ended) {
 			break
 		case 3:
 			_cutscene_ended = true;
+			_show_boss_name = false;
 			part_system_destroy(_particle_system2);
 			obj_player._disabled = false;
 			obj_test_boss._active = true;

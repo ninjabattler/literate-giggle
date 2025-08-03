@@ -27,6 +27,7 @@
     {"name":"prt_soul_glare","order":2,"path":"particles/prt_soul_glare/prt_soul_glare.yy",},
     {"name":"prt_soul_trail","order":7,"path":"particles/prt_soul_trail/prt_soul_trail.yy",},
     {"name":"scr_instance_nth_nearest","order":2,"path":"scripts/scr_instance_nth_nearest/scr_instance_nth_nearest.yy",},
+    {"name":"sh_wave_x","order":1,"path":"shaders/sh_wave_x/sh_wave_x.yy",},
     {"name":"snd_boss_1_growl","order":2,"path":"sounds/snd_boss_1_growl/snd_boss_1_growl.yy",},
     {"name":"snd_boss_1_laser","order":3,"path":"sounds/snd_boss_1_laser/snd_boss_1_laser.yy",},
     {"name":"snd_music_boss","order":1,"path":"sounds/snd_music_boss/snd_music_boss.yy",},
@@ -41,6 +42,7 @@
     {"name":"spr_cutscene_border","order":2,"path":"sprites/spr_cutscene_border/spr_cutscene_border.yy",},
     {"name":"spr_explosion","order":2,"path":"sprites/spr_explosion/spr_explosion.yy",},
     {"name":"spr_gui_boss_healthbar","order":1,"path":"sprites/spr_gui_boss_healthbar/spr_gui_boss_healthbar.yy",},
+    {"name":"spr_soul_counter","order":3,"path":"sprites/spr_soul_counter/spr_soul_counter.yy",},
     {"name":"tl_test_wave_5_backup","order":1,"path":"timelines/tl_test_wave_5_backup/tl_test_wave_5_backup.yy",},
   ],
 }
