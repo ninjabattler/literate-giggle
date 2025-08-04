@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"snd_music_victory",
+  "%Name":"snd_shield_break",
   "audioGroupId":{
-    "name":"music",
-    "path":"audiogroups/music",
+    "name":"soundEffects",
+    "path":"audiogroups/soundEffects",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":46.896576,
-  "name":"snd_music_victory",
+  "duration":3.0040817,
+  "name":"snd_shield_break",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_music_victory.wav",
+  "soundFile":"snd_shield_break.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.85,
 }

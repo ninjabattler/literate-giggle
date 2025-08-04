@@ -1,10 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
 if (!_invisible) {
+	if (!surface_exists(_shield_surf)) {
+		_shield_surf = surface_create(800, 800);	
+	}
+	
+	if (!surface_exists(_main_surf)) {
+		_main_surf = surface_create(800, 800);	
+	}
 	
 	draw_set_alpha(_shield_alpha / 5);
 	draw_circle_color(x, y, 100 * (1 + _shield_scale_offset), c_aqua, c_aqua, false);
 	draw_set_alpha(1);
+	
+	var _surf_offset = 400;
+	
+	surface_set_target(_main_surf)
+	draw_clear_alpha(c_white, .0);
 
 	var _arm_rotation_states = _arm_state_idle;
 	switch (_arm_state) {
@@ -66,21 +78,65 @@ if (!_invisible) {
 		}
 	
 		if (!_arm_piece_destroyed[_i][0]) {
-			draw_sprite_ext(spr_boss_1_arm_1, image_index, x + _arm_off_1_x, y - _arm_off_1_y, 0.515, 0.515, _arm_base + _arm_rotation_1, c_white, 1);
+			draw_sprite_ext(spr_boss_1_arm_1, image_index, _surf_offset + _arm_off_1_x, _surf_offset - _arm_off_1_y, 0.515, 0.515, _arm_base + _arm_rotation_1, c_white, 1);
 		}
 	
 		if (!_arm_piece_destroyed[_i][1]) {
-			draw_sprite_ext(spr_boss_1_arm_2, image_index, x + _arm_off_2_x + 56 * dcos(_arm_base + _arm_rotation_1), y - _arm_off_2_y - 56 * dsin(_arm_base + _arm_rotation_1), 0.515, 0.515, _arm_base - _arm_rotation_2, c_white, 1);
+			draw_sprite_ext(spr_boss_1_arm_2, image_index, _surf_offset + _arm_off_2_x + 56 * dcos(_arm_base + _arm_rotation_1), _surf_offset - _arm_off_2_y - 56 * dsin(_arm_base + _arm_rotation_1), 0.515, 0.515, _arm_base - _arm_rotation_2, c_white, 1);
 		}
 	
 		if (!_arm_piece_destroyed[_i][2]) {
-			draw_sprite_ext(_arm3, 0, (x + _arm_pos_3_x + 56 * dcos(_arm_base + _arm_rotation_1)) + 56 * dcos(_arm_base - _arm_rotation_2), (y - _arm_pos_3_x - 56 * dsin(_arm_base + _arm_rotation_1)) - 56 * dsin(_arm_base - _arm_rotation_2), 0.5, 0.5,  _arm_base - _arm_rotation_2 + 30, c_white, 1);
+			draw_sprite_ext(_arm3, 0, (_surf_offset + _arm_pos_3_x + 56 * dcos(_arm_base + _arm_rotation_1)) + 56 * dcos(_arm_base - _arm_rotation_2), (_surf_offset - _arm_pos_3_x - 56 * dsin(_arm_base + _arm_rotation_1)) - 56 * dsin(_arm_base - _arm_rotation_2), 0.5, 0.5,  _arm_base - _arm_rotation_2 + 30, c_white, 1);
 		}
 	}
-	draw_sprite_ext(sprite_index, image_index, x ,y, 0.325, 0.325, image_angle, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, _surf_offset, _surf_offset, 0.325, 0.325, image_angle, c_white, 1);
 	
-	draw_sprite_ext(spr_boss_1_radius, _shield_index, x, y, (1.2 + _shield_scale_offset) * 0.415, (1.2 + _shield_scale_offset) * 0.415, _shield_rotate, c_white, _shield_alpha);
+	surface_reset_target();
+	
+	// Shadow
+	shader_set(sh_test)
 
+	draw_surface_ext(_main_surf, x - _surf_offset, y - _surf_offset, 1, 1, 0, c_black, 1);
+
+	shader_set_uniform_f(shader_get_uniform(sh_test,"size"),384,384,5)
+	shader_set_uniform_f(shader_get_uniform(sh_test,"base_alpha"),0.5)
+	shader_set_uniform_f(shader_get_uniform(sh_test,"direction"),4)
+	
+	shader_reset();
+	
+	// Attack Glow
+	for (var _i = 0; _i < 4; _i++) {
+		shader_set(sh_lich_magic)
+		
+		draw_surface(_main_surf, x - _surf_offset, y - _surf_offset);
+
+		shader_set_uniform_f(shader_get_uniform(sh_lich_magic,"size"),400,400,_glow_aura * 4)
+		shader_set_uniform_f(shader_get_uniform(sh_lich_magic,"base_alpha"),0.75)
+		shader_set_uniform_f(shader_get_uniform(sh_lich_magic,"direction"),(current_time * 0.005) + (90 * _i))
+		
+		if (_active && !_single_laser && !_double_laser && !_triple_laser) {
+			shader_set_uniform_f(shader_get_uniform(sh_lich_magic,"color"), 255, 0.995, 255, _glow_aura)
+		} else {
+			shader_set_uniform_f(shader_get_uniform(sh_lich_magic,"color"),  0.975, 255, 255, _glow_aura)
+		}
+	
+		shader_reset();
+	}
+	
+	// Lich
+	draw_surface(_main_surf, x - _surf_offset, y - _surf_offset);
+	
+	surface_free(_main_surf);
+	
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	//surface_set_target(_shield_surf);
+	draw_sprite_ext(spr_boss_1_radius, _shield_index, x, y, (1.2 + _shield_scale_offset) * 0.415, (1.2 + _shield_scale_offset) * 0.415, _shield_rotate, c_white, _shield_alpha);
+	//surface_reset_target();
+	
+	//draw_surface(_shield_surf, x - 400, y - 400);
+	
+	//surface_free(_shield_surf);
 	draw_set_alpha(1);
 
 	if (_attacking) {

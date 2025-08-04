@@ -12,6 +12,20 @@ _cutscene_ended = false;
 */
 _step = 0;
 
+_show_dialogue = false;
+_dialogue_timer = 0.0125;
+_dialogue_current = 0;
+_dialogue_index = 1;
+_dialogue_text = "";
+
+_dialogue = [
+	"Huh, well isn't this a curious predicament?",
+	"I thought maybe a Reaper had found me, but all this headache is nothing but the work of a child playing with magic.",
+	"You step into my domain, relying on familiars to fight your battles for you? Pathetic hehehe.",
+	"The things you still have yet to learn... let me show you the power of ascension!"
+
+];
+
 _boss_name_underline = 1912;
 _boss_name_opacity = 0;
 _show_boss_name = false;

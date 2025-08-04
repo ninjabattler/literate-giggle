@@ -34,6 +34,7 @@ shader_set_uniform_f(shader_get_uniform(sh_wave_x, "waves"), 100);
 shader_set_uniform_f(shader_get_uniform(sh_wave_x, "wave_width"), 1);
 
 draw_surface(_soul_counter_surface, 541 + _stats_offset, 906);
+surface_free(_soul_counter_surface);
 
 shader_reset();
 

@@ -2,13 +2,31 @@
 // You can write your code in this editor
 
 if (_show_boss_name) {
-	_boss_name_underline = lerp(_boss_name_underline, 960, 0.0075);
+	_boss_name_underline = lerp(_boss_name_underline, 1200, 0.0075);
 
-	if (_boss_name_underline < 1400) {
+	if (_boss_name_underline < 1550) {
 		_boss_name_opacity = lerp(_boss_name_opacity, 1, 0.015)	
 	}
 } else {
 	_boss_name_opacity = lerp(_boss_name_opacity, 0, 0.1)	
+}
+
+if (_show_dialogue) {
+	if (_dialogue_timer <= 0) {
+		if (string_length(_dialogue_text) < string_length(_dialogue[_dialogue_current])) {
+			var _char_to_add = string_char_at(_dialogue[_dialogue_current], _dialogue_index)
+			
+			if (_char_to_add != " ") {
+				audio_play_sound(snd_click_soft, 0, false);
+			}
+			
+			_dialogue_text += _char_to_add;
+			_dialogue_index += 1;
+			_dialogue_timer = 0.0125;
+		}
+	} else {
+		_dialogue_timer -= global.dt;	
+	}
 }
 
 if (_timer <= 0 && !_cutscene_ended) {
@@ -26,20 +44,23 @@ if (_timer <= 0 && !_cutscene_ended) {
 			_timer = 2;
 			break;
 		case 1:
+			_show_dialogue = true;
+			break;
+		case 2:
 			obj_test_boss._arm_state = "PROJECTILE";
+			_show_boss_name = false;
 			audio_play_sound(snd_boss_1_growl, 0, false);
 			_step += 1;
 			_timer = 1.5;
 			break;
-		case 2:
+		case 3:
 			obj_test_boss._arm_state = "IDLE";
 			obj_test_boss._hide_shield = false;
 			_timer = 1.5;
 			_step += 1;
-			break
-		case 3:
+			break;
+		case 4:
 			_cutscene_ended = true;
-			_show_boss_name = false;
 			part_system_destroy(_particle_system2);
 			obj_player._disabled = false;
 			obj_test_boss._active = true;

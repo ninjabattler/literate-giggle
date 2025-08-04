@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.758625,
+  "duration":2.7586396,
   "name":"snd_music_victory_splash",
   "parent":{
     "name":"Sounds",

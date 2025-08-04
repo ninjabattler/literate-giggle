@@ -12,6 +12,9 @@ _target_stats_offset = 960;
 _has_death_anim = true;
 _invisible = true;
 _shield_alpha = 0;
+_shield_surf = -1;
+_main_surf = -1;
+_glow_aura = 0;
 _hide_shield = true;
 _particle_system = part_system_create(prt_boss_death_explosion_1);
 _death_explosion_1 = part_emitter_create(_particle_system);
@@ -23,6 +26,7 @@ part_system_global_space(_particle_system, true);
 _active = false;
 _defeated = false;
 
+#region Arm States
 _arm_state = "IDLE";
 _arm_state_idle = [
 	{
@@ -248,6 +252,7 @@ _arm_rotation_timer_2_1 = 0.65;
 _arm_rotation_timer_2_2 = 0.7;
 _arm_rotation_timer_3_1 = 0.85;
 _arm_rotation_timer_3_2 = 0.9;
+#endregion
 
 _shield_scale_offset = 0;
 _target_shield_scale_offset = 0.2;
@@ -315,8 +320,8 @@ _fireball_burst_max_repeat = 5;
 _fireball_teleport_timer = 0;
 _fireball_teleport_repeat = 5;
 
-_single_laser_timer = 4;
-_single_laser_repeat = 5;
+_single_laser_timer = 3;
+_single_laser_repeat = 6;
 _single_laser_homing_timer = 0.025;
 _single_laser_homing_repeat = 0;
 
