@@ -539,7 +539,7 @@ if (!_targetable) {
 		case "DOUBLE_LASER":
 			var _rotation_lerp = _arm_rotation_timer = _defeated ? 0.025 : 0.1;
 			var _offset_lerp = _arm_rotation_timer = _defeated ? 0.005 : 0.025;
-			var _closing_rotation = 3 * global.dt
+			var _closing_rotation = 2.75 * global.dt
 			_arm_1_1_rotation_offset = _arm_1_1_rotation_offset + _closing_rotation;
 			_arm_1_2_rotation_offset = _arm_1_2_rotation_offset - _closing_rotation;
 			_arm_2_1_rotation_offset = _arm_2_1_rotation_offset - _closing_rotation;
