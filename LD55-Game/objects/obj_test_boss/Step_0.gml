@@ -3,6 +3,7 @@
 event_inherited();
 
 image_angle = _sprite_rotation;
+_stats_offset = lerp(_stats_offset, _target_stats_offset, 0.075);
 
 _shield_rotate += global.game_speed;
 _shield_index += global.dt * 24;
@@ -17,6 +18,11 @@ for (var _i = 0; _i < array_length(_arm_position_offsets); _i++) {
 	}
 }
 
+if (_arm_state != "IDLE" && !_targetable) {
+	_glow_aura = lerp(_glow_aura, 1, 0.2);
+} else {
+	_glow_aura = lerp(_glow_aura, 0, 0.2);
+}
 
 if (_hp <= 0 && !_defeated) {
 	_defeated = true;
@@ -103,17 +109,24 @@ if (_defeated) {
 
 //Idle Movement
 if (!_attacking && !_targetable && !_defeated) {
-	_shield_alpha = lerp(_shield_alpha, 1, 0.2);
-	_arm_state = "IDLE";
-	_rotation += 1 + 0.3 * _current_phase;
-	sprite_index = spr_boss_1;
-	x =  960 + radius * dcos(_rotation)
-	y =  540 - radius * dsin(_rotation)
-
-	if (_attack_timer > 0) {
-		_attack_name = ""
-	    _attack_timer -= global.game_speed * global.dt;
+	//Hide Shield for Cutscene
+	if (_hide_shield) {
+		_shield_alpha = lerp(_shield_alpha, 0, 0.2);
 	} else {
+		_shield_alpha = lerp(_shield_alpha, 1, 0.2);
+	}
+	
+	 if (_active) {
+		_arm_state = "IDLE";
+		_rotation += 1 + 0.3 * _current_phase;
+		sprite_index = spr_boss_1;
+		x =  960 + radius * dcos(_rotation)
+		y =  540 - radius * dsin(_rotation)
+
+		if (_attack_timer > 0) {
+			_attack_name = ""
+		    _attack_timer -= global.game_speed * global.dt;
+		} else {
 		_attacking = true;
 		audio_play_sound(snd_boss_1_growl, 0, false);
 		
@@ -241,6 +254,31 @@ if (!_attacking && !_targetable && !_defeated) {
 				array_push(_blue_lasers, _blue_laser);
 
 				break;
+			case "DOUBLE_LASER":
+				_arm_state = "DOUBLE_LASER";
+				_double_laser = true;
+				_attack_name = "Magicae Anulum"
+				
+				for(var _i = 0; _i< 2; _i++){
+					var _arm_rotation_1 = _arm_1_1_rotation + _arm_1_1_rotation_offset;
+					var _arm_rotation_2 = _arm_1_2_rotation + _arm_1_2_rotation_offset;
+	
+					if (_i = 1) {
+						_arm_rotation_1 = _arm_2_1_rotation + _arm_2_1_rotation_offset;
+						_arm_rotation_2 = _arm_2_2_rotation + _arm_2_2_rotation_offset;
+					}
+					
+					var _arm_pos_3_x = _arm_position_offsets[_i][2] * dcos(image_angle + _arm_rotation_2);
+					var _arm_pos_3_y = _arm_position_offsets[_i][2] * dsin(image_angle + _arm_rotation_2);
+					
+					var _laser_x = (x + _arm_pos_3_x + 56 * dcos(image_angle + _arm_rotation_1)) + 56 * dcos(image_angle - _arm_rotation_2);
+					var _laser_y =  (y - _arm_pos_3_x - 56 * dsin(image_angle + _arm_rotation_1)) - 56 * dsin(image_angle - _arm_rotation_2);
+					var _blue_laser = instance_create_depth(_laser_x, _laser_y, 0, obj_boss_laser_blue);
+					
+					array_push(_blue_lasers, _blue_laser);
+				}
+				
+				break;
 			case "TRIPLE_LASER":
 				_arm_state = "STRETCHED";
 				_triple_laser = true;
@@ -277,6 +315,7 @@ if (!_attacking && !_targetable && !_defeated) {
 			_current_attack++;
 		}
 	}
+	 }
 }
 
 //Vulnerable
@@ -492,6 +531,33 @@ if (!_targetable) {
 				_target_shield_scale_offset = -_target_shield_scale_offset;
 				_target_arm_2_1_rotation_offset = -_target_arm_2_1_rotation_offset;
 				_target_arm_2_2_rotation_offset = -_target_arm_2_2_rotation_offset;
+				_target_arm_3_1_rotation_offset = -_target_arm_3_1_rotation_offset;
+				_target_arm_3_2_rotation_offset = -_target_arm_3_2_rotation_offset;
+				_arm_rotation_timer = 0.75
+			}
+			break;
+		case "DOUBLE_LASER":
+			var _rotation_lerp = _arm_rotation_timer = _defeated ? 0.025 : 0.1;
+			var _offset_lerp = _arm_rotation_timer = _defeated ? 0.005 : 0.025;
+			var _closing_rotation = 2.75 * global.dt
+			_arm_1_1_rotation_offset = _arm_1_1_rotation_offset + _closing_rotation;
+			_arm_1_2_rotation_offset = _arm_1_2_rotation_offset - _closing_rotation;
+			_arm_2_1_rotation_offset = _arm_2_1_rotation_offset - _closing_rotation;
+			_arm_2_2_rotation_offset = _arm_2_2_rotation_offset + _closing_rotation;
+			_arm_3_1_rotation_offset = lerp(_arm_3_1_rotation_offset, _target_arm_3_1_rotation_offset, _offset_lerp);
+			_arm_3_2_rotation_offset = lerp(_arm_3_2_rotation_offset, _target_arm_3_2_rotation_offset, _offset_lerp);
+			
+			_arm_1_1_rotation = lerp(_arm_1_1_rotation, _arm_state_double_laser[0]._arm_rot_1, 0.1);
+			_arm_1_2_rotation = lerp(_arm_1_2_rotation, _arm_state_double_laser[0]._arm_rot_2, 0.1);
+			_arm_2_1_rotation = lerp(_arm_2_1_rotation, _arm_state_double_laser[1]._arm_rot_1,  0.1);
+			_arm_2_2_rotation = lerp(_arm_2_2_rotation, _arm_state_double_laser[1]._arm_rot_2,  0.1);
+			_arm_3_1_rotation = lerp(_arm_3_1_rotation, _arm_state_double_laser[2]._arm_rot_1 + _arm_3_1_rotation_offset, _rotation_lerp);
+			_arm_3_2_rotation = lerp(_arm_3_2_rotation, _arm_state_double_laser[2]._arm_rot_2 + _arm_3_2_rotation_offset, _rotation_lerp);
+			
+			if (_arm_rotation_timer > 0) {
+			    _arm_rotation_timer -= global.game_speed * global.dt;
+			} else {
+				_target_shield_scale_offset = -_target_shield_scale_offset;
 				_target_arm_3_1_rotation_offset = -_target_arm_3_1_rotation_offset;
 				_target_arm_3_2_rotation_offset = -_target_arm_3_2_rotation_offset;
 				_arm_rotation_timer = 0.75
@@ -783,9 +849,11 @@ if (_attacking && _single_laser) {
 	_blue_lasers[0].y = _laser_y;
 	_blue_lasers[0].direction = -90 - _arm_rotation_2;
 
+	// Laser Spread
 	if (_single_laser_timer > 0) {
 	    _single_laser_timer -= global.game_speed * global.dt;
 	} else {
+		audio_play_sound(snd_click_soft, 0, false);
 		for(var _i = 0; _i< 8; _i++){
 			var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
 			_laser.direction = (_i * 45);
@@ -796,13 +864,9 @@ if (_attacking && _single_laser) {
 			}
 		}
 		
-		for(var _i = 0; _i< 10; _i++){
-			var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_homing);
-			_fireball.direction = (image_angle - 180) + (random_range(-5, 5) * 9);
-		}
-		
 		_single_laser_timer = 2;
 		_single_laser_repeat -= 1;
+		_single_laser_homing_repeat = 8;
 		
 		if (_single_laser_repeat <= 0) {
 			speed = 0;
@@ -816,7 +880,7 @@ if (_attacking && _single_laser) {
 			
 			self._targetable = true;
 			self._targetable_timer = 10;
-			audio_play_sound(snd_enemy_hurt, 0, false);
+			audio_play_sound(snd_shield_break, 0, false);
 			self.sprite_index = spr_boss_1_downed_anim;
 			self.image_index = 0;
 		
@@ -824,6 +888,87 @@ if (_attacking && _single_laser) {
 				for (var _j = 0; _j < array_length(self._arm_position_target_offsets[_i]); _j++) {
 					self._arm_position_target_offsets[_i][_j] = random_range((10 * _j) - 10, 10 * _j) * 15;
 				}
+			}
+		}
+	}
+}
+
+// Single Laser Homing Projectiles
+if (_single_laser_homing_repeat > 0) {
+	if (_single_laser_homing_timer > 0) {
+		_single_laser_homing_timer -= global.dt; 	
+	} else {
+		audio_play_sound(snd_summon_shoot, 0, false);
+		var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_homing);
+		_fireball.direction = (image_angle - 180);
+			
+		_single_laser_homing_repeat -= 1;
+		_single_laser_homing_timer = 0.025;
+	}
+}
+
+//Double Laser
+if (_attacking && _double_laser) {
+	x = lerp(x, 960 + radius * dcos(90), 0.05);
+	y = lerp(y, 540 - radius * dsin(90), 0.05);
+	
+	for(var _i = 0; _i< 2; _i++){
+		var _arm_rotation_1 = _arm_1_1_rotation + _arm_1_1_rotation_offset;
+		var _arm_rotation_2 = _arm_1_2_rotation + _arm_1_2_rotation_offset;
+	
+		if (_i = 1) {
+			_arm_rotation_1 = _arm_2_1_rotation + _arm_2_1_rotation_offset;
+			_arm_rotation_2 = _arm_2_2_rotation + _arm_2_2_rotation_offset;
+		}
+
+		var _arm_pos_3_x = _arm_position_offsets[_i][2] * dcos(-90 + _arm_rotation_2);
+		var _arm_pos_3_y = _arm_position_offsets[_i][2] * dsin(-90 + _arm_rotation_2);
+					
+		var _laser_x = (x + _arm_pos_3_x + 56 * dcos(-90 + _arm_rotation_1)) + 56 * dcos(-90 - _arm_rotation_2);
+		var _laser_y =  (y - _arm_pos_3_x - 56 * dsin(-90 + _arm_rotation_1)) - 56 * dsin(-90 - _arm_rotation_2);
+		
+		_blue_lasers[_i].x = _laser_x;
+		_blue_lasers[_i].y = _laser_y;
+		_blue_lasers[_i].direction = -90 - _arm_rotation_2;
+	}
+	
+	if (_double_laser_start_timer < 0) {
+		_double_laser_timer -= global.dt;
+		_double_laser_projectile_timer -= global.dt;
+	} else {
+		_double_laser_start_timer -= global.dt;
+	}
+	
+	if (_double_laser_projectile_timer <- 0) {
+		_double_laser_projectile_timer = 0.5
+		audio_play_sound(snd_summon_shoot, 0, false);
+		
+		for(_i = 0; _i < 36; _i++) {	
+			var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_non_homing);
+			_fireball.direction = (_i * (360 / 36)) + _double_laser_projectile_offset * 5;
+			_fireball._speed = 3;
+		}
+		
+		_double_laser_projectile_offset += 1
+	}
+	
+	if (_double_laser_timer <= 0) {
+		_attacking = false;
+		_attack_timer = 3;
+		_double_laser = false;
+		_double_laser_timer = 15;
+			
+		_blue_lasers = [];
+			
+		self._targetable = true;
+		self._targetable_timer = 10;
+		audio_play_sound(snd_shield_break, 0, false);
+		self.sprite_index = spr_boss_1_downed_anim;
+		self.image_index = 0;
+		
+		for (var _i = 0; _i < array_length(self._arm_position_target_offsets); _i++) {
+			for (var _j = 0; _j < array_length(self._arm_position_target_offsets[_i]); _j++) {
+				self._arm_position_target_offsets[_i][_j] = random_range((10 * _j) - 10, 10 * _j) * 15;
 			}
 		}
 	}
@@ -871,21 +1016,18 @@ if (_attacking && _triple_laser) {
 			
 			var _i_max = 2;
 			
-			if (_triple_laser_projectile_repeat < 420) {
+			if (_triple_laser_projectile_repeat < 300) {
+				_i_max = 6;
+			} else if (_triple_laser_projectile_repeat < 420) {
 				_i_max = 4;
-			} else if (_triple_laser_projectile_repeat < 300) {
-				_i_max = 8;
 			}
 		
 			for(var _i = 0; _i< _i_max; _i++){
-				audio_play_sound(snd_summon_shoot, 0, false);
+				if (_i == 0) {
+					audio_play_sound(snd_summon_shoot, 0, false);
+				}
 				var _laser_random = random_range(-8, 1);
-				
-				//if (_i_max > 1 && _laser_random > 0) {
-				//	var _laser = instance_create_depth(x, y, 0, obj_boss_laser);
-				//	_laser.direction = (_i * (360 / _i_max)) + _triple_laser_projectile_repeat * (36 / (_i_max / 2));
-				//	_laser._laser_timer = 1;
-				//}
+
 				var _fireball = instance_create_depth(x, y, -1, obj_boss_fireball_non_homing);
 				_fireball.direction = ((_i * (360 / (_i_max / 2))) + (_triple_laser_projectile_repeat * (36 / (_i_max / 2))) + (180 * (_i / (_i_max - 1))));
 				_fireball._speed = 2.25;
@@ -915,7 +1057,14 @@ if (_attacking && _triple_laser) {
 			
 		}
 		
-		_triple_laser_projectile_timer = -0.025 + clamp((_triple_laser_projectile_repeat / 500) / 10, 0.03, 0.1);
+		if (_triple_laser_projectile_repeat < 300) {
+			_triple_laser_projectile_timer = 0.015
+		} else if (_triple_laser_projectile_repeat < 420) {
+			_triple_laser_projectile_timer = 0.0425
+		} else {
+			_triple_laser_projectile_timer = 0.075
+		}
+		
 		_triple_laser_projectile_repeat -= 1;
 		
 		if (_triple_laser_projectile_repeat <= 0) {
@@ -929,7 +1078,7 @@ if (_attacking && _triple_laser) {
 			
 			self._targetable = true;
 			self._targetable_timer = 10;
-			audio_play_sound(snd_enemy_hurt, 0, false);
+			audio_play_sound(snd_shield_break, 0, false);
 			self.sprite_index = spr_boss_1_downed_anim;
 			self.image_index = 0;
 		

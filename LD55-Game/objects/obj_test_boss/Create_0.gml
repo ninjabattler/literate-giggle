@@ -4,10 +4,18 @@ event_inherited();
 path_end();
 
 depth = 0;
-x = 540;
-y = 540;
+radius = point_distance(960, 540, 540, 540);
+x =  960 + radius * dcos(1.03)
+y =  540 - radius * dsin(1.03)
+_stats_offset = 960;
+_target_stats_offset = 960;
 _has_death_anim = true;
-_shield_alpha = 1;
+_invisible = true;
+_shield_alpha = 0;
+_shield_surf = -1;
+_main_surf = -1;
+_glow_aura = 0;
+_hide_shield = true;
 _particle_system = part_system_create(prt_boss_death_explosion_1);
 _death_explosion_1 = part_emitter_create(_particle_system);
 _death_explosion_timer = 1;
@@ -15,8 +23,10 @@ _death_explosion_arm = 2;
 _death_explosion_arm_piece = 2;
 part_system_global_space(_particle_system, true);
 
+_active = false;
 _defeated = false;
 
+#region Arm States
 _arm_state = "IDLE";
 _arm_state_idle = [
 	{
@@ -130,6 +140,20 @@ _arm_state_single_laser = [
 		_arm_rot_2: -210
 	},
 ]
+_arm_state_double_laser = [
+	{
+		_arm_rot_1: -60,
+		_arm_rot_2: 60
+	},
+	{
+		_arm_rot_1:	60,
+		_arm_rot_2: -60
+	},
+	{
+		_arm_rot_1: 225,
+		_arm_rot_2: -125
+	},
+]
 _arm_state_stretched = [
 	{
 		_arm_rot_1: 0,
@@ -222,6 +246,14 @@ _target_arm_3_2_rotation_offset = 10;
 
 _arm_rotation_timer = 0.75;
 
+_arm_rotation_timer_1_1 = 0.75;
+_arm_rotation_timer_1_2 = 0.8;
+_arm_rotation_timer_2_1 = 0.65;
+_arm_rotation_timer_2_2 = 0.7;
+_arm_rotation_timer_3_1 = 0.85;
+_arm_rotation_timer_3_2 = 0.9;
+#endregion
+
 _shield_scale_offset = 0;
 _target_shield_scale_offset = 0.2;
 _shield_index = 0;
@@ -235,7 +267,6 @@ _sprite_rotation = 0;
 _fireball_timer = 2;
 _rotation = 0;
 _current_phase = 1;
-radius = point_distance(960, 540, x, y);
 
 _attacking = false;
 _fireball_ring = false;
@@ -289,8 +320,15 @@ _fireball_burst_max_repeat = 5;
 _fireball_teleport_timer = 0;
 _fireball_teleport_repeat = 5;
 
-_single_laser_timer = 4;
-_single_laser_repeat = 5;
+_single_laser_timer = 3;
+_single_laser_repeat = 6;
+_single_laser_homing_timer = 0.025;
+_single_laser_homing_repeat = 0;
+
+_double_laser_start_timer = 2.5;
+_double_laser_timer = 15;
+_double_laser_projectile_timer = 0.5;
+_double_laser_projectile_offset = 1;
 
 _triple_laser_projectile_timer = 2.5;
 _triple_laser_projectile_repeat = 500;
@@ -315,7 +353,7 @@ _attack_orders = [
 		"FIREBALL_BURST",
 		"LASER_SPIN",
 		"FIREBALL_TELEPORT",
-		"FIREBALL_REFLECTIVE"
+		"DOUBLE_LASER"
 	],
 	[
 		"FIREBALL_RING",
@@ -327,12 +365,8 @@ _attack_orders = [
 		"FIREBALL_SPIN",
 		"FIREBALL_TELEPORT",
 		"TRIPLE_LASER",
-		"FIREBALL_REFLECTIVE",
 	],
 ]
-
-audio_stop_sound(snd_music_main);
-audio_play_sound(snd_music_boss, 0, true);
 
 function apply_projectile_pose() {
 	_arm_1_1_rotation = _arm_state_projectile[0]._arm_rot_1;

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":46.896564,
+  "duration":46.896576,
   "name":"snd_music_victory",
   "parent":{
     "name":"Sounds",
