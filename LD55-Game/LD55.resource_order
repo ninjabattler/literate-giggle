@@ -6,6 +6,7 @@
   "ResourceOrderSettings":[
     {"name":"fnt_boss_name","order":2,"path":"fonts/fnt_boss_name/fnt_boss_name.yy",},
     {"name":"fnt_griffy_small","order":1,"path":"fonts/fnt_griffy_small/fnt_griffy_small.yy",},
+    {"name":"obj_afterimage","order":1,"path":"objects/obj_afterimage/obj_afterimage.yy",},
     {"name":"obj_boss_fireball_blue","order":5,"path":"objects/obj_boss_fireball_blue/obj_boss_fireball_blue.yy",},
     {"name":"obj_boss_fireball_homing","order":3,"path":"objects/obj_boss_fireball_homing/obj_boss_fireball_homing.yy",},
     {"name":"obj_boss_fireball_non_homing","order":1,"path":"objects/obj_boss_fireball_non_homing/obj_boss_fireball_non_homing.yy",},

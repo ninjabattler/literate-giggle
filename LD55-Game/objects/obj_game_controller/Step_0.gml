@@ -9,6 +9,12 @@ if room != TitleRoom {
 		global.game_paused = !global.game_paused;
 		if(global.game_paused == false) {
 			instance_destroy(resume_button)
+			
+			// Reset options menu
+			instance_destroy(obj_music_slider)
+			instance_destroy(obj_sound_slider)
+			global.show_options = false;
+			
 			instance_activate_all();
 			surface_free(global.paused_surf);
 			global.paused_surf = -1;

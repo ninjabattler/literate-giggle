@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Dash timer
 // You can write your code in this editor
 
 if (_dash_count < _dash_max_count) {
