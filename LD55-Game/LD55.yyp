@@ -80,6 +80,7 @@
     {"id":{"name":"fnt_griffy","path":"fonts/fnt_griffy/fnt_griffy.yy",},},
     {"id":{"name":"Contributors","path":"notes/Contributors/Contributors.yy",},},
     {"id":{"name":"LICENSE","path":"notes/LICENSE/LICENSE.yy",},},
+    {"id":{"name":"obj_afterimage","path":"objects/obj_afterimage/obj_afterimage.yy",},},
     {"id":{"name":"obj_arc_summon","path":"objects/obj_arc_summon/obj_arc_summon.yy",},},
     {"id":{"name":"obj_arrow_base","path":"objects/obj_arrow_base/obj_arrow_base.yy",},},
     {"id":{"name":"obj_attack_arc","path":"objects/obj_attack_arc/obj_attack_arc.yy",},},

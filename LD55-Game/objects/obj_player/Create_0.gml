@@ -6,11 +6,15 @@ image_speed = 0;
 
 _momentum_x = 0;
 _momentum_y = 0;
-_initial_max_speed = 3;
-_max_speed = 3;
+_initial_max_speed = 5;
+_max_speed = 5;
+_accel = 0.9;
+_friction = 0.85;
+
 _stab_cooldown = 15;
 _stab_on_cooldown = false;
 _disabled = false;
+
 
 // Used for placing summons
 _x_offset = 0;
@@ -20,8 +24,8 @@ global._can_place = true;
 
 // Abilities
 _has_dash = true;
-_dash_count = 1;
-_dash_max_count = 1;
+_dash_count = 2;
+_dash_max_count = 2;
 _dash_speed_mult = 0;
 _dash_dir = 0;
 

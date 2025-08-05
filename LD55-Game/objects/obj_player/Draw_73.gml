@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 draw_self()
+//draw_text(300, 300, string_format(global.dt * 60, 0, 5))
 
 // Project summons
 if(global.active_summon != 0) {
