@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.345283,
+  "duration":2.0114286,
   "name":"snd_boss_1_laser",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_boss_1_laser.wav",
+  "soundFile":"snd_boss_1_laser.mp3",
   "type":0,
-  "volume":0.6,
+  "volume":1.0,
 }

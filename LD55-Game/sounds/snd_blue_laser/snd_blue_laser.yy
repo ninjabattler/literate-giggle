@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_boss_killed",
+  "%Name":"snd_blue_laser",
   "audioGroupId":{
     "name":"soundEffects",
     "path":"audiogroups/soundEffects",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.9967346,
-  "name":"snd_boss_killed",
+  "duration":20.009796,
+  "name":"snd_blue_laser",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_boss_killed.mp3",
+  "soundFile":"snd_blue_laser.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.4,
 }

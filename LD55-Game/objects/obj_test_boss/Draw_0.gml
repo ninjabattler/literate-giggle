@@ -16,7 +16,7 @@ if (!_invisible) {
 	var _surf_offset = 400;
 	
 	surface_set_target(_main_surf)
-	draw_clear_alpha(c_white, .0);
+	draw_clear_alpha(c_black, .0);
 
 	var _arm_rotation_states = _arm_state_idle;
 	switch (_arm_state) {

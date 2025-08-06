@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_boss_killed",
+  "%Name":"snd_teleport",
   "audioGroupId":{
     "name":"soundEffects",
     "path":"audiogroups/soundEffects",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":3.9967346,
-  "name":"snd_boss_killed",
+  "name":"snd_teleport",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_boss_killed.mp3",
+  "soundFile":"snd_teleport.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.6,
 }

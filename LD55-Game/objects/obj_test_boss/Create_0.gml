@@ -320,13 +320,13 @@ _fireball_burst_max_repeat = 5;
 _fireball_teleport_timer = 0;
 _fireball_teleport_repeat = 5;
 
-_single_laser_timer = 3;
-_single_laser_repeat = 6;
+_single_laser_timer = 4;
+_single_laser_repeat = 8;
 _single_laser_homing_timer = 0.025;
 _single_laser_homing_repeat = 0;
 
 _double_laser_start_timer = 2.5;
-_double_laser_timer = 15;
+_double_laser_timer = 16;
 _double_laser_projectile_timer = 0.5;
 _double_laser_projectile_offset = 1;
 

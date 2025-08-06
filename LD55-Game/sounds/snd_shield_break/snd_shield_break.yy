@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_shield_break.mp3",
   "type":0,
-  "volume":0.85,
+  "volume":0.75,
 }

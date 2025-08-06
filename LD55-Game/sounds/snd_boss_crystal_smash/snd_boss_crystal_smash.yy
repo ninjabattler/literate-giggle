@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"snd_boss_killed",
+  "%Name":"snd_boss_crystal_smash",
   "audioGroupId":{
-    "name":"soundEffects",
-    "path":"audiogroups/soundEffects",
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
   "duration":3.9967346,
-  "name":"snd_boss_killed",
+  "name":"snd_boss_crystal_smash",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_boss_killed.mp3",
+  "soundFile":"snd_boss_crystal_smash.mp3",
   "type":0,
   "volume":1.0,
 }

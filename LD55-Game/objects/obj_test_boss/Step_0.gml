@@ -78,7 +78,13 @@ if (_defeated) {
 				break;
 		}
 		
-		audio_play_sound(snd_enemy_killed, 0, false);
+		if (_death_explosion_arm_piece == 2) {
+			audio_play_sound(snd_boss_crystal_smash, 0, false);	
+		} else {
+			audio_play_sound(snd_enemy_killed, 0, false);	
+			audio_play_sound(snd_boss_bone_break, 0, false);	
+		}
+		
 		part_particles_burst(_particle_system, _explosion_x, _explosion_y, prt_boss_death_explosion_1);
 		_death_explosion_timer = 0.3333;
 		
@@ -240,6 +246,7 @@ if (!_attacking && !_targetable && !_defeated) {
 				_arm_state = "SINGLE_LASER";
 				_single_laser = true;
 				_attack_name = "Magicae Anulum"
+				audio_play_sound(snd_blue_laser, 0, false);
 				
 				var _arm_rotation_1 = _arm_1_1_rotation + _arm_1_1_rotation_offset;
 				var _arm_rotation_2 = _arm_1_2_rotation + _arm_1_2_rotation_offset;
@@ -258,6 +265,7 @@ if (!_attacking && !_targetable && !_defeated) {
 				_arm_state = "DOUBLE_LASER";
 				_double_laser = true;
 				_attack_name = "Magicae Anulum"
+				audio_play_sound(snd_blue_laser, 0, false);
 				
 				for(var _i = 0; _i< 2; _i++){
 					var _arm_rotation_1 = _arm_1_1_rotation + _arm_1_1_rotation_offset;
@@ -283,6 +291,7 @@ if (!_attacking && !_targetable && !_defeated) {
 				_arm_state = "STRETCHED";
 				_triple_laser = true;
 				_attack_name = "Magicae Anulum"
+				audio_play_sound(snd_blue_laser, 0, false);
 				
 				for(var _i = 0; _i< 3; _i++){
 					var _arm_rotation_1 = _arm_1_1_rotation + _arm_1_1_rotation_offset;
@@ -345,6 +354,7 @@ if (_targetable) {
 		
 		_fireball_reflects = _current_phase - 1;
 	} else {
+		audio_play_sound(snd_boss_laugh, 0, false);
 		_fireball_reflects = _current_phase - 1;
 		_targetable = false;
 		_attack_timer = 2.5 - 0.45 * _current_phase;
@@ -539,7 +549,7 @@ if (!_targetable) {
 		case "DOUBLE_LASER":
 			var _rotation_lerp = _arm_rotation_timer = _defeated ? 0.025 : 0.1;
 			var _offset_lerp = _arm_rotation_timer = _defeated ? 0.005 : 0.025;
-			var _closing_rotation = 2.75 * global.dt
+			var _closing_rotation = 2 * global.dt
 			_arm_1_1_rotation_offset = _arm_1_1_rotation_offset + _closing_rotation;
 			_arm_1_2_rotation_offset = _arm_1_2_rotation_offset - _closing_rotation;
 			_arm_2_1_rotation_offset = _arm_2_1_rotation_offset - _closing_rotation;
@@ -616,7 +626,7 @@ if (_attacking && _laser_teleport) {
 	if (_laser_teleport_timer > 0) {
 	    _laser_teleport_timer -= global.game_speed * global.dt;
 	} else {
-		audio_play_sound(snd_click_soft, 0, false);
+		audio_play_sound(snd_teleport, 0, false);
 
 		_rotation += random_range(0, 360);
 		x = 960 + radius * dcos(_rotation);
@@ -715,6 +725,7 @@ if (_attacking && _laser_teleport_fan) {
 	    _laser_teleport_fan_timer -= global.game_speed * global.dt;
 	} else {
 		audio_play_sound(snd_click_soft, 0, false);
+		audio_play_sound(snd_teleport, 0, false);
 		
 		if (_laser_teleport_fan_repeat == 0) {
 			apply_projectile_pose();
@@ -801,7 +812,7 @@ if (_attacking && _fireball_teleport) {
 	if (_fireball_teleport_timer > 0) {
 	    _fireball_teleport_timer -= global.game_speed * global.dt;
 	} else {
-		audio_play_sound(snd_summon_shoot, 0, false);
+		audio_play_sound(snd_teleport, 0, false);
 
 		_rotation += random_range(0, 360);
 		var _laser_rotation_offset = random_range(0, 360);
@@ -939,17 +950,21 @@ if (_attacking && _double_laser) {
 		_double_laser_start_timer -= global.dt;
 	}
 	
-	if (_double_laser_projectile_timer <- 0) {
-		_double_laser_projectile_timer = 0.5
+	if (_double_laser_projectile_timer <= 0) {
+		_double_laser_projectile_timer = 0.1
 		audio_play_sound(snd_summon_shoot, 0, false);
 		
-		for(_i = 0; _i < 36; _i++) {	
+		for(_i = 0; _i < 2; _i++) {	
 			var _fireball = instance_create_depth(x, y, 0, obj_boss_fireball_non_homing);
-			_fireball.direction = (_i * (360 / 36)) + _double_laser_projectile_offset * 5;
-			_fireball._speed = 3;
+			_fireball.direction = -90 + (sin(_double_laser_projectile_offset) * 45);
+			
+			if (_i % 2 == 0) {
+				_fireball.direction = -90 + (sin(_double_laser_projectile_offset) * -45);
+			}
+			_fireball._speed = 2.5;
 		}
 		
-		_double_laser_projectile_offset += 1
+		_double_laser_projectile_offset += 0.25
 	}
 	
 	if (_double_laser_timer <= 0) {

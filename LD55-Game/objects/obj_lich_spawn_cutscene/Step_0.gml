@@ -33,7 +33,7 @@ if (_timer <= 0 && !_cutscene_ended) {
 	switch (_step) {
 		case 0:
 			obj_test_boss._invisible = false;
-			audio_play_sound(snd_enemy_killed, 0, false);
+			audio_play_sound(snd_teleport, 0, false);
 			part_system_destroy(_particle_system);
 			
 			_particle_system2 = part_system_create(prt_boss_spawn_explosion);
@@ -47,19 +47,29 @@ if (_timer <= 0 && !_cutscene_ended) {
 			_show_dialogue = true;
 			break;
 		case 2:
+			audio_play_sound(snd_boss_laugh, 0, false);
+			_timer = 3;
+			_step += 1;
+			_show_dialogue = false;
+			break;
+		case 3:
+			_show_dialogue = true;
+			break;
+		case 4:
 			obj_test_boss._arm_state = "PROJECTILE";
 			_show_boss_name = false;
 			audio_play_sound(snd_boss_1_growl, 0, false);
 			_step += 1;
 			_timer = 1.5;
 			break;
-		case 3:
+		case 5:
 			obj_test_boss._arm_state = "IDLE";
 			obj_test_boss._hide_shield = false;
+			audio_play_sound(snd_shield_cast, 0, false);
 			_timer = 1.5;
 			_step += 1;
 			break;
-		case 4:
+		case 6:
 			_cutscene_ended = true;
 			part_system_destroy(_particle_system2);
 			obj_player._disabled = false;

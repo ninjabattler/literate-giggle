@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.088934,
+  "duration":0.08893424,
   "name":"snd_enemy_stab",
   "parent":{
     "name":"Sounds",
